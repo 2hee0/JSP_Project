@@ -1,0 +1,226 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="movieinfo.css">
+</head>
+<body>
+  <!--상단바-->
+  <header class="header">
+    <div class="header-main">
+        <h1 class="logo">
+            <a href="#">
+              <!-- 상단 로고-->
+                <img src="D:\gb_ldh_0630\Team Project\조별과제_OTT\logo\logo.webp" alt="로고" width="200px" height="60px"/>
+            </a>
+        </h1>
+        <nav class="menu1">
+            <ul>
+                <li>
+                    <a href="#" class="home">홈</a>
+                </li>
+                <li class="category-list">
+                    <a href="#">
+                        장르
+                    </a>
+                    <div class="categorty-list-menu">
+                        <ul class="ul1">
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">로맨스</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">공포</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">액션</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">코미디</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">SF</span>
+                                </a>
+                            </li>
+                            <li>
+                                <a href="#" class="category-menu">
+                                    <span class="category-menu-line">애니메이션</span>
+                                </a>
+                            </li>
+                        </ul>
+                    </div>
+                </li>
+                <li>
+                    <a href="#">영화</a>
+                </li>
+                <li>
+                    <a href="#">MY</a>
+                </li>
+            </ul>
+        </nav>
+        <nav class="menu2">
+            <ul>
+                <li>
+                    <a href="#">로그인</a>
+                </li>
+                <li>
+                    <a href="#">이용권</a>
+                </li>
+                <li>
+                    <a href="#">이벤트</a>
+                </li>
+            </ul>
+        </nav>
+    </div>
+    <div class="search-box">
+    <div class="search-main-box">
+        <button type="submit" class="search-submit"/>
+        <img src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" alt="이미지 없음">
+        </button> 
+        <input type="text" placeholder="제목,인물명을 입력해보세요" class="search"/>
+    </div>
+</div>
+</header>
+<footer>
+
+</footer>
+<!--상단바 끝-->
+      <div>
+        
+        <div id="player-area">
+        <div class="detail_page">
+          <div id="poster-box">
+                <section class="player-contents">
+                  <div class="poster-box">
+                    <div class="picture-area">
+                      <picture>
+                          <source srcset="D:\gb_ldh_0630\Team Project\조별과제_OTT\Code/logo.jpg" type="css/webp">
+                          <!--포스터썸네일-->
+                          <img src="D:\gb_ldh_0630\Team Project\조별과제_OTT\Code\Movieinfo\movie.webp" class="poster-thumb">
+                      </picture>
+                  </div>
+              </div>
+              <p><h1>영화제목</h1></p>
+                <!--로그인버튼 박스-->
+                <div id="essential-box">
+                  <div>
+                      <button type="button" id="loginbutton" >로그인</button>
+                          <input type="checkbox" id="favorite">관심</button>
+                          <button type="button" id="share">공유</button>
+                          <button type="button" id="download">다운로드</button>
+                    <!---->
+                  </div>
+                </div>
+            </div>
+      </section>
+        <div class="player-bottom-contents">
+          <div class="player-nav">
+            <ul>
+              <li>
+                <button type="button" class="">
+                  추천
+                </button>
+             </li>
+             <li>
+              <button type="button" class="on">
+                상세정보
+              </button>
+              </li>
+           </ul>
+    </div>
+    <!---->
+    <div class="detail-view-content-area">
+      <!---->
+      <div class="detail-view-box">
+        <div class="thumb-box">
+          <div class="picture-area">
+            <picture><source srcset="" type="image/webp">
+              <!--영화 미니 포스터-->
+              <img src="D:\gb_ldh_0630\Team Project\조별과제_OTT\Code\Movieinfo\moviemini.webp" alt="" class="thumb-img">
+            </picture>
+          </div>
+        </div>
+        <div class="detail-info-box"><em class="preview-subtitle">
+          영화 제목
+        </em>
+          <p class="detail-dsc">
+            "영화 상세정보 줄거리 ~~~~~~
+          </p>
+          <table class="detail-info-table">
+            <colgroup>
+              <col style="width: 76px;">
+              <col style="width: auto;">
+            </colgroup>
+            <tr>
+              <th scope="row">
+                개요
+              </th>
+              <td>
+                국가 , 개봉일자
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                장르
+              </th>
+              <td>
+                <a href="" class="genre">
+                #장르1
+                </a>,
+                <a href="" class="genre">
+                  #장르2
+                </a>
+                <!---->
+              </td>
+            </tr>
+            <tr>
+              <th scope="row">
+                출연
+              </th>
+              <td>
+                <a href="javascript:void(0)" class="genre">
+                  배우1
+                </a>, <a href="" class="genre">
+                  배우2
+                </a>, <a href="" class="genre">
+                  배우3
+                </a>, <a href="" class="genre">
+                  배우4
+                </a>
+    <!---->
+  </td>
+</tr>
+<tr>
+  <th scope="row">
+    감독
+  </th>
+  <td>
+    <a href="javascript:void(0)" class="genre">
+     감독
+    </a>
+    <!---->
+  </td>
+</tr>
+<tr>
+  <th scope="row">
+    등급
+  </th>
+  <td>
+    <span>
+      <!--등급 아이콘-->
+      <img src="D:\gb_ldh_0630\Team Project\조별과제_OTT\logo\logo.jpg" width="50" height="50" :alt="">
+    </span>
+  </td>
+</tr>
+</body>
+</html>
