@@ -1,0 +1,18 @@
+body {
+    background-color: #1b1b1b;
+    color:#ffffff;
+}
+
+
+.head-banner {
+    min-width: 1240px;
+    padding: 49px 0 44px;
+    background-color: #252525;
+    text-align: center
+}
+
+.head-logo {
+    width: 1240px;
+    margin: 0 auto;
+    position: relative
+}

@@ -11,7 +11,7 @@
 }
 
 .login ul.input-wrap01 li {
-    margin: 0 0 10px
+    margin: 0 0 20px
 }
 
 .login ul.input-wrap01 li:last-child {
@@ -243,7 +243,6 @@ input[type=password],input[type=tel],input[type=text],textarea {
     margin: 0;
     color: #a5a5a5
 }
-
 
 
 .btn-purple,.btn-purple>a {
