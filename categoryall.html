@@ -5,21 +5,21 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link rel="stylesheet" href="./css/mainpage.css">
+    <link rel="stylesheet" href="./css/Category.css">
 </head>
 
 <body>
     <header class="header">
         <div class="header-main">
             <h1 class="logo">
-                <a href="#">
-                    <img src="./img/Giggle3.png" alt="로고" width="150px" height="40px" />
+                <a href="mainpage.html">
+                    <img src="./img/Giggle3.png" alt="로고" width="160px" height="50px" />
                 </a>
             </h1>
             <nav class="menu1">
                 <ul>
                     <li>
-                        <a href="#" class="home">홈</a>
+                        <a href="mainpage.html" class="home">홈</a>
                     </li>
                     <li class="category-list">
                         <a href="#">
@@ -28,7 +28,7 @@
                         <div class="categorty-list-menu">
                             <ul class="ul1">
                                 <li>
-                                    <a href="Category1.html" class="category-menu">
+                                    <a href="#" class="category-menu">
                                         <span class="category-menu-line">로맨스</span>
                                     </a>
                                 </li>
@@ -95,216 +95,56 @@
         </div>
     </header>
     <main class="main">
-        <div class="slidebox">
-            <input type="radio" name="slide" id="slide01" checked />
-            <input type="radio" name="slide" id="slide02" />
-            <input type="radio" name="slide" id="slide03" />
-            <input type="radio" name="slide" id="slide04" />
-            <ul class="slidelist">
-                <li class="slideitem">
-                    <label for="slide04" class="next"></label>
-                    <label for="slide02" class="right1"></label>
-                    <a href="movieinfo.html"><img src="./img/범죄도시3_스틸컷.png"></a>
-                </li>
-                <li class="slideitem">
-                    <label for="slide01" class="next"></label>
-                    <label for="slide03" class="right1"></label>
-                    <a href="movieinfo.html"><img src="./img/movie1.png"></a>
-                </li>
-                <li class="slideitem">
-                    <label for="slide02" class="next"></label>
-                    <label for="slide04" class="right1"></label>
-                    <a href="movieinfo.html"><img src="./img/movie2.png"></a>
-                </li>
-                <li class="slideitem">
-                    <label for="slide03" class="next"></label>
-                    <label for="slide01" class="right1"></label>
-                    <a href="movieinfo.html"><img src="./img/movie3.PNG"></a>
-                </li>
-            </ul>
+        <div class="list-view">
+            <div>
+                <div class="page-top">
+                    <div class="page-top-inner">
+                        <h1 class="page-title">영화</h1>
+                    </div>
+                </div>
+            </div>
         </div>
         <section>
             <div class="pickmovie-container">
                 <div class="pickmovie">
-                    <a href="#">믿고보는 GIGGLE 에디터의 추천작</a>
-                </div>
-                <div class="slide-container">
-                    <a href="movieinfo.html">
-                        <img src="./img/movie11.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie12.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie13.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie14.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
+                    <a href="#">#모든영화</a>
                 </div>
             </div>
-            <div class="pickmovie-container">
-                <div class="pickmovie">
-                    <a href="#">인기 추천 작품</a>
-                </div>
-                <div class="slide-container">
-                    <a href="movieinfo.html">
-                        <img src="./img/movie23.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie24.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie25.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie26.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                </div>
+            <div class="slide-container">
+                <a href="movieinfo.html">
+                    <img src="./img/movie11.jpg" />
+                </a>
+                <a href="movieinfo.html">
+                    <img src="./img/movie12.jpg" />
+                </a>
+                <a href="movieinfo.html">
+                    <img src="./img/movie13.jpg" />
+                </a>
+                <a href="movieinfo.html">
+                    <img src="./img/movie17.jpg" />
+                </a>
+                <a href="movieinfo.html">
+                    <img src="./img/movie18.jpg" />
+                </a>
             </div>
-            <div class="pickmovie-container">
-                <div class="pickmovie">
-                    <a href="#">따끈따끈 업데이트 영화</a>
-                </div>
-                <div class="slide-container">
-                    <a href="movieinfo.html">
-                        <img src="./img/movie15.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
+            <div class="btn-float-box">
+                <div class="button-top">
+                    <a href="#">
+                        <button type="button">
+                            <span class="ally-hidden">
+                                페이지 맨 위로 이동
+                            </span>
+                        </button>
                     </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie16.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie17.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                    <a href="movieinfo.html">
-                        <img src="./img/movie18.jpg" />
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </a>
-                </div>
-            </div>
-            <div>
-                <div class="pickmovie-container">
-                    <div class="pickmovie">
-                        <a href="#">신작 보고 갈래요?</a>
-                        <div>
-                            <span>영화제목</span>
-                        </div>
-                    </div>
-                    <div class="slide-container">
-                        <a href="movieinfo.html">
-                            <img src="./img/movie19.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/movie20.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/movie21.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/movie22.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                    </div>
-                </div>
-            </div>
-            <div>
-                <div class="pickmovie-container">
-                    <div class="pickmovie">
-                        <a href="#">오늘의 TOP4</a>
-                    </div>
-                    <div class="slide-container">
-                        <a href="movieinfo.html">
-                            <img src="./img/movie24.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/럭키_포스터.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/movie25.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                        <a href="movieinfo.html">
-                            <img src="./img/인사이드아웃_포스터.jpg" />
-                            <div>
-                                <span>영화제목</span>
-                            </div>
-                        </a>
-                    </div>
                 </div>
             </div>
         </section>
-        </div>
-        <div class="btn-float-box">
-            <div class="button-top">
-                <a href="#">
-                    <button type="button">
-                        <span class="ally-hidden">
-                            페이지 맨 위로 이동
-                        </span>
-                    </button>
-                </a>
-            </div>
-        </div>
     </main>
     <footer class="footer">
         <div class="footer-box">
             <div class="footer-box-inner">
                 <h2 class="gongi">
-                    <a href="#">공지사항</a>
+                    <a href="board.html">공지사항</a>
                 </h2>
                 <button type="button" class="footer-arrow-left">
                     <img src="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAADIAAAAyCAYAAAAeP4ixAAAAAXNSR0IArs4c6QAAAlBJREFUaAXtVktrGlEUzvioYqELpRCyiIss7CK7/gJdNMEEQjdSunATfNEEugi0BPoDmkV3iY/4qGIKFUIXDdJmY6kEAv0FdhNw405oScWq0Xx3IQyDEqLn5AFnNvfOnbnf+b7vnHNnZmbkEgfEAXFAHBAHxAFxQBwQB+6iA8lk8i01LxM14FV4iURiZzAYPL/qves+t1x3w6Tvg7yGTOxhfGq3259NijNunzbuAeV6qVQyN5vNj8CcdzqdK4FA4JwSX2GxZwQiHkDEZ8Sy22y2JYhoU4tQeKwZQSk5UEpfEOevpmkvI5FIl0OEwmRr9mKx+Kjf73+DkAbK6QWnCCWEJSP5fN7VarW+IwunELCJcaCCcV7kGcnlcrMQUQX542g0unETIpRBpELS6bS73W6fgHweIrY5M2DEJhMCEYvdbrdqMpk+QMR7YyDuezIhvV5vGWSr6IldbtKj8MmEWK3WTyipBfyCpHBSkeGOIj1qjfTUKhQKD9HoRwjU8Hg8Qa/X2xsVlGONVIgiWC6XbfV6/RBZuXC73QG/3/+fg7gRk1yIClCpVCy1Wu0AU5fD4VgLBoP/jIGp71mEKJKqT9Av+5g+wUnmxyHwh5q8Ho+tKdH4/Vgsto7xF0T9yGazj/WBqedsQoZE8U15DSFfO53Oz0wmMzdcpx7ZSstIFGW2hbVXZrPZFwqFzozPp72/MSGKaDwej6DU3qFnfOFw+Pe05PX72UtLHww9k0SZvVG/9/r1eztPpVKr95a8EBcHxAFxQBwQB8QBcUAcEAdu3YFLPjOyQF+dJGYAAAAASUVORK5CYII="
@@ -360,18 +200,6 @@
             </div>
         </div>
     </footer>
-    <div class="popup-back">
-        <section class="popup main-notice-popup">
-            <div class="popup-content">
-                <a href="payment.html"><img src="./img/first-popup.png" alt="팝업 이미지"></a>
-            </div>
-            <div class="popup-button-close" id="close-popup"><a href="#"><img src="./img/x-button.png" alt="팝업 닫기"></a></div>
-            <div class="popup-checkbox-check">
-                <label for="hour-close">한 시간 동안 보지 않기</label>
-                <input type="checkbox" id="hour-close" class="check-blue-dark">
-            </div>
-        </section>
-    </div>
-    <script src="popup.js"></script> 
-   </body>
-   </html>
+</body>
+
+</html>
