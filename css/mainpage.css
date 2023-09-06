@@ -54,6 +54,7 @@ body {
     box-sizing: border-box;
 }
 
+
 /* header(화면 맨 위) - nav */
 .header {
     position: fixed;
@@ -69,7 +70,7 @@ body {
 .header-main {
     position: relative;
     width: 1240px;
-    height: 80px;
+    height: 65px;
     margin: 0 auto;
     font-size: 0
 }
@@ -78,20 +79,23 @@ body {
     display: inline-block;
     height: 100%;
     margin-right: 78px;
-    line-height: 90px;
+    line-height: 70px;
     vertical-align: middle;
 }
 
 .header-main h1 a {
-    display: block;
-    width: 100%;
+   display: inline-block;
     height: 100%;
+    margin-right: 78px;
+    line-height: 65px;
+    vertical-align: middle;
 
 }
 
 .header-main h1 img {
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
 }
 
 .header-main .menu1 {
@@ -129,6 +133,49 @@ body {
     text-decoration-line: none;
 }
 
+.menu-top{
+    position: relative;
+    width: 1240px;
+    height: 30px;
+    margin-left: 230px;
+    font-size: 0;
+    border-bottom: 1px solid #2f2f2f;
+    margin: 0 auto;
+}
+
+.menu1 ul{
+margin-left:150px;
+}
+
+
+.menu2 {
+    font-size: 0;
+    margin-left: 0px;
+    float: right;
+}
+.menu2, .menu2>ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu2>ul>li>a {
+    display: block;
+    padding: 0px 10px;
+    font-size: 13px;
+    line-height: 35px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.menu2>ul>li:first-child {
+    margin-left: 0;
+}
+
+.menu2>ul>li:hover>a {
+    color: #fff;
+}
+
+
 /* 장르 메뉴 */
 .category-list-line {
     display: block;
@@ -143,11 +190,12 @@ body {
 .categorty-list-menu {
     display: none;
     position: absolute;
-    top: 74px;
+    top: 65px;
     left: -20px;
     z-index: 1;
     min-width: 210px;
     background-color: #101010;
+    height: 290px;
 }
 
 .categorty-list-menu>ul>li:hover>a {
@@ -160,6 +208,11 @@ body {
     line-height: 34px;
     color: #a5a5a5;
     text-decoration-line: none;
+}
+
+.categorty-list-menu .ul1{
+    margin-left: 30px;
+    padding-top: 30px;
 }
 
 .categorty-menu-line {
@@ -191,27 +244,8 @@ body {
 
 .header-main .menu2>ul>li:hover>a {
     color: #fff;
-}
+} 
 
-.header-main .menu2>ul>li>a {
-    display: block;
-    padding: 0 10px;
-    font-size: 20px;
-    line-height: 90px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-
-/* 검색창 */
-.search-box {
-    z-index: 1750;
-    top: 7.5%;
-    right: 0;
-    left: 0;
-    width: 100%;
-    min-width: 1240px;
-    background-color: #1b1b1b;
-}
 
 .search-box .search-main-box>.search>.search-submit {
     display: inline-block;
@@ -224,8 +258,7 @@ body {
     height: 30px;
     margin-left: 230px;
     font-size: 0;
-    border-bottom: 1px solid #2f2f2f;
-    ;
+    margin: 0 auto;
 }
 
 .search-submit {
@@ -233,16 +266,38 @@ body {
     background-color: #1b1b1b;
 }
 
+.search-submit img{
+    margin-top: -30px;
+}
+
 .search {
     border-radius: 4px;
     width: 300px;
-    height: 22px;
-    background-color: #1b1b1b;
+    height: 35px;
+    background-color: #030303;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #232323;
     float: right;
+    margin-right: 15px;
+    margin-top: -35px;
+    text-indent: 10px;
+}
+.search-main-box .submitbutton {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    margin-top: -35px;
+    margin-right: 15px;
 }
 
+.button-top button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/*헤더 끝*/
 /*메인페이지*/
 .main {
     width: 100%;
@@ -1008,194 +1063,6 @@ body {
     box-sizing: border-box;
 }
 
-/* header(화면 맨 위) - nav */
-.header {
-    position: fixed;
-    /* 위치 고정 */
-    z-index: 1750;
-    top: 0;
-    left: 0;
-    width: 100%;
-    min-width: 1240px;
-    background-color: #1b1b1b;
-}
-
-.header-main {
-    position: relative;
-    width: 1240px;
-    height: 80px;
-    margin: 0 auto;
-    font-size: 0
-}
-
-.header-main h1 {
-    display: inline-block;
-    height: 100%;
-    margin-right: 78px;
-    line-height: 90px;
-    vertical-align: middle;
-}
-
-.header-main h1 a {
-    display: block;
-    width: 100%;
-    height: 100%;
-
-}
-
-.header-main h1 img {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.header-main .menu1 {
-    font-size: 0
-}
-
-.header-main .menu1,
-.header-main .menu1>ul>li {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.header-main .menu1>ul>li:first-child {
-    margin-left: 0;
-}
-
-.header-main .menu1>ul>li {
-    margin-right: 20px;
-}
-
-.category-list {
-    position: relative;
-}
-
-.header-main .menu1>ul>li:hover>a {
-    color: #fff;
-}
-
-.header-main .menu1>ul>li>a {
-    display: block;
-    padding: 0 10px;
-    font-size: 20px;
-    line-height: 90px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-
-/* 장르 메뉴 */
-.category-list-line {
-    display: block;
-}
-
-.category-list:hover .categorty-list-menu {
-    display: block;
-}
-
-
-
-.categorty-list-menu {
-    display: none;
-    position: absolute;
-    top: 74px;
-    left: -20px;
-    z-index: 1;
-    min-width: 210px;
-    background-color: #101010;
-}
-
-.categorty-list-menu>ul>li:hover>a {
-    color: #fff;
-}
-
-.categorty-list-menu>ul>li>a {
-    font-family: NotoSans, sans-serif;
-    font-size: 14px;
-    line-height: 34px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-
-.categorty-menu-line {
-    display: block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-}
-
-
-
-/* 메뉴2 */
-.header-main .menu2 {
-    font-size: 0;
-    margin-left: 300px;
-}
-
-.header-main .menu2,
-.header-main .menu2>ul>li {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.header-main .menu2>ul>li:first-child {
-    margin-left: 0;
-}
-
-
-.header-main .menu2>ul>li:hover>a {
-    color: #fff;
-}
-
-.header-main .menu2>ul>li>a {
-    display: block;
-    padding: 0 10px;
-    font-size: 20px;
-    line-height: 90px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-
-/* 검색창 */
-.search-box {
-    z-index: 1750;
-    top: 7.5%;
-    right: 0;
-    left: 0;
-    width: 100%;
-    min-width: 1240px;
-    background-color: #1b1b1b;
-}
-
-.search-box .search-main-box>.search>.search-submit {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-.search-main-box {
-    position: relative;
-    width: 1240px;
-    height: 30px;
-    margin-left: 230px;
-    font-size: 0;
-    border-bottom: 1px solid #2f2f2f;
-    ;
-}
-
-.search-submit {
-    float: right;
-    background-color: #1b1b1b;
-}
-
-.search {
-    border-radius: 4px;
-    width: 300px;
-    height: 22px;
-    background-color: #1b1b1b;
-    color: #fff;
-    border: 1px solid #fff;
-    float: right;
-}
 
 /*메인페이지*/
 .main {
@@ -2013,19 +1880,18 @@ ul, li {list-style:none;}
     left: 0;
     width: 100%;
     height: 100%;
-    background: rgba(0,0,0,.8); /* 배경을 어둡게 표시 */
+    background: rgba(0,0,0,.9); /* 배경을 어둡게 표시 */
     display: flex;
     justify-content: center;
     align-items: center;
 
 }
 
-/* .popup {
+.popup {
     max-width: 100%;
     text-align: center;
     box-shadow: 0 0 10px rgba(0,0,0,.9);
-    
-} */
+}
 
 .popup img {
 
@@ -2054,83 +1920,5 @@ ul, li {list-style:none;}
 .popup-button-close img {
    margin-left: 220px;
    
-}
-
-
-/* 09/06 추가 */
-
-
-.popup-content-1 {
-    background-color: #717171;
-    width: 80%; /* 팝업 창 너비를 원하는 크기로 조정하세요 */
-    max-width: 400px; /* 최대 너비 설정 (원하는 값으로 조정) */
-    padding: 10px;
-    text-align: center;
-    position: fixed;
-    top: 50%; /* 화면 상단에서 절반 높이에 위치 */
-    left: 50%; /* 화면 왼쪽에서 절반 너비에 위치 */
-    transform: translate(-50%, -50%); /* 수평 및 수직 가운데 정렬 */
-    border-radius: 10px;
-}
-
-
-
-
-/* 팝업 창 닫기 버튼 스타일 */
-.close-button {
-    position: absolute;
-    top: 10px;
-    right: 10px;
-    font-size: 10px;
-    cursor: pointer;
-    color: white;
-} 
-
-/* 팝업 내용 스타일 (제목 및 정보) */
-.popup-product-name {
-   
-    font-size: 24px;
-    font-weight: bold;
-    margin-bottom: 10px;
-}
-/* 
-.popup-product-info { */
-    /* 팝업 내용 정보 스타일을 원하는대로 수정 */
-    /* font-size: 16px;
-} */
-
-.popup {
-    
-    display: flex;
-    position: fixed;
-    top: 0;
-    left: 0;
-    width: 100%;
-    height: 100%;
-    background-color: rgba(0, 0, 0, 0.8); /* 배경을 반투명으로 어둡게 처리 */
-    z-index: 1000;
-    justify-content: center;
-    align-items: center;
-}
-
-#pay {
-    background-color: #333;
-    /* 배경색을 원하는 색상으로 설정합니다. */
-    color: white;
-    /* 텍스트 색상을 흰색으로 설정합니다. */
-    padding: 10px 20px;
-    /* 버튼의 패딩을 조절합니다. */
-    border: none;
-    /* 테두리를 없앱니다. */
-    cursor: pointer;
-    /* 커서를 포인터로 변경하여 버튼을 클릭 가능한 상태로 만듭니다. */
-    margin-top: 10px;
-    right: 0;
-    /* 표의 오른쪽에 위치 */
-    border-radius: 10px;
-}
-
-#pay:hover {
-    background-color: #717171; /* hover 시 배경색 변경 */
 }
 
