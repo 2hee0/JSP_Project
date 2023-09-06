@@ -55,6 +55,7 @@ body {
     box-sizing: border-box;
 }
 
+
 /* header(화면 맨 위) - nav */
 .header {
     position: fixed;
@@ -70,7 +71,7 @@ body {
 .header-main {
     position: relative;
     width: 1240px;
-    height: 80px;
+    height: 65px;
     margin: 0 auto;
     font-size: 0
 }
@@ -79,20 +80,23 @@ body {
     display: inline-block;
     height: 100%;
     margin-right: 78px;
-    line-height: 90px;
+    line-height: 70px;
     vertical-align: middle;
 }
 
 .header-main h1 a {
-    display: block;
-    width: 100%;
+   display: inline-block;
     height: 100%;
+    margin-right: 78px;
+    line-height: 65px;
+    vertical-align: middle;
 
 }
 
 .header-main h1 img {
     display: inline-block;
     vertical-align: middle;
+    position: absolute;
 }
 
 .header-main .menu1 {
@@ -130,6 +134,99 @@ body {
     text-decoration-line: none;
 }
 
+.menu-top{
+    position: relative;
+    width: 1240px;
+    height: 30px;
+    margin-left: 230px;
+    font-size: 0;
+    border-bottom: 1px solid #2f2f2f;
+    margin: 0 auto;
+}
+
+.menu1 ul{
+margin-left:150px;
+}
+
+
+.menu2 {
+    font-size: 0;
+    margin-left: 0px;
+    float: right;
+}
+.menu2, .menu2>ul>li {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+.menu2>ul>li>a {
+    display: block;
+    padding: 0px 10px;
+    font-size: 13px;
+    line-height: 35px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.menu2>ul>li:first-child {
+    margin-left: 0;
+}
+
+.menu2>ul>li:hover>a {
+    color: #fff;
+}
+
+
+/* 장르 메뉴 */
+.category-list-line {
+    display: block;
+}
+
+.category-list:hover .categorty-list-menu {
+    display: block;
+}
+
+
+
+.categorty-list-menu {
+    display: none;
+    position: absolute;
+    top: 65px;
+    left: -20px;
+    z-index: 1;
+    min-width: 210px;
+    background-color: #101010;
+    height: 290px;
+}
+
+.categorty-list-menu>ul>li:hover>a {
+    color: #fff;
+}
+
+.categorty-list-menu>ul>li>a {
+    font-family: NotoSans, sans-serif;
+    font-size: 14px;
+    line-height: 34px;
+    color: #a5a5a5;
+    text-decoration-line: none;
+}
+
+.categorty-list-menu .ul1{
+    margin-left: 30px;
+    padding-top: 30px;
+}
+
+.categorty-menu-line {
+    display: block;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    -webkit-line-clamp: 1;
+}
+
+
+
+/* 메뉴2 */
 .header-main .menu2 {
     font-size: 0;
     margin-left: 300px;
@@ -148,59 +245,9 @@ body {
 
 .header-main .menu2>ul>li:hover>a {
     color: #fff;
-}
+} 
 
-.header-main .menu2>ul>li>a {
-    display: block;
-    padding: 0 10px;
-    font-size: 20px;
-    line-height: 90px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-/* 장르 메뉴 */
-.category-list-line {
-    display: block;
-}
-
-.category-list:hover .categorty-list-menu {
-    display: block;
-}
-
-
-
-.categorty-list-menu {
-    display: none;
-    position: absolute;
-    top: 74px;
-    left: -20px;
-    z-index: 1;
-    min-width: 210px;
-    background-color: #101010;
-}
-
-.categorty-list-menu>ul>li:hover>a {
-    color: #fff;
-}
-
-.categorty-list-menu>ul>li>a {
-    font-family: NotoSans, sans-serif;
-    font-size: 14px;
-    line-height: 34px;
-    color: #a5a5a5;
-    text-decoration-line: none;
-}
-
-.categorty-menu-line {
-    display: block;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
-    -webkit-line-clamp: 1;
-}
-
-
-/* 검색창 */
+/*검색창*/ 
 .search-box {
     z-index: 1750;
     top: 7.5%;
@@ -222,8 +269,7 @@ body {
     height: 30px;
     margin-left: 230px;
     font-size: 0;
-    border-bottom: 1px solid #2f2f2f;
-    ;
+    margin: 0 auto;
 }
 
 .search-submit {
@@ -231,30 +277,79 @@ body {
     background-color: #1b1b1b;
 }
 
+.search-submit img{
+    margin-top: -30px;
+}
+
 .search {
     border-radius: 4px;
     width: 300px;
-    height: 22px;
-    background-color: #1b1b1b;
+    height: 35px;
+    background-color: #030303;
     color: #fff;
-    border: 1px solid #fff;
+    border: 1px solid #232323;
     float: right;
+    margin-right: 15px;
+    margin-top: -35px;
+    text-indent: 10px;
+}
+.search-main-box .submitbutton {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    margin-top: -35px;
+    margin-right: 15px;
+}
+.search-main-box .submitbutton {
+    position: absolute;
+    width: 17px;
+    top: 10px;
+    right: 12px;
+    margin: 0;
+    margin-top: -35px;
+    margin-right: 15px;
+}
+
+.button-top button {
+    background-color: transparent;
+    border: none;
+    cursor: pointer;
+}
+/*헤더 끝*/
+
+/* 메인 */
+.main {
+    width: 100%;
+    z-index: 10;
+    /*   margin: 109px auto 0; maring-top 값 수정 */
+    margin: 100px auto 0;
+    padding-bottom: 50px;
+    height: 100%;
+    min-height: 1080px;
+    overflow: hidden;
+    min-width: 1240px;
+    background-color: #1b1b1b;
 }
 
 .list-view {
     width: 100%;
     min-width: 1240px;
     height: 100%;
+    min-height: 550px;
     overflow: hidden;
     z-index: 10;
-    margin: 0 auto 106 ;
+    margin: 106px auto 0;
     background-color: #1b1b1b;
 }
+
 .page-top {
     margin-bottom: 40px;
     padding: 40px 0;
     background-color: #252525;
 }
+
 .page-top-inner {
     position: relative;
     max-width: 1240px;
@@ -267,24 +362,7 @@ body {
     line-height: 36px;
     color: #fff;
     font-weight: 400;
-}
-
-.pickmovie-container{
-    display: flex;
-    flex-direction: column;
-    color: #a5a5a5;
-    font-size: 30px;
-    margin-top: 15px;
-    margin-bottom: 15px;
-    position: relative;
-}
-
-.pickmovie > a {
-    color: #a5a5a5;
-    cursor: pointer;
-    font-size: 30px;
     font-weight: bold;
-    padding: 0;
 }
 
 .pickmovie {
@@ -293,7 +371,15 @@ body {
     color: #a5a5a5;
     font-size: 24px;
     font-weight: bold;
-    margin-left: 350px;
+    margin-left: 400px;
+}
+
+.pickmovie>a {
+    color: #a5a5a5;
+    cursor: pointer;
+    font-size: 24px;
+    font-weight: bold;
+    padding: 0;
 }
 
 .pickmovie-container {
@@ -321,15 +407,28 @@ body {
     /* 원하는 간격 크기, 예: 20px */
 }
 
+.slide-container a {
+    width: 240px;
+    height: 400px;
+    vertical-align: middle;
+    border-radius: 30px;
+    margin-right: 20px;
+}
+
 .slide-container img {
     width: 240px;
     /* 원하는 너비 */
     height: 360px;
     /* 원하는 높이 */
-    vertical-align: middle;
-    border-radius: 30px;
-    margin-right: 20px;
 }
+
+.slide-container span {
+    position: relative;
+    left: 30%;
+    color: #fff;
+    font-weight: bold;
+}
+
 
 /* 하단 */
 
