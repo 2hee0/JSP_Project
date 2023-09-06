@@ -363,15 +363,15 @@ margin-left:150px;
     color: #fff;
     font-weight: 400;
     font-weight: bold;
+    padding: 0 100px;
 }
 
 .pickmovie {
     height: 70px;
-    width: 100%;
+    width: 1000px;
     color: #a5a5a5;
     font-size: 24px;
     font-weight: bold;
-    margin-left: 400px;
 }
 
 .pickmovie>a {
