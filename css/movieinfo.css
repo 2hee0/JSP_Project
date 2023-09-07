@@ -1386,3 +1386,85 @@ ul, li {list-style:none;}
         left: 0%;
     }
 }
+
+/* 화준의 추가.. 나중에 CSS 통합할 때 중복된 아이디 값이 있을 수 있으니 주의하세요! */
+
+.popup {
+    display: none;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.8);
+    z-index: 1;
+}
+
+.popup-content {
+    background-color: #2f2f2f;
+    width: 420px;
+    height: 330px;
+    margin: 20% auto;
+    padding: 20px;
+    text-align: center;
+    position: relative;
+    border-radius: 10px;
+}
+
+.close-button {
+    position: absolute;
+    top: 5px;
+    right: 5px;
+    cursor: pointer;
+    font-size: 10px;
+}
+
+#info_copy {
+
+    position: absolute;
+    font-weight: bold;
+    background-color: #333; /* 버튼 배경색 */
+    color: #fff; /* 버튼 텍스트 색상 */
+    font-size: 15px;
+    display: block;
+    margin-bottom: 5px;
+    padding: 10px 20px;
+    border: none;
+    cursor: pointer;
+    bottom: 30px; /* 팝업 창 아래에서 10px 떨어진 위치에 배치 */
+    left: 50%; /* 가로 중앙 정렬을 위해 왼쪽 위치를 50%로 설정 */
+    transform: translateX(-50%); /* 가로 중앙 정렬을 위해 자체의 절반만큼 왼쪽으로 이동 */
+    border-radius: 10px;
+}
+
+#info_copy:hover {
+    background-color: #717171; /* hover 시 배경색 변경 */
+}
+
+.popup-content li a strong {
+    color: #717171; 
+}
+
+.popup-content li {
+    display: inline-block;
+    margin-right: 20px; /* 이미지들 사이의 간격 조절 */}
+
+.popup-content li a {
+    text-decoration: none;
+    color: #717171; /* SNS 링크 글자색 지정 (검정색) */
+
+}
+
+.sns-img img {
+    width: 80px; /* 이미지 크기 조절 */
+    height: 80px;
+    margin: 0 auto;
+    bottom: 80px;
+    left: 80%; /* 가로 중앙 정렬을 위해 왼쪽 위치를 50%로 설정 */
+}
+
+.sns-box {
+
+    margin-top: 56px;     
+    margin-left: 18px; 
+}

@@ -129,6 +129,26 @@
               </div>
             </div>
       </section>
+      <!--팝업-->
+        <div id="popup" class="popup" style="display: none;">
+          <div class="popup-content">
+              <span class="close-button" onclick="closePopup()">닫기</span>
+              <h2>공유</h2>
+              <div class="sns-box">
+              <li><a href="https://twitter.com/i/flow/login?redirect_after_login=%2Fintent%2Ftweet%3Ftext%3D%5Bwavve%5D%2520%25EA%25B5%25AD%25EB%25AF%25BC%25EC%2582%25AC%25ED%2598%2595%25ED%2588%25AC%25ED%2591%259C%250a1%2520%25ED%259A%258C%2520%25EA%25B5%25AD%25EB%25AF%25BC%25EC%2582%25AC%25ED%2598%2595%25ED%2588%25AC%25ED%2591%259C%25EB%25A5%25BC%2520%25EC%258B%259C%25EC%259E%2591%25ED%2595%2598%25EA%25B2%25A0%25EC%258A%25B5%25EB%258B%2588%25EB%258B%25A4%250a%26url%3Dhttps%253A%252F%252Fwww.wavve.com%252Fplayer%252Fvod%253Fprogramid%253DS01_P466239300"><div class="sns-img">
+                <img src="img/twitter_logo.png" alt="twitter">
+              </div><strong>트위터</strong></a></li>
+              <li><a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fcs.kakao.com%2Fhelps%3Fservice%3D52%26category%3D166%26locale%3Dko#login"><div class="sns-img">
+                <img src="img/kakao_logo.png" alt="kakao">
+              </div><strong>카카오</strong></a></li>
+              <li><a href="https://access.line.me/oauth2/v2.1/login?returnUri=%2Foauth2%2Fv2.1%2Fauthorize%2Fconsent%3Fresponse_type%3Dcode%26client_id%3D1397264795%26redirect_uri%3Dhttps%253A%252F%252Fcreator.line.me%252Fsignup%252Fline_callback%26state%3Dd8THUP6RdZkaAJOObdxXm2h7SKkM0RzV%26scope%3Dprofile&loginChannelId=1397264795&loginState=7E1AKOokHzMCMbhRhyzZOr#/"><div class="sns-img">
+                <img src="img/line_logo.png" alt="line">
+              </div><strong>라인</strong></a></li>
+              </div>
+              <button type="button" id="info_copy">링크 복사하기</button>
+            </div>
+        </div>
+      <!--팝업 끝-->
         <div class="player-bottom-contents">
           <div class="player-nav">
             <ul>
@@ -294,4 +314,5 @@
       </div>
   </div>
 </footer>
+<script src="info_popup.js"></script>
 </html>
