@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -15,10 +13,7 @@
           <nav class="menu2">
             <ul>
                 <li>
-                    <c:choose>
-                    	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                   		<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
-               		</c:choose>
+                    <a href="login.jsp">로그인</a>
                 </li>
                 <li>
                     <a href="payment.jsp">이용권</a>
@@ -27,7 +22,7 @@
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
                 <li>
-                    <a href="board.jsp">게시판</a>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
                 </li>
             </ul>
           </nav>

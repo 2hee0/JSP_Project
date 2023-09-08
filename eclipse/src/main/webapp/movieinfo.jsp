@@ -1,7 +1,5 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>  
 <!DOCTYPE html>
 <html>
 <head>
@@ -16,10 +14,7 @@
       <nav class="menu2">
         <ul>
             <li>
-                <c:choose>
-                    <c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    <c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
-                </c:choose>
+                <a href="login.jsp">로그인</a>
             </li>
             <li>
                 <a href="payment.jsp">이용권</a>
@@ -28,7 +23,7 @@
                 <a href="eventpage.jsp">이벤트</a>
             </li>
             <li>
-                <a href="board.jsp">게시판</a>
+                <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
             </li>
         </ul>
       </nav>
@@ -123,16 +118,7 @@
                       <!--로그인버튼 박스-->
                     <div id="essential-box">
                       <div>
-                          <button type="button" id="loginbutton" >
-                          <c:choose>
-                            <c:when test="${empty sessionScope.user}">
-                                로그인
-                            </c:when>
-                            <c:otherwise>
-                                재생 ▶︎
-                            </c:otherwise>
-                          </c:choose>
-                          </button>
+                          <button type="button" id="loginbutton" >재생 ▶︎</button>
                               <input type="checkbox" id="favorite">관심</button>
                               <label for="favorite"><img src=""></label>
                               <button type="button" id="share">공유</button>
@@ -144,24 +130,6 @@
               </div>
             </div>
       </section>
-     <!-- 동영상 -->
-	<!-- <div id="videoModal" class="modal" style="display: none;">
-    	<div class="modal-content">
-        	<span class="close" onclick="closeVideoModal()">&times;</span>
-        	<video id="videoPlayer" controls width="1280" height="720">
-            	<source src="video/insideout.mp4" type="video/mp4">
-            	Your browser does not support the video tag.
-       		</video>
-    	</div>
-	</div>-->
-	<div id="videoPopup" class="popup" style="display: none;">
-        <div class="popup-video-content">
-            <span class="close-button" id="closePopup">닫기</span>
-            <video controls id="videoPlayer" style="width: 100%; height: 100%;">
-                <source src="https://rr4---sn-ogul7n76.c.drive.google.com/videoplayback?expire=1694152761&ei=CY76ZPvPAuH7-LYP0buo4Ac&ip=220.117.144.29&cp=QVROVkJfUVdUQlhPOlhMVGhlaUdOVldMOUM3ZElCeGliakloM3k4WUk2Yll0UVYyX01mMDlvSzE&id=706d40149028b4d1&itag=18&source=webdrive&requiressl=yes&mh=NI&mm=32&mn=sn-ogul7n76&ms=su&mv=m&mvi=4&pl=18&ttl=transient&susc=dr&driveid=1PIHXEoLwFxKLuws7sve3oifTq4mpgTVA&app=explorer&mime=video/mp4&vprv=1&prv=1&dur=147.214&lmt=1694139275460445&mt=1694141581&subapp=DRIVE_WEB_FILE_VIEWER&txp=0006224&sparams=expire,ei,ip,cp,id,itag,source,requiressl,ttl,susc,driveid,app,mime,vprv,prv,dur,lmt&sig=AOq0QJ8wRQIgMMh4WcuJQSPiDOK9dKP3nyyOeFTyyYRzobvPjgEeELICIQDjGzix5CtETEIVlRdve2uZXM3l9C3eaikit9uQhte4aA==&lsparams=mh,mm,mn,ms,mv,mvi,pl&lsig=AG3C_xAwRQIhAJqomZJJGEghbn1Xx-xiXVhPKGzuZTo2_Fmsf-MDG-TeAiBU97zZtBM6j4ZUORp19SNdgj2eH_oXtSFj_IVPbCSuWg==&cpn=I6Z_JxiLKzYo1IDv&c=WEB_EMBEDDED_PLAYER&cver=1.20230904.00.00">
-          	</video>
-        </div>
-    </div>
       <!--팝업-->
         <div id="popup" class="popup" style="display: none;">
           <div class="popup-content">
@@ -347,7 +315,6 @@
       </div>
   </div>
 </footer>
-<script type="text/javascript" src="./js/info_popup.js"></script>
-<script type="text/javascript" src="./js/video.js"></script>    
+<script type="text/javascript" src="./js/info_popup.js"></script>  
 </body>
 </html>

@@ -1468,26 +1468,3 @@ ul, li {list-style:none;}
     margin-top: 56px;     
     margin-left: 18px; 
 }
-
-
-.video-container {
-    width: 800px;
-    height: 600px;
-}
-
-
-.popup-video-content {
-	
-	position: absolute;
-    top: 50%;
-    left: 50%;
-    width: 1300px;
-    height: 800px;
-    transform: translate(-50%, -50%);
-    background-color: #717171;
-    padding: 15px;
-    border-radius: 5px;
-    box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.5);
-	
-}
-

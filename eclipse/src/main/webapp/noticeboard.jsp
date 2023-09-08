@@ -5,7 +5,8 @@
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="./css/boardview.css" type="text/css">
+<link rel="stylesheet" type="text/css"
+	href="${pageContext.request.contextPath}/css/boardview.css">
 </head>
 <body>
 	<header class="header">
@@ -15,7 +16,7 @@
 					<li><a href="login.jsp">로그인</a></li>
 					<li><a href="payment.jsp">이용권</a></li>
 					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li><a href="board.jsp">게시판</a></li>
+					<li><a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></li>
 				</ul>
 			</nav>
 		</div>

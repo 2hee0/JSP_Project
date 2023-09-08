@@ -27,7 +27,7 @@
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
                 <li>
-                    <a href="board.jsp">게시판</a>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
                 </li>
             </ul>
           </nav>

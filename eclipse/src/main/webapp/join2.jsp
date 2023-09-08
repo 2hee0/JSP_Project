@@ -68,9 +68,9 @@
 									</p>
 								</li>
 								<li>
-									<label for="user_nick">
-										닉네임  <input type="text" name="user_nick" id="user_nick"
-											placeholder="사용할 닉네임을 특수문자를 제외하고 입력하세요." class="input-style01 input-style02"
+									<label for="uer_nickname">
+										프로필 : <input type="text" name="user_nick" id="user_nick"
+											placeholder="사용할 프로필 이름을 특수문자를 제외하고 입력하세요." class="input-style01 input-style02"
 											maxlength="12" required="">
 									</label>
 									<p class="login-error-gray" id="id-error-alert">
@@ -78,7 +78,7 @@
 								</li>
 								<li>
 									<label for="user-pw">
-										비밀번호  <input type="password" name="password" id="user-pw"
+										비밀번호 : <input type="password" name="password" id="user-pw"
 											placeholder="8~20자 이내로 영문, 숫자, 특수문자 중 3가지 이상 혼용하여 입력"
 											class="input-style01 input-style02" maxlength="20" required="">
 									</label>
@@ -86,35 +86,35 @@
 								</li>
 								<li>
 									<label for="re-user-pw">
-										비밀번호 확인  <input type="password" name="password" id="re-user-pw"
+										비밀번호 확인 : <input type="password" name="password" id="re-user-pw"
 											placeholder="8~20자 이내로 영문, 숫자, 특수문자 중 3가지 이상 혼용하여 입력"
 											class="input-style01 input-style02" maxlength="20" required="">
 									</label>
 								</li>
 								<li>
 									<label for="user-name">
-										이름  <input type="text" name="username" placeholder="이름 정자로 입력해주세요"
+										이름 : <input type="text" name="username" placeholder="이름 정자로 입력해주세요"
 											id="user-name" class="input-style01 input-style02" maxlength="50"
 											required="">
 									</label>
 								</li>
 								<li>
-									<label for="user-gender">
-										성별  <label> 남자 <input type="radio" class="input-style01 input-style02"
-												name="user-gender" value="M" checked> 여자 <input type="radio"
+									<label for="user-name">
+										성별 : <label> 남자 <input type="radio" class="input-style01 input-style02"
+												name="usergender" value="M" checked> 여자 <input type="radio"
 												class="input-style01 input-style02" name="usergender" value="W"></label>
 									</label>
 								</li>
 								<li>
 									<label for="user-birth">
-										생년월일  <input type="text" name="userbirth" placeholder="생년월일을 여섯자리로 입력해주세요"
+										생년월일 : <input type="text" name="userbirth" placeholder="생년월일을 여섯자리로 입력해주세요"
 											id="user-birth" class="input-style01 input-style02" maxlength="6"
 											required="">
 									</label>
 								</li>
 								<li>
-									<label for="user-phone">
-										휴대폰 번호  <input type="text" name="userphone" placeholder="휴대폰 번호를 -를 빼고 입력해주세요"
+									<label for="user-name">
+										휴대폰 번호 : <input type="text" name="userphone" placeholder="휴대폰 번호를 -를 빼고 입력해주세요"
 											id="user-phone" class="input-style01 input-style02" maxlength="12"
 											required="">
 									</label>

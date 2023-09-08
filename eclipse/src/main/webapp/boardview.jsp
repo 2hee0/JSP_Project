@@ -1,33 +1,32 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/boardview.css">
+<link rel="stylesheet" href="./css/boardview.css">
 </head>
 <body>
-	  <header class="header">
+	    <header class="header">
         <div class="menu-top">
-			<nav class="menu2">
-				<ul>
-					<li><c:choose>
-							<c:when test="${empty sessionScope.user}">
-								<a href="login.jsp">로그인</a>
-							</c:when>
-							<c:otherwise>
-								<a href="/giggle/LogoutAction.mo">로그아웃</a>
-							</c:otherwise>
-						</c:choose></li>
-					<li><a href="payment.jsp">이용권</a></li>
-					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li><a href="board.jsp">게시판</a></li>
-				</ul>
-			</nav>
-		</div>
+          <nav class="menu2">
+            <ul>
+                <li>
+                    <a href="login.jsp">로그인</a>
+                </li>
+                <li>
+                    <a href="payment.jsp">이용권</a>
+                </li>
+                <li>
+                    <a href="eventpage.jsp">이벤트</a>
+                </li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+                </li>
+            </ul>
+          </nav>
+        </div>
         <div class="header-main">
             <h1 class="logo">
                 <a href="mainpage.jsp">

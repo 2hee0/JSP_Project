@@ -28,7 +28,7 @@
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
                 <li>
-                    <a href="board.jsp">게시판</a>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
                 </li>
             </ul>
           </nav>
@@ -114,22 +114,22 @@
                 <li class="slideitem">
                     <label for="slide04" class="next"></label>
                     <label for="slide02" class="right1"></label>
-                    <a href="movieinfo.jsp"><img src="./img/범죄도시3_스틸컷.png"></a>
+                    <a href="movieinfo.html"><img src="./img/범죄도시3_스틸컷.png"></a>
                 </li>
                 <li class="slideitem">
                     <label for="slide01" class="next"></label>
                     <label for="slide03" class="right1"></label>
-                    <a href="movieinfo.jsp"><img src="./img/movie1.png"></a>
+                    <a href="movieinfo.html"><img src="./img/movie1.png"></a>
                 </li>
                 <li class="slideitem">
                     <label for="slide02" class="next"></label>
                     <label for="slide04" class="right1"></label>
-                    <a href="movieinfo.jsp"><img src="./img/movie2.png"></a>
+                    <a href="movieinfo.html"><img src="./img/movie2.png"></a>
                 </li>
                 <li class="slideitem">
                     <label for="slide03" class="next"></label>
                     <label for="slide01" class="right1"></label>
-                    <a href="movieinfo.jsp"><img src="./img/movie2.png"></a>
+                    <a href="movieinfo.html"><img src="./img/movie2.png"></a>
                 </li>
             </ul>
         </div>
@@ -142,13 +142,13 @@
                     <a href="movieinfo.jsp">
                         <img src="./img/movie11.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie12.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie13.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie14.jpg" />
                     </a>
                 </div>
@@ -158,16 +158,16 @@
                     <a href="#">인기 추천 작품</a>
                 </div>
                 <div class="slide-container">
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie23.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie24.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie25.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie26.jpg" />
                     </a>
                 </div>
@@ -177,16 +177,16 @@
                     <a href="#">따끈따끈 업데이트 영화</a>
                 </div>
                 <div class="slide-container">
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie15.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie16.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie17.jpg" />
                     </a>
-                    <a href="movieinfo.jsp">
+                    <a href="movieinfo.html">
                         <img src="./img/movie18.jpg" />
                     </a>
                 </div>
@@ -197,16 +197,16 @@
                         <a href="#">신작 보고 갈래요?</a>
                     </div>
                     <div class="slide-container">
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie19.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie20.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie21.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie22.jpg" />
                         </a>
                     </div>
@@ -218,16 +218,16 @@
                         <a href="#">오늘의 TOP4</a>
                     </div>
                     <div class="slide-container">
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie24.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/럭키_포스터.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/movie25.jpg" />
                         </a>
-                        <a href="movieinfo.jsp">
+                        <a href="movieinfo.html">
                             <img src="./img/인사이드아웃_포스터.jpg" />
                         </a>
                     </div>

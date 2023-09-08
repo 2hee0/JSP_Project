@@ -852,9 +852,11 @@ li {
 .cs-table01-wrap table{
     width: 1040px;
     border-collapse: collapse;
-    
 }
 
+.cs-table-02 .view-count ,.noti-type, .noti-date{
+	text-align: center;
+}
 
 
 /* 이용권 표를 가운데로 정렬 */
