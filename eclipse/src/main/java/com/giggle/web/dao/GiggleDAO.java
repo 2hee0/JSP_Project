@@ -1,12 +1,14 @@
 package com.giggle.web.dao;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 import org.apache.ibatis.session.SqlSession;
 import org.apache.ibatis.session.SqlSessionFactory;
 
 import com.giggle.mybatis.SqlMapConfig;
+import com.giggle.web.dto.BoardDTO;
 import com.giggle.web.dto.GiggleDTO;
 
 public class GiggleDAO {
@@ -71,8 +73,9 @@ public class GiggleDAO {
 	        e.printStackTrace();
 	    }
 	    return user_name;
+	}
+
+	public List<BoardDTO> getBoardList() {
+		List<BoardDTO> list=sqlsession.selectList("Giggle.getBoardList");
+		return list;
 	} }
-
-
-
-

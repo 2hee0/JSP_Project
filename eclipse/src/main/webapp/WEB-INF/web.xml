@@ -10,6 +10,5 @@
      <url-pattern>*.png</url-pattern>
      <url-pattern>*.jpg</url-pattern>
      <url-pattern>*.js</url-pattern>
-     <url-pattern>*.mp4</url-pattern>
   </servlet-mapping>
 </web-app>

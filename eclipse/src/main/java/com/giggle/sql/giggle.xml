@@ -9,4 +9,7 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="getUserNameByCredentials" resultType="java.lang.String" parameterType="java.util.Map">
     	SELECT user_name FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	<select id="getBoardList" resultType="BoardDTO">
+	SELECT * FROM board ORDER BY BOARDNUM DESC
+	</select>
 </mapper>

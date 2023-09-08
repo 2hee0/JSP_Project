@@ -4,6 +4,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-config.dtd">
 <configuration>
 	<typeAliases>
+	  <typeAlias alias="BoardDTO" type="com.giggle.web.dto.BoardDTO" />
  	  <typeAlias alias="GiggleDTO" type="com.giggle.web.dto.GiggleDTO" />
 	</typeAliases>
 	<environments default="development">
@@ -12,7 +13,7 @@ PUBLIC "-//mybatis.org//DTD Config 3.0//EN"
 			<dataSource type="POOLED">
 				<property name="driver" value= "oracle.jdbc.driver.OracleDriver" />
 				<property name="url" value= "jdbc:oracle:thin:@localhost:1521:xe" />
-				<property name="username" value="hj" />
+				<property name="username" value="ott" />
 				<property name="password" value="1234" />
 			</dataSource>
 		</environment>

@@ -52,6 +52,7 @@ public class GiggleFrontController extends HttpServlet{
 		 
 		 	case "/giggle/LoginAction.mo" : System.out.println("오류 추적2"); forward = new LoginAction().execute(request,response); break;
 		 	case "/giggle/LogoutAction.mo" : System.out.println("오류 추적3"); forward = new LogoutAction().execute(request,response); break;
+		 	case "/BoardList.mo": System.out.println("오류 추적4"); forward= new BoardListAction().execute(request, response);
 		 
 		 }
 		 // 전송에 대한 일괄처리
