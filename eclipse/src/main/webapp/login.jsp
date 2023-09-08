@@ -1,5 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <!DOCTYPE html>
 <html>
 <head>
@@ -13,7 +15,10 @@
           <nav class="menu2">
             <ul>
                 <li>
-                    <a href="login.jsp">로그인</a>
+                    <c:choose>
+                    <c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
+                    <c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
+                  	</c:choose>
                 </li>
                 <li>
                     <a href="payment.jsp">이용권</a>
@@ -111,16 +116,17 @@
                                 <label>
                                     <input type="text" name="user_id" id="user_id" placeholder="이메일 주소 또는 아이디" title="아이디" class="input-style01">
                                 </label>
-
+								<div id="idAlert"></div>
                             </li>
                             <li>
                                 <label>
                                     <input type="password" name="user_pw" id="user_pw" placeholder="비밀번호"
                                     title="비밀번호" class="input-style01">
                                 </label>
+                                <div id="pwAlert"></div>
                             </li>
                         <div class="btn-purple btn-purple-dark">
-                           <a href="javascript:document.login_form.submit();" title="로그인">로그인</a>
+                           <a onclick="return submit_check();" href="javascript:document.login_form.submit();">로그인</a>
                         </div>                        
                     </fieldset>
                 </form>
@@ -231,4 +237,6 @@
         </div>
     </footer>
 </body>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
+<script type="text/javascript" src="./js/login.js"></script>
 </html>
