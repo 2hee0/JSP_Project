@@ -123,7 +123,6 @@ SELECT * FROM DUAL ;
 
 SELECT * FROM CONTENTS c ;
 
-
 -- 영화 카테고리 테이블 (category) 생성
 CREATE TABLE category(
    category_index      number(10) PRIMARY KEY,
@@ -499,18 +498,36 @@ CREATE TABLE board(
    boardreadcount   number(10)
 ) ;
 
+
 -- board 테이블 데이터 입력
 INSERT ALL
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (1,'hee0@naver.com','리뷰','꿀잼',sysdate, 0)
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (2,'ldh98721@gmail.com','리뷰','무섭',sysdate, 0)
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (3,'ongong11@hanmail.net','리뷰','평점 10점!!',sysdate, 0)
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (4,'khn9811@gmail.com','리뷰','생각보다 노잼',sysdate, 0)
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (5,'kim123@naver.com','요청','오펜하이머 요청해요~',sysdate, 0)
-INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (6,'hee0@naver.com','추천','뽀로로 추천해요',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'hee0@naver.com','리뷰','꿀잼',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'ldh98721@gmail.com','리뷰','무섭',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'ongong11@hanmail.net','리뷰','평점 10점!!',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'khn9811@gmail.com','리뷰','생각보다 노잼',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'kim123@naver.com','요청','오펜하이머 요청해요~',sysdate, 0)
+INTO board  (boardnum, user_id, boardtitle, boardcontent, boarddate, boardreadcount) VALUES (board_seq.nextval, 'hee0@naver.com','추천','뽀로로 추천해요',sysdate, 0)
 SELECT * FROM DUAL ;
 
 SELECT * FROM board;
+SELECT USER_ID, BOARDTITLE, BOARDDATE, BOARDREADCOUNT FROM BOARD;
 
+SELECT USER_ID, BOARDTITLE, BOARDDATE, BOARDREADCOUNT FROM BOARD;
+			
+SELECT USER_ID, BOARDTITLE, BOARDDATE, BOARDREADCOUNT FROM BOARD ORDER BY BOARDNUM DESC
+
+--보드 테이블 (actor) 시퀀스 생성
+
+CREATE SEQUENCE board_seq
+START WITH 1
+INCREMENT BY 1;
+
+
+INSERT INTO BOARD VALUES(
+board_seq.nextval,'게시글4','내용','홍길동',sysdate,0
+);
+
+TRUNCATE TABLE board;
 -- board 테이블과 user_info 테이블 연결
 ALTER TABLE     BOARD 
 ADD CONSTRAINT    fk_user_id4
