@@ -1,0 +1,44 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper
+PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
+"https://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="Giggle">
+	<select id="LoginAction" parameterType="map" resultType="_int">
+		SELECT count (*) FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
+	</select>
+	<select id="getUserNameByCredentials" resultType="java.lang.String" parameterType="java.util.Map">
+    	SELECT user_name FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
+	</select>
+	<select id="getBoardList" resultType="BoardDTO">
+	SELECT * FROM (
+		SELECT rownum r,A.* FROM (
+			SELECT * FROM board ORDER BY BOARDNUM DESC) A ) B WHERE B.r BETWEEN #{startRow} AND #{endRow}
+	</select>
+	<select id="getBoardNotice" resultType="BoardNoticeDTO">
+	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
+	</select>
+	<select id="getDetail" parameterType="_int" resultType="BoardDTO">
+	SELECT * FROM BOARD WHERE BOARDNUM = #{BOARDNUM}
+	</select>
+	<insert id="addctn" parameterType="BoardDTO">
+		INSERT INTO board  
+(boardnum, user_id,user_nick, boardtitle, boardcontent, boarddate, boardreadcount,USER_pw)
+VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0,#{user_pw}) 
+	</insert>
+	<insert id="join" parameterType="JoinDTO">
+    	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE )
+    	values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_gender},#{user_birth},#{user_phone})
+	</insert>
+	<select id="checkId" parameterType="string" resultType="_int">
+		SELECT count(*) FROM user_info WHERE USER_ID = #{user_id}
+	</select>
+	<select id="getBoardCnt" resultType="_int">
+   	SELECT COUNT(*) FROM board
+   </select>
+	<select id="getNoticeDetail" parameterType="_int" resultType="BoardNoticeDTO">
+	SELECT * FROM BOARD_NOTICE WHERE BOARDNUM = #{BOARDNUM}
+	</select>
+	<select id="getBoardNotice" resultType="BoardNoticeDTO">
+	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
+	</select>
+</mapper>
