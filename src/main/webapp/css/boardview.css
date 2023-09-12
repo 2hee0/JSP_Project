@@ -853,3 +853,17 @@ margin-left:150px;
     scrollbar-darkshadow-color: none;
     scrollbar-color: #a5a5a5 #1b1b1b;
 }
+
+
+.paging-type02{
+	position: relative;
+	width: 1200px;
+	height: 30px;
+	left: 300px;
+	
+	
+}
+
+.paging-type02 td {
+	color: #717171;
+}

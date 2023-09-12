@@ -14,9 +14,6 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 		SELECT rownum r,A.* FROM (
 			SELECT * FROM board ORDER BY BOARDNUM DESC) A ) B WHERE B.r BETWEEN #{startRow} AND #{endRow}
 	</select>
-	<select id="getBoardNotice" resultType="BoardNoticeDTO">
-	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
-	</select>
 	<select id="getDetail" parameterType="_int" resultType="BoardDTO">
 	SELECT * FROM BOARD WHERE BOARDNUM = #{BOARDNUM}
 	</select>
