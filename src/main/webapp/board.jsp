@@ -85,13 +85,15 @@
 		</div>
 	</header>
 	<main class="main">
-		<div class="page-top">
-			<hgroup class="page-top-inner-wrap">
+		<div class="page-top1">
+			<div class="board-banner">
 				<div class="page-title">
 					<div class="title-box">
 						<h3>게시판</h3>
 					</div>
 				</div>
+			</div>
+			<hgroup class="page-top-inner-wrap">
 				<div class="notification">
 					<div>
 						<h3>공지사항</h3>
@@ -109,16 +111,17 @@
 							</tr>
 						</thead>
 						<c:choose>
-							<c:when test="${boardNotice != null && fn:length(boardNotice) > 0}">
+							<c:when
+								test="${boardNotice != null && fn:length(boardNotice) > 0}">
 								<c:forEach var="notice" items="${boardNotice}">
 									<tr>
 										<td>
 											<p class="noti-type">${notice.notice_sect}</p>
 										</td>
-										<td><a href="${pageContext.request.contextPath}/NoticeBoardView.mo?boardnum=${notice.boardnum}">
-										<span class="noti-content">
-											${notice.boardtitle}
-										</span></a></td>
+										<td><a
+											href="${pageContext.request.contextPath}/NoticeBoardView.mo?boardnum=${notice.boardnum}">
+												<span class="noti-content"> ${notice.boardtitle} </span>
+										</a></td>
 										<td>
 											<p class="noti-date">${notice.boarddate}</p>
 										</td>
@@ -147,13 +150,15 @@
 								</tr>
 							</thead>
 							<c:choose>
-								<c:when test="${boardList != null and fn:length(boardList) > 0 }">
+								<c:when
+									test="${boardList != null and fn:length(boardList) > 0 }">
 									<c:forEach var="board" items="${boardList}">
 										<tr>
 											<td>
 												<p class="noti-type">${board.user_nick}</p>
 											</td>
-											<td><a href="${pageContext.request.contextPath}/BoardView.mo?boardnum=${board.boardnum}"><span
+											<td><a
+												href="${pageContext.request.contextPath}/BoardView.mo?boardnum=${board.boardnum}"><span
 													class="noti-content">${board.boardtitle}</span></a></td>
 											<td>
 												<p class="noti-date">${board.boarddate}</p>
@@ -168,51 +173,36 @@
 						</table>
 					</div>
 					<div class="writebutton">
-						<c:choose>
-			                    <c:when test="${empty sessionScope.user}"><a href="login.jsp"><button id="write-button">글쓰기</button></a></c:when>
-			                    <c:otherwise><a href="noticeboard.jsp"><button id="write-button">글쓰기</button></a></c:otherwise>
-			            </c:choose> 
+						<a href="../noticeboard.jsp">
+							<button id="write-button">글쓰기</button>
+						</a>
 					</div>
 					<div class="paging-type02">
-						<table style="border: 0px; width:900px;"> 
-							<tr align="center" valign="middle">
-								<td>
-									<c:if test="${nowPage > 1 }">
-										<a href="${pageContext.request.contextPath}/BoardList.mo?page=${nowPage -1}">
-											[&lt;]
-										</a>
-									</c:if>
-									<c:forEach var="i" begin="${startPage}" end="${endPage}">
+						<table class="paging-1">
+							<tr class="paging-tr">
+								<td><c:if test="${nowPage > 1 }">
+										<a
+											href="${pageContext.request.contextPath}/BoardList.mo?page=${nowPage -1}">
+											&lt; </a>
+									</c:if> <c:forEach var="i" begin="${startPage}" end="${endPage}">
 										<c:choose>
 											<c:when test="${i== nowPage }">
-												[${i }]
+												${i}
 											</c:when>
 											<c:otherwise>
-												<a href="${pageContext.request.contextPath}/BoardList.mo?page=${i}">[${i }]</a>
+												<a
+													href="${pageContext.request.contextPath}/BoardList.mo?page=${i}">${i }</a>
 											</c:otherwise>
 										</c:choose>
-									</c:forEach>
-									<c:if test="${nowPage < totalPage }">
-										<a href="${pageContext.request.contextPath}/BoardList.mo?page=${nowPage +1}">
-										[&gt;]
-										</a>
-									</c:if>
-								</td>
+									</c:forEach> <c:if test="${nowPage < totalPage }">
+										<a
+											href="${pageContext.request.contextPath}/BoardList.mo?page=${nowPage +1}">
+											&gt; </a>
+									</c:if></td>
 							</tr>
 						</table>
 					</div>
 				</div>
-				<div class="btn-float-box">
-            <div class="button-top">
-                <a href="#">
-                    <button type="button">
-                        <span class="ally-hidden">
-                            페이지 맨 위로 이동
-                        </span>
-                    </button>
-                </a>
-            </div>
-        </div>
 			</hgroup>
 		</div>
 	</main>
