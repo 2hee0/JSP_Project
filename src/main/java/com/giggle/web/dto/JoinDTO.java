@@ -11,11 +11,11 @@ public class JoinDTO {
 	private String user_name;
 	private String user_gender;
 	private String user_birth;
-	private String user_phone; 
+	private String user_phone;
+	private int user_num;
 //	private String membership_type;
 //	private String membership_signup;
 //	private String membership_expire;
-	
 	public String getUser_id() {
 		return user_id;
 	}
@@ -58,6 +58,14 @@ public class JoinDTO {
 	public void setUser_phone(String user_phone) {
 		this.user_phone = user_phone;
 	}
+	public int getUser_num() {
+		return user_num;
+	}
+	public void setUser_num(int user_num) {
+		this.user_num = user_num;
+	}
+	
+	
 //	public String getMembership_type() {
 //		return membership_type;
 //	}

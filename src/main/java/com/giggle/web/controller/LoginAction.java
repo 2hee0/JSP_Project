@@ -25,6 +25,9 @@ public class LoginAction implements Action {
 	    
 	    String user_id = req.getParameter("user_id");
 	    String user_pw = req.getParameter("user_pw");
+	    
+	    String userNick = null;
+        String userName = null;
 
 	    // 사용자 이름 조회
 	    String user_name = mdao.getUserNameByCredentials(user_id, user_pw);

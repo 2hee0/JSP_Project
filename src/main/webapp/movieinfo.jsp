@@ -346,5 +346,6 @@
 <script type="text/javascript" src="./js/info_popup.js"></script> 
 <script type="text/javascript" src="./js/video.js"></script>
 <script type="text/javascript" src="./js/up.js"></script>
+<script type="text/javascript" src="./js/favorite.js"></script>
 </body>
 </html>

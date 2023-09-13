@@ -23,8 +23,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0,#{user_pw}) 
 	</insert>
 	<insert id="join" parameterType="JoinDTO">
-    	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE )
-    	values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_gender},#{user_birth},#{user_phone})
+    	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE,user_num )
+    	values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_gender},#{user_birth},#{user_phone},usernumidx_seq.nextval)
 	</insert>
 	<select id="checkId" parameterType="string" resultType="_int">
 		SELECT count(*) FROM user_info WHERE USER_ID = #{user_id}
