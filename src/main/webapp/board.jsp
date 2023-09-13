@@ -75,14 +75,12 @@
 				</ul>
 			</nav>
 		</div>
-		<div class="search-box">
-			<div class="search-main-box">
-				<input type="text" placeholder="제목,인물명을 입력해보세요" class="search" /> <input
-					type="image"
-					src="https://www.wavve.com/img/icon-search-22.704db5c8.svg"
-					class="submitbutton">
-			</div>
-		</div>
+		 <div class="search-box">
+            <form action="search.jsp" class="search-main-box">
+                <input type="text" placeholder="제목,인물명을 입력해보세요" class="search" />
+                <input type="image" src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" class="submitbutton">
+            </form>
+        </div>
 	</header>
 	<main class="main">
 		<div class="page-top1">

@@ -42,11 +42,6 @@ a {
 }
 
 
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 /* header(화면 맨 위) - nav */
 .header {
@@ -305,12 +300,6 @@ margin-left:150px;
     background-color: #1b1b1b;
 }
 
-
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-}
 
 ul,
 li {
@@ -1271,17 +1260,6 @@ body {
 }
 
 /*새로추가3*/
-
-/*썸네일 효과*/
-/*.pickmovie-container a{*/
-/*	transition: all 0.2s linear;*/
-/*}*/
-/*.pickmovie-container:hover a{*/
-/*	transform:scale(1.1);*/
-/*}*/
-
-
-
 
 
 .paging-type02 {

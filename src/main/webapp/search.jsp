@@ -1,16 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
-<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
+<%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
+<%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%> 
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="UTF-8">
 <title>Insert title here</title>
-<link rel="stylesheet" href="css/category.css" type="text/css">
+<link rel="stylesheet" href="./css/category.css" type="text/css">
 <link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
     <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script> 
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -18,11 +18,11 @@
             <nav class="menu2">
                 <ul>
                     <li>
-                         <c:choose>
+                    	<c:choose>
                     		<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
                     		<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
                   		</c:choose>
-                    </li>
+                	</li>
                     <li>
                         <a href="payment.jsp">이용권</a>
                     </li>
@@ -99,7 +99,7 @@
                 </ul>
             </nav>
         </div>
-         <div class="search-box">
+        <div class="search-box">
             <form action="search.jsp" class="search-main-box">
                 <input type="text" placeholder="제목,인물명을 입력해보세요" class="search" />
                 <input type="image" src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" class="submitbutton">
@@ -111,24 +111,32 @@
             <div>
                 <div class="page-top">
                     <div class="page-top-inner">
-                        <h1 class="page-title">액션</h1>
+                        <h1 class="page-title">검색 결과</h1>
                     </div>
                 </div>
             </div>
             <div>
                 <div class="pickmovie-container">
                     <div class="pickmovie">
-                        <a href="#">#액션</a>
+                        <a href="#">#검색어</a>
                     </div>
-                    <div class="slide-container-left">
+                    <div class="slide-container">
                         <a href="movieinfo.jsp">
-                            <img src="./img/7-p.png" />
+                            <img src="./img/4-p.png" />
                         </a>
                         <a href="movieinfo.jsp">
-                            <img src="./img/8-p.png" />
+                            <img src="./img/5-p.png" />
                         </a>
                         <a href="movieinfo.jsp">
-                            <img src="./img/20-p.png" />
+                            <img src="./img/6-p.png" />
+                        </a>
+                        <a href="movieinfo.jsp">
+                            <img src="./img/23-p.png" />
+                         </a>
+                   	</div>
+                   	<div class="slide-container-left">
+                            <a href="movieinfo.jsp">
+                            <img src="./img/24-p.png" />
                         </a>
                     </div>
                 </div>
