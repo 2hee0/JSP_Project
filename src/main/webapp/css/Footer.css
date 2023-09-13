@@ -1,4 +1,4 @@
-section {
+@charset "EUC-KR";section {
     display: block;
 }
 
@@ -41,6 +41,12 @@ a {
     font-weight: 400;
 }
 
+body {
+    font-family: NotoSans, sans-serif;
+    width: 100%;
+    background-color: #1b1b1b;
+    letter-spacing: -.5px;
+}
 
 * {
     margin: 0;
@@ -416,22 +422,15 @@ li {
     animation: slide04 20s infinite;
 }
 
-.pageing-tr{
-	text-align: center;
-}
-
-
-
-
 /* 중간 배너 */
 
 .pickmovie {
     height: 70px;
-    width: 1080px;
+    width: 100%;
     color: #a5a5a5;
     font-size: 24px;
     font-weight: bold;
-    margin: 0 auto;
+    margin-left: 400px;
 }
 
 .pickmovie>a {
@@ -450,7 +449,6 @@ li {
     margin-top: 15px;
     margin-bottom: 15px;
     position: relative;
-    overflow:hidden;
 }
 
 .slide-container {
@@ -774,35 +772,21 @@ li {
 
 
 /* 페이지 타이틀 및 텍스트 스타일 설정 */
-
-.title-box{
-	width: 1080px;
-	margin:0 auto;
-	height: 150px;
-}
-
-
-
 .title-box h1{
     font-size: 28px;
     margin-left: 8%;
-}
-
-.title-box h3{
-	height: 150px;
 }
 
 
 
 .page-title {
     color: #fff;
+    margin-top: 20px;
     background-color: #252525;
     font-size: 28px;
     font-weight: bold;
-    line-height: 5;
-    width: auto;
-    height: 150px;
-    margin-top: 25px;
+    padding: 40px 300px;
+    line-height: 36px;
 }
 
 .page-text {
@@ -873,27 +857,37 @@ li {
 	text-align: center;
 }
 
-/*이용권 상단 배너*/
-.page-top{
-	background-color: #252525;
+
+/* 이용권 표를 가운데로 정렬 */
+.ticket-event-desc {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 50vh;
+    /* 화면 높이에 맞추기 위해 사용 */
+    background-color: #333;
+    /* 배경 색상을 변경하고자 할 경우 */
+    color: #fff;
+    /* 글자 색상을 하얀색으로 변경 */
 }
 
-.page-top-inner-wrap{
-	width: 1080px;
-	margin: 0 auto;
-}
-
-.discount{
-	font-size: 12px;
-	background-color: #0951ff;
-	border-radius: 6px;
-}
 
 /* 이용권 표 내부의 테이블 스타일 수정 */
 .voucher-table {
     border-collapse: collapse;
     /* 테이블 셀 경계 제거 */
-    width: 1080px;
+    width: 100%;
+    /* 테이블 폭을 100%로 설정 */
+}
+
+.voucher-table th,
+.voucher-table td {
+    padding: 10px;
+    /* 셀 안의 여백 설정 */
+    text-align: center;
+    /* 텍스트 가운데 정렬 */
+    border: 1px solid #fff;
+    /* 테두리 스타일 및 색상 설정 */
 }
 
 .voucher-table caption {
@@ -909,6 +903,31 @@ li {
     /* 인라인 블록 요소로 설정하여 컨테이너가 컨텐츠에 맞게 크기가 조절되도록 함 */
 }
 
+.button-container .btn {
+    background-color: transparent;
+    /* 배경색을 투명으로 설정 */
+    border: 1px solid #ccc;
+    /* 버튼 테두리 스타일 설정 */
+    padding: 10px 20px;
+    /* 버튼 내부 여백 설정 */
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    /* 배경색 변경에 애니메이션 효과 추가 */
+}
+
+.button-container .btn:hover {
+    background-color: #3498db;
+    /* 마우스 호버 시 배경색 변경 */
+    color: #fff;
+    /* 텍스트 색상 변경 */
+}
+
+.month,
+.price,
+.summary {
+    font-size: 19px;
+    color: #fff;
+}
 
 .bt-noti-tit {
     margin-bottom: 10px;
@@ -962,7 +981,10 @@ li {
 }
 
 
+.paging-type02 {
+    text-align: center;
 
+}
 
 
 /* 표의 제목 배경색 및 텍스트 색상 수정 */
@@ -981,12 +1003,20 @@ li {
     border: 1px solid #a5a5a5; 
 }
 
+.paging-type02 a, .arrow img {
+    font-size: 20px; /* 숫자 크기를 조절합니다. */
+    margin: 5px; /* 간격을 조절합니다. */
+    padding: 5px 5px; /* 숫자 주변의 여백을 설정합니다. */
+    color : #717171;
+    height: 20px;
+    vertical-align: middle;
+}
+
 
 
 .writebutton {
     text-align: right;
-    margin: 0 auto;
-    width: 1080px;
+    margin: 0 15%;
 }
 
 #write-button {
@@ -1011,23 +1041,9 @@ li {
     color: #fff;
 }
 
-.usernote h3{
+.notification, .usernote h3{
     margin: 30px;
-}
-
-.usernote {
-	width: 1080px;
-	margin:auto;
-}
-.usernote div{
-	text-align: left;
-}
-.notification{
-	width: 1080px;
-	margin: 0 auto;
-}
-.notification h3{
-	margin: 30px;
+    margin-left: 20%;
 }
 
 
@@ -1087,7 +1103,7 @@ body {
 * {
     margin: 0;
     padding: 0;
-    box-sizing: border-box;	
+    box-sizing: border-box;
 }
 
 
@@ -1116,6 +1132,27 @@ body {
 
 /*새로추가2*/
 
+/* 페이지 타이틀 및 텍스트 스타일 설정 */
+.page-title {
+
+    color: white;
+    /* 글자 색상을 하얀색으로 변경 */
+    margin-left: 380px;
+    /* 텍스트를 오른쪽으로 이동 */
+    margin-top: 40px;
+    margin-bottom: 10px;
+    font-size: 27px;
+    font-weight: bold;
+}
+
+.page-text {
+    color: #a5a5a5;
+    margin-left: 380px;
+    /* 텍스트를 오른쪽으로 이동 */
+    margin-top: 10px;
+    margin-bottom: 40px;
+    font-size: 24px;
+}
 
 .panel-content {
     display: flex;
@@ -1161,13 +1198,20 @@ body {
     align-items: center;
     height: 50vh;
     /* 화면 높이에 맞추기 위해 사용 */
-    background-color: #1b1b1b;
+    background-color: #333;
     /* 배경 색상을 변경하고자 할 경우 */
     color: #fff;
     /* 글자 색상을 하얀색으로 변경 */
-    margin-top:50px;
 }
 
+
+/* 이용권 표 내부의 테이블 스타일 수정 */
+.voucher-table {
+    border-collapse: collapse;
+    /* 테이블 셀 경계 제거 */
+    width: 100%;
+    /* 테이블 폭을 100%로 설정 */
+}
 
 .voucher-table th,
 .voucher-table td {
@@ -1175,21 +1219,9 @@ body {
     /* 셀 안의 여백 설정 */
     text-align: center;
     /* 텍스트 가운데 정렬 */
-    border-left: 1px solid #a5a5a5;
-    border-right: 1px solid #a5d5d5;
+    border: 1px solid #fff;
     /* 테두리 스타일 및 색상 설정 */
 }
-
-.voucher-table th:first-child,
-.voucher-table td:first-child {
-	border-left: 0;
-	}
-.voucher-table th:last-child,
-.voucher-table td:last-child {
-	border-right: 0;
-	}
-
-
 
 .voucher-table caption {
     font-size: 26px;
@@ -1205,43 +1237,16 @@ body {
 }
 
 .button-container .btn {
-    background-color: #252525;
+    background-color: transparent;
+    /* 배경색을 투명으로 설정 */
+    border: 1px solid #ccc;
     /* 버튼 테두리 스타일 설정 */
-      border-radius: 5px;
-      
     padding: 10px 20px;
     /* 버튼 내부 여백 설정 */
     cursor: pointer;
     transition: background-color 0.3s ease;
     /* 배경색 변경에 애니메이션 효과 추가 */
-  	height: 68px;
- 	width: 400px;
- 	margin:5px 0;
- 	display: flex;
- 	align-items: center;
- 	flex-direction: row;
-    justify-content: space-between;
 }
-/*서비스 이용 주의사항*/
-.bt-noti{
-	width:1280px;
-	margin: 40px auto;
-	border-top: 1px solid #a5a5a5;
-}
-
-.summary{
-	font-size: 12px;
-    font-weight: bold;
-}
-
-
-
-
-.paytable-top{
-	border-top: 1px solid #a5a5a5;
-	border-bottom: 1px solid #a5a5a5;
-}
-
 
 .button-container .btn:hover {
     background-color: #3498db;
@@ -1250,9 +1255,11 @@ body {
     /* 텍스트 색상 변경 */
 }
 
-.month,.price {
-    font-size: 15px;
-    color: #a5a5a5;
+.month,
+.price,
+.summary {
+    font-size: 19px;
+    color: #fff;
 }
 
 .bt-noti-tit {
@@ -1272,30 +1279,11 @@ body {
 
 /*새로추가3*/
 
-/*썸네일 효과*/
-/*.pickmovie-container a{*/
-/*	transition: all 0.2s linear;*/
-/*}*/
-/*.pickmovie-container:hover a{*/
-/*	transform:scale(1.1);*/
-/*}*/
-
-
-
 
 
 .paging-type02 {
- margin: auto;
-}
-.paging-type02 .paging-1{
- margin: auto;
-}
-.paging-1 tbody{
-	text-align: center;
-}
-.paging-tr td{
-	color: #ffffff;
-	font-size: 20px;
+    text-align: center;
+
 }
 
 
@@ -1418,8 +1406,8 @@ body {
 
 .popup-button-close img {
     margin-left: 180px;
-    margin-top: -262px;
-    width: 25px;
+    margin-top: 300px;
+    width: 20px;
     height: auto;
 }
 
@@ -1495,7 +1483,107 @@ body {
 #pay:hover {
     background-color: #717171; /* hover 시 배경색 변경 */
 }
-/* footer */
+
+ /* footer  추가 */
+* {
+    word-break: break-all;
+    word-wrap: break-word;
+    box-sizing: border-box;
+  }
+  body {
+    font-family: NotoSans, sans-serif;
+    width: 100%;
+    background-color: #1b1b1b;
+    letter-spacing: -.5px;
+  }
+  body, ul, li {
+    margin: 0;
+    padding: 0;
+    list-style: none;
+  }
+  a {
+    text-decoration: none;
+    color: inherit;
+    font-weight: 400;
+  }
+  img {
+    vertical-align: middle;
+  }
+  button {
+    margin: 0;
+    background-color: transparent;
+    border: 0 none;
+    cursor: pointer;
+    font-family: NotoSans, sans-serif;
+  }
+  .container {
+    margin-left: auto;
+    margin-right: auto;
+  }
+  .float-grid > * {
+      float: left;
+    box-sizing: border-box;
+  }
+  .float-grid::after {
+      content: "";
+    display: block;
+    clear: both;
+  }
+  .inline-grid {
+    font-size: 0;
+  }
+  .inline-grid > * {
+    display: inline-block;
+    vertical-align: top;
+    font-size: 1rem;
+  }
+  .img-box > img {
+    display: block;
+    width: 100%;
+  }
+  
+  footer {
+    display: block;
+  }
+  
+  
+  
+  
+  /* scroll bar */
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+    background-color: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    height: 8px;
+    border-radius: 0;
+    background-color: #a5a5a5;
+  }
+  ::-webkit-scrollbar-track {
+    border-radius: 0;
+    background-color: transparent;
+  }
+  
+  
+  
+  
+  
+  
+  /* custom */
+  .container {
+    width: 1270px;
+  }
+  .body {
+    position: relative;
+    width: 100%;
+    min-height: 100%;
+  }
+  
+  
+  
+
+  /* footer */
 .footer-notice {
     border-top: 1px solid #2f2f2f;
     border-bottom: 1px solid #2f2f2f;
@@ -1504,12 +1592,6 @@ body {
   .footer-notice > .container {
     display: flex;
     justify-content: space-between;
-  }
-  
-  .container{
-	width: 1270px;
-	margin-left: auto;
-    margin-right: auto;
   }
   .footer-title {
     color: #a5a5a5;
@@ -1547,6 +1629,3 @@ body {
     border-right: 1px solid #2f2f2f;
     right: 0;
   }
-  
-  
-
