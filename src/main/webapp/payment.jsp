@@ -8,6 +8,9 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/mainpage.css">
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+    <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
 	<header class="header">
@@ -302,7 +305,35 @@
                                 (16% 할인)으로 연 1회 정기 결제됩니다.</span></p>
                     </div>
     </main>
-    <footer class="footer">
+   <footer class="footer">
+        <div class="footer-box">
+            <div>
+                <div class="footer-notice">
+                    <div class="container">
+                        <div class="footer-title">
+                            <span>공지사항</span>
+                        </div>
+                        <div class="swiper">
+                            <ul class="swiper-wrapper">
+                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
+                                        [점검안내] 9월 5일 SBS(ch.6) 라이브 채널 점검NEW
+                                    </a></li>
+                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
+                                        [점검안내] 9월 2일 MBN,MBN+라이브 채널 점검
+                                    </a></li>
+                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
+                                        [업데이트] 8월 5주 프로그램 리스트
+                                    </a></li>
+                            </ul>
+                            <div class="footer-button">
+                                <div class="swiper-button-prev"></div>
+                                <div class="swiper-button-next"></div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
         <div class="footer-menu">
             <div class="footer-info">
                 <ul>
@@ -310,34 +341,34 @@
                         <a href="#">4조</a>
                     </li>
                     <li>
-                        <a href="#">OTT사이트</a>
+                        <a href="#">Giggle</a>
                     </li>
                     <li>
                         <a href="#">ㅎㅎㅎㅎㅎㅎ</a>
                     </li>
                     <li>
-                        <a href="#">조원소개</a>
+                        <a href="#">김호년 &nbsp 이희영 &nbsp 송화준 &nbsp 이현지 &nbsp 이동현 &nbsp 김현욱</a>
                     </li>
                     <li>
-                        <a href="#">기타등등</a>
+                        <a href="https://kiccampus.co.kr/index.jsp">[프로젝트 중심] 자바 개발 & 빅데이터 분석 전문가 양성과정</a>
                     </li>
                 </ul>
             </div>
             <div class="footer-info-area">
-                <span>적고싶은거 있으면 적어보기</span>
-            </div>
-            <div class="button-top">
-                <a href="#">
-                    <button type="button">
-                        <span class="ally-hidden">
-                            페이지 맨 위로 이동
-                        </span>
-                    </button>
-                </a>
+                <span>콘텐츠기글 프로젝트 리더 김호년</span> 
+                <span>콘텐츠기글 시스템 아키텍트 이희영</span> 
+                <span>콘텐츠기글 소프트웨어 엔지니어 송화준</span> 
+                <span>콘텐츠기글 데이터베이스 엔지니어 이현지</span>  
+                <span>콘텐츠기글 시니어 엔지니어 이동현</span> 
+                <span>콘텐츠기글 비즈니스 분석가 김현욱</span>  
+                <span>고객센터 9292-5959 (평일 09:00~18:00 / 점심시간 12:00~13:00 / 주말 및 공휴일 휴무)</span>  
+                <span>사업자등록번호 111-11-11111 서울특별시 강남구 역삼동 819-10 세경빌딩3층  : helpdesk@giggle.com</span> 
+				<span>Copyright© 콘텐츠기글(주) All rights reserved.</span>
             </div>
         </div>
     </footer>
     <script type="text/javascript" src="./js/payment_popup.js"></script>  
     <script type="text/javascript" src="./js/payment_process.js"></script>
+    <script type="text/javascript" src="./js/up.js"></script>
 </body>
 </html>
