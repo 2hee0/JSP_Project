@@ -50,37 +50,37 @@
                         <div class="categorty-list-menu">
                             <ul class="ul1">
                                 <li>
-                                    <a href="Category1.jsp" class="category-menu">
+                                    <a href="category1.jsp" class="category-menu">
                                         <span class="category-menu-line">로맨스</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category2.jsp" class="category-menu">
+                                    <a href="category2.jsp" class="category-menu">
                                         <span class="category-menu-line">공포</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category3.jsp" class="category-menu">
+                                    <a href="category3.jsp" class="category-menu">
                                         <span class="category-menu-line">액션</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category4.jsp" class="category-menu">
+                                    <a href="category4.jsp" class="category-menu">
                                         <span class="category-menu-line">코미디</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category5.jsp" class="category-menu">
+                                    <a href="category5.jsp" class="category-menu">
                                         <span class="category-menu-line">SF</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category6.jsp" class="category-menu">
+                                    <a href="category6.jsp" class="category-menu">
                                         <span class="category-menu-line">애니메이션</span>
                                     </a>
                                 </li>
                                 <li>
-                                    <a href="Category7.jsp" class="category-menu">
+                                    <a href="category7.jsp" class="category-menu">
                                         <span class="category-menu-line">범죄</span>
                                     </a>
                                 </li>

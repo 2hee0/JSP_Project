@@ -129,7 +129,7 @@ public class GiggleDAO {
 		}
 		return result;
 	}
-
+	
 	public int getBoardCnt() {
 		return sqlsession.selectOne("Giggle.getBoardCnt");
 		
@@ -143,6 +143,7 @@ public class GiggleDAO {
 	public Object getNoticeDetail(int boardnum) {
 		return sqlsession.selectOne("Giggle.getNoticeDetail", boardnum);
 	}
+
 
 
 

@@ -116,7 +116,7 @@
                       <picture>
                           <source srcset="moviethumb.webp" type="css/webp">
                           <!--포스터썸네일-->
-                          <img src="img/인사이드아웃_스틸컷.jpg" class="poster-thumb">
+                          <img src="img/16-b.png" class="poster-thumb">
                       </picture>
                   <div class="play-area">
                     <p class="moviename"><h1>영화제목</h1></p>
@@ -200,7 +200,7 @@
           <div class="picture-area">
             <picture><source srcset="" type="image/webp">
               <!--영화 미니 포스터-->
-              <img src="img/인사이드아웃_포스터.jpg" alt="" class="thumb-img">
+              <img src="img/16-p.png" alt="" class="thumb-img">
             </picture>
           </div>
         </div>
@@ -271,7 +271,7 @@
         <td>
           <span>
         <!--등급 아이콘-->
-        <img src="img/everyicon.svg" width="50" height="50" :alt="전체이용가">
+        <img src="img/everyicon.png" width="50" height="50" :alt="전체이용가">
           </span>
         </td>
       </tr>

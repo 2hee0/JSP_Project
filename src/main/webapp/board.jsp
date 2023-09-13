@@ -165,9 +165,10 @@
 						</table>
 					</div>
 					<div class="writebutton">
-						<a href="../noticeboard.jsp">
-							<button id="write-button">글쓰기</button>
-						</a>
+						<c:choose>
+			                    <c:when test="${empty sessionScope.user}"><a href="login.jsp"><button id="write-button">글쓰기</button></a></c:when>
+			                    <c:otherwise><a href="noticeboard.jsp"><button id="write-button">글쓰기</button></a></c:otherwise>
+			            </c:choose> 
 					</div>
 					<div class="paging-type02">
 						<table style="border: 0px; width:900px;"> 
@@ -198,6 +199,17 @@
 						</table>
 					</div>
 				</div>
+				<div class="btn-float-box">
+            <div class="button-top">
+                <a href="#">
+                    <button type="button">
+                        <span class="ally-hidden">
+                            페이지 맨 위로 이동
+                        </span>
+                    </button>
+                </a>
+            </div>
+        </div>
 			</hgroup>
 		</div>
 	</main>
@@ -247,13 +259,7 @@
 			<div class="footer-info-area">
 				<span>적고싶은거 있으면 적어보기</span>
 			</div>
-			<div class="button-top">
-				<a href="#">
-					<button type="button">
-						<span class="ally-hidden"> 페이지 맨 위로 이동 </span>
-					</button>
-				</a>
-			</div>
+			
 		</div>
 	</footer>
 </body>

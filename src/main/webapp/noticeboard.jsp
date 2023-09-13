@@ -92,8 +92,8 @@
 					</colgroup>
 					<input type="hidden" name="user_id" required="kkk123@naver.com" >
 					<div class="title-nick">
-						<input type="text" name="user_nick" placeholder="닉네임을 입력하세요">
-						<input type="password" name="user_pw" placeholder="비밀번호을 입력하세요">
+						<input type="text" name="user_id" readonly>
+						<input type="text" name="user_nick" readonly>
 					</div>
 					<div class="title-name">
 						<input type="textarea" name="boardtitle" placeholder="제목을 입력하세요" />
