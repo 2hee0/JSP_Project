@@ -136,9 +136,6 @@ public class GiggleDAO {
 	}
 
 
-	public String getUserNick(GiggleDTO gmto) {
-		return sqlsession.selectOne("Giggle.UserNick");
-	}
 
 	public Object getNoticeDetail(int boardnum) {
 		return sqlsession.selectOne("Giggle.getNoticeDetail", boardnum);
@@ -146,6 +143,29 @@ public class GiggleDAO {
 
 
 
+	public Object getcontent(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
 
+
+	public int getUserNum(String user_id, String user_pw) {
+	    int user_num = 0;
+	    try {
+	        Map<String, String> credentials = new HashMap<>();
+	        credentials.put("user_id", user_id);
+	        credentials.put("user_pw", user_pw);
+
+	        // Fetch user_num from the database
+	        user_num = sqlsession.selectOne("Giggle.getUserNum", credentials);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return user_num;
+	}
+
+
+	public Object getuserdata(int usernum) {
+		return sqlsession.selectOne("Giggle.getuserinfo", usernum);
+	}
 	
 }

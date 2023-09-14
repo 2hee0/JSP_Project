@@ -38,4 +38,13 @@ VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},
 	<select id="getBoardNotice" resultType="BoardNoticeDTO">
 	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
 	</select>
+	<select id="getcontent" parameterType="_int" resultType="ContensDTO">
+	 SELECT * FROM contents WHERE content_index = #{content_index}
+	</select>
+	<select id="getUserNum" resultType="int" parameterType="java.util.Map">
+    SELECT user_num FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
+	</select>
+	<select id="getuserinfo" parameterType="_int" resultType="NameDTO">
+	 SELECT * FROM user_info WHERE user_num = #{user_num}
+	</select>
 </mapper>

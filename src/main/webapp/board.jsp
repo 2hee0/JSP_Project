@@ -83,7 +83,7 @@
 					<li>
 						<c:choose>
 			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="mypw.jsp">MY</a></c:otherwise>
+			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
 			            </c:choose> 
 			        </li>
 				</ul>
@@ -187,9 +187,10 @@
 						</table>
 					</div>
 					<div class="writebutton">
-						<a href="../noticeboard.jsp">
-							<button id="write-button">글쓰기</button>
-						</a>
+						<c:choose>
+			                    <c:when test="${empty sessionScope.user}"><a href="login.jsp"><button id="write-button">글쓰기</button></a></c:when>
+			                    <c:otherwise><a href="${pageContext.request.contextPath}/InsertBoard.mo?user_num=${sessionScope.user_num}"><button id="write-button">글쓰기</button></a></c:otherwise>
+			            </c:choose> 
 					</div>
 					<div class="paging-type02">
 						<table class="paging-1">

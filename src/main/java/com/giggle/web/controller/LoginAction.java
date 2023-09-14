@@ -16,51 +16,47 @@ import com.giggle.web.dto.GiggleDTO;
 
 
 public class LoginAction implements Action {
-	public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
-	    ActionForward forward = new ActionForward();
-	    GiggleDAO mdao = new GiggleDAO();
-	    GiggleDTO gmto = new GiggleDTO();
-	    HttpSession session = req.getSession();
-	    
-	    
-	    String user_id = req.getParameter("user_id");
-	    String user_pw = req.getParameter("user_pw");
-	    
-	    String userNick = null;
-        String userName = null;
+    public ActionForward execute(HttpServletRequest req, HttpServletResponse resp) {
+        ActionForward forward = new ActionForward();
+        GiggleDAO mdao = new GiggleDAO();
+        GiggleDTO gmto = new GiggleDTO();
+        HttpSession session = req.getSession();
 
-	    // 사용자 이름 조회
-	    String user_name = mdao.getUserNameByCredentials(user_id, user_pw);
-	   
-	    
-	    if (user_name != null) {
-	        // 사용자 이름이 조회되었을 경우
-	        // 환영 메시지를 생성합니다.
-	        String welcomeMessage = user_name + "님, 환영합니다.";
+        String user_id = req.getParameter("user_id");
+        String user_pw = req.getParameter("user_pw");
 
-	        // JavaScript를 사용하여 alert 창에 환영 메시지를 표시합니다.
-	        try {
-	        	resp.setContentType("text/html; charset=UTF-8");
-	            forward.setRedirect(false);
-	            session.setAttribute("user", user_name);
+        // Fetch user_name and user_num
+        String user_name = mdao.getUserNameByCredentials(user_id, user_pw);
+        int user_num = mdao.getUserNum(user_id, user_pw);
 
-	            PrintWriter out = resp.getWriter();
-	            out.println("<script>alert('" + welcomeMessage + "');window.location.href='/mainpage.jsp';</script>");
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    } else {
-	        // 사용자 이름이 조회되지 않았을 경우
-	        try {
-	        	resp.setContentType("text/html; charset=UTF-8");
-	            forward.setRedirect(false);
-	            PrintWriter out = resp.getWriter();
-	            out.println("<script>alert('로그인에 실패했습니다.');history.back();</script>");
-	        } catch (IOException e) {
-	            e.printStackTrace();
-	        }
-	    }
+        if (user_name != null && user_num > 0) {
+            // If user_name and user_num are valid
+            String welcomeMessage = user_name + "님, 환영합니다.";
+            try {
+                resp.setContentType("text/html; charset=UTF-8");
+                forward.setRedirect(false);
 
-	    return forward;
-	} }
+                // Store user_name and user_num in the session
+                session.setAttribute("user", user_name);
+                session.setAttribute("user_num", user_num);
+
+                PrintWriter out = resp.getWriter();
+                out.println("<script>alert('" + welcomeMessage + "');window.location.href='/mainpage.jsp';</script>");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        } else {
+            // Handle login failure
+            try {
+                resp.setContentType("text/html; charset=UTF-8");
+                forward.setRedirect(false);
+                PrintWriter out = resp.getWriter();
+                out.println("<script>alert('로그인에 실패했습니다.');history.back();</script>");
+            } catch (IOException e) {
+                e.printStackTrace();
+            }
+        }
+        return forward;
+    }
+}
 	

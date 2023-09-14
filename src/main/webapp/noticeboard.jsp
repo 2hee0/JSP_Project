@@ -14,6 +14,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+	<c:set var="usernum" value="${requestScope.usernum}" />
 	<header class="header">
 		<div class="menu-top">
           <nav class="menu2">
@@ -78,7 +79,7 @@
 					<li>
 						<c:choose>
 			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="mypw.jsp">MY</a></c:otherwise>
+			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
 			            </c:choose> 
 			        </li>
 				</ul>
@@ -105,10 +106,9 @@
 						<col style="width: 962px;">
 						<col style="width: 139px;">
 					</colgroup>
-					<input type="hidden" name="user_id" required="kkk123@naver.com" >
 					<div class="title-nick">
-						<input type="text" name="user_id" readonly>
-						<input type="text" name="user_nick" readonly>
+						<input type="text" name="user_id" readonly>${usernum.user_id}</input>
+						<input type="text" name="user_nick" readonly>${usernum.user_nick }</input>
 					</div>
 					<div class="title-name">
 						<input type="textarea" name="boardtitle" placeholder="제목을 입력하세요" />
