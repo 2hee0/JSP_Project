@@ -16,20 +16,29 @@
 <body>
 	<header class="header">
 		<div class="menu-top">
-			<nav class="menu2">
-				<ul>
-					<li>
-						<c:choose>
-                    		<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    		<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
-                  		</c:choose>
-                  	</li>
-					<li><a href="payment.jsp">이용권</a></li>
-					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li><a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></li>
-				</ul>
-			</nav>
-		</div>
+          <nav class="menu2">
+            <ul>
+                <li>
+                    <c:choose>
+                    	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
+                    	<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
+                  	</c:choose>
+                </li>
+                <li>
+                    <a href="payment.jsp">이용권</a>
+                </li>
+                <li>
+                    <a href="eventpage.jsp">이벤트</a>
+                </li>
+                <li>
+                    <c:choose>
+						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
+						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
+					</c:choose> 
+                </li>
+            </ul>
+          </nav>
+        </div>
 		<div class="header-main">
 			<h1 class="logo">
 				<a href="mainpage.jsp"> <img src="./img/Giggle3.png" alt="로고"
@@ -66,18 +75,16 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li><a href="my.jsp">MY</a></li>
+					<li><a href="mypw.jsp">MY</a></li>
 				</ul>
 			</nav>
 		</div>
-		<div class="search-box">
-			<div class="search-main-box">
-				<input type="text" placeholder="제목,인물명을 입력해보세요" class="search" /> <input
-					type="image"
-					src="https://www.wavve.com/img/icon-search-22.704db5c8.svg"
-					class="submitbutton">
-			</div>
-		</div>
+		 <div class="search-box">
+            <form action="search.jsp" class="search-main-box">
+                <input type="text" placeholder="제목,인물명을 입력해보세요" class="search" />
+                <input type="image" src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" class="submitbutton">
+            </form>
+        </div>
 	</header>
 	<main class="main">
 		<div class="page-top">

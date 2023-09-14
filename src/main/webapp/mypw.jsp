@@ -94,154 +94,28 @@
 <body>
 	<main>
 		<div>
-			<div>
-				<section class="">
-					<section class="top-padding" section-info="[object Object]"
-						thumbnail-info="[object Object]" multisection-index="0">
-						<div class="mypooq-top-wrap">
-							<div class="my-ticket-info">
-								<div class="wrap">
-									<div class="my-ticket-info-l">
-										<div class="profile-image-wrap">
-											<!--프로필 이미지-->
-											<img src="img/profile.png" alt="프로필이미지">
-										</div>
-										<div class="profile-text-wrap">
-											<span class="profile-inner-wrap"> <span
-												class="profile-name"> <c:choose>
-														<c:when test="${empty sessionScope.user}">${user.user_nick}</c:when>
-														<c:otherwise>닉네임</c:otherwise>
-													</c:choose>
-											</span> <span class="profile-title"> &nbsp;님 </span> <!---->
-											</span>
-											<div class="profile-link">
-												<div class="promotion-text">
-													<span style="color: rgb(165, 165, 165);"> Giggle의
-														다양한 컨텐츠를 즐겨보세요! </span>
-												</div>
-												<a href="payment.html"> 이용권 구매하기 </a>
-											</div>
-										</div>
-									</div>
-									<div class="my-ticket-info-r">
-										<div class="profile-metadata-wrap">
-											<div class="profile-metadata">
-												<!---->
-												<ul class="profile-metadata-list">
-													<li><a> <span> 관심 콘텐츠 : </span> <span
-															class="value"> &nbsp;0 </span>
-													</a> <a> <span> 사용중인 이용권 : </span> <span class="value">
-																&nbsp; 이용권 종류 </span>
-													</a> <a> <span> 사용 기간 : </span> <span class="value">
-																&nbsp; ~~~ </span>
-													</a></li>
-												</ul>
-											</div>
-										</div>
-									</div>
-								</div>
-							</div>
-						</div>
-					</section>
-				</section>
-				<section class="user">
-					<div class="user-info">
-						<div class="title">
-							<h1 tabindex="0" class="title-area">
-								<span class="label"> 회원 정보 </span>
-							</h1>
-						</div>
-						<div class="user-form">
-							<div class="user-input">
-								<div>
-									<h3>닉네임</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="닉네임">
-								</div>
-							</div>
-							<div class="user-input">
-								<div>
-									<h3>이름</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="이름">
-								</div>
-							</div>
-							<div class="user-input">
-								<div>
-									<h3>아이디</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="아이디">
-								</div>
-							</div>
-							<div class="user-input">
-								<div>
-									<h3>비밀번호</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="비밀번호">
-								</div>
-								<div>
-									<input type="text" placeholder="비밀번호 확인">
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>성별</h3>
-									</div>
-									<div class="gendertp">
-										<input type="radio" class="gender" name="gender" value="man">남
-										<input type="radio" class="gender" name="gender" value="women">여
-									</div>
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>생년월일</h3>
-									</div>
-									<div>
-										<input type="text" placeholder="생년월일">
-									</div>
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>휴대폰 번호</h3>
-									</div>
-									<div>
-										<input type="text" placeholder="101-1515-1515">
-									</div>
-								</div>
-							</div>
-							<div class="change">
-								<form>
-									<input type="submit" class="ins" value="수정" >
-									<input type="submit" class="cng" value="변경">
-								</form>
-							</div>
+			<section class="">
+				<section class="top-padding" section-info="[object Object]"
+					thumbnail-info="[object Object]" multisection-index="0">
+					<div class="mypooq-top-wrap">
+						<div class="my-title">
+							<h1>마이페이지</h1>
 						</div>
 					</div>
 				</section>
-				<section class="fav">
-					<section>
-						<div id="multisection_index_2" class="multi portrait-cell"
-							style="background-color: rgb(27, 27, 27);">
-							<div class="title">
-								<h1 tabindex="0" class="title-area">
-									<span class="label"> 관심 영화 </span>
-								</h1>
-							</div>
-							<div>
-								<div tabindex="0" class="no-data">
-									<p>
-										<img src="img/nodata.png"> <span> 관심있는 영화가 없어요 </span>
-									</p>
-								</div>
-							</div>
-						</div>
-					</section>
-				</section>
+			</section>
+			<div class="password">
+				<div>
+					<div class="input-pw">
+						<input type="text" placeholder="비밀번호를 입력해 주세요">
+					</div>
+				</div>
+				<div class="agree">
+					<a href="./my.jsp">
+						<button class="agree-btn">확인</button>
+					</a>
+				</div>
 			</div>
-		</div>
 	</main>
 	<footer class="footer">
 		<div class="footer-box">

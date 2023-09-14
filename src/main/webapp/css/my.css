@@ -754,7 +754,7 @@ ul, li {list-style:none;}
     }
 }
 
-/*Main CSS*/
+/*마이 페이지 CSS*/
 *, body, html {
     box-sizing: border-box;
 }
@@ -762,12 +762,6 @@ ul, li {list-style:none;}
     word-break: break-all;
     word-wrap: break-word;
 }
-.top-padding {
-    padding-top: 106px;
-    height: 100%;
-    min-height: auto!important;
-}
-
 
 
 
@@ -809,9 +803,8 @@ body {
     min-height: auto!important;
 }
 .top-padding {
-    padding-top: 109px;
+    padding-top: 120px;
     height: 100%;
-    min-height: 550px;
 }
 element.style {
     background-color: rgb(27, 27, 27);
@@ -958,10 +951,7 @@ a {
     margin: 0 auto;
     overflow: hidden;
 }
-body, button, dd, dl, dt, fieldset, figure, form, h1, h2, h3, h4, h5, h6, input, legend, li, ol, p, pre, select, table, td, textarea, th, ul {
-    margin: 0;
-    padding: 0;
-}
+
 
 .title-area .count, .title-area .label {
     display: inline-block;
@@ -984,31 +974,164 @@ a, a:active, a:hover, a:link, a:visited {
     width: 1px;
     height: 1px;
 }
+/*마이페이지 추가*/
+.user-info .title h1{
+display: inline-block;
+    font-size: 0;
+    line-height: 36px;
+    color: #fff;
+    font-weight: 400;
+    vertical-align: middle;
+}
+
+.user-info{
+	position: relative;
+    width: 1240px;
+    height: auto;
+    margin: 0 auto;
+    overflow: hidden;
+    margin-bottom: 100px;
+}
+
+.user-form{
+	text-align: center;
+	width: 1080px;
+	margin: 0 auto;
+	margin-top:30px;
+}
+
+.user-form h3{
+	text-align: left;
+}
+
+
+.user-form .user-input input{
+	height: 53px;
+	width: 1080px;
+	background-color: #2f2f2f;
+	color: #a5a5a5;
+	border: none;
+	border-radius: 5px;
+	padding: 12px;
+	margin: 10px auto;
+	font-size: 15px;
+}
+
+.user-form .user-input input:focus{
+	outline:none;
+}
+.gendertp{
+	text-align: left;
+	font-size: 20px;
+	color: #a5a5a5;
+}
+
+.user-form .user-input .gender{
+	width:20px;
+	margin: 0 15px;
+	vertical-align: middle;
+}
+
+.change form{
+	text-align: right;
+}
+
+.change .cng{
+	height: 45px;
+    width: 100px;
+    background-color: #252525;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+.change .ins{
+	height: 45px;
+    width: 100px;
+    background-color: #3577e3;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+    transition: background-color 0.3s ease;
+}
+
+
+
+.change form input:hover{
+	background-color: #a5a5a5;
+	
+	}
+
+.my-title{
+	width: 1080px;
+    margin: 0 auto;
+    height: 130px;
+}
+.my-title h1{
+	color: #fff;
+    background-color: #252525;
+    font-size: 28px;
+    font-weight: bold;
+    line-height: 5;
+    width: auto;
+    height: 130px;
+}
+
+.input-pw{
+	text-align: center;
+	}
+
+.input-pw input{
+	height: 53px;
+	width: 400px;
+    background-color: #2f2f2f;
+    color: #a5a5a5;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px auto;
+    font-size: 15px;
+}
+
+.input-pw input:focus{
+	outline:none;
+}
+
+.agree{
+	text-align: center;
+}
+
+.agree-btn {
+	height: 45px;
+    width: 100px;
+    background-color: #3577e3;
+    border-radius: 6px;
+    border: 0;
+    color: #ffffff;
+    cursor: pointer;
+    font-size: 15px;
+}
+
+.password{
+	margin: 50px 0;
+}
+
+
+
 /*데이터 없음*/
 .no-data {
     min-height: 270px;
     padding: 80px 0;
     text-align: center;
 }
-.no-data p:before {
-    content: "";
-    display: inline-block;
-    width: 74px;
-    height: 74px;
-    background: url(/img/nodata.png) no-repeat 50%/cover;
-    font-size: 0;
-}
 
 /*나중에 삭제될 아이콘*/
-.no-data img {
-    content: "";
-    display: inline-block;
-    width: 74px;
-    height: 74px;
-    background: url(/img/nodata.png) no-repeat 50%/cover;
-    font-size: 0;
-    margin-right: 74px;
-}
+
 
 .my-ticket-info .profile-link a {
     display: inline-block;

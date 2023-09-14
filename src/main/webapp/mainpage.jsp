@@ -32,7 +32,10 @@
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
                 <li>
-                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+                    <c:choose>
+						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
+						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
+					</c:choose> 
                 </li>
             </ul>
           </nav>
@@ -98,17 +101,17 @@
                     <li>
 			                <c:choose>
 			                    <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			                    <c:otherwise><a href="my.jsp">MY</a></c:otherwise>
+			                    <c:otherwise><a href="mypw.jsp">MY</a></c:otherwise>
 			                </c:choose>            	
                     </li>
                 </ul>
             </nav>
         </div>
-        <div class="search-box">
-            <div class="search-main-box">
+         <div class="search-box">
+            <form action="search.jsp" class="search-main-box">
                 <input type="text" placeholder="제목,인물명을 입력해보세요" class="search" />
                 <input type="image" src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" class="submitbutton">
-            </div>
+            </form>
         </div>
     </header>
     <main class="main">
