@@ -76,8 +76,12 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li><a href="${pageContext.request.contextPath}/mylogin.mo">MY</a>
-					</li>
+					<li>
+						<c:choose>
+			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			            	<c:otherwise><a href="mypw.jsp">MY</a></c:otherwise>
+			            </c:choose> 
+			        </li>
 				</ul>
 			</nav>
 		</div>
@@ -107,7 +111,7 @@
 			<div class="password">
 				<div>
 					<div class="input-pw">
-						<input type="text" placeholder="비밀번호를 입력해 주세요">
+						<input type="password" placeholder="비밀번호를 입력해 주세요">
 					</div>
 				</div>
 				<div class="agree">

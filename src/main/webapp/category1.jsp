@@ -76,7 +76,11 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li><a href="mypw.jsp">MY</a></li>
+					<li>
+					<c:choose>
+						<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+						<c:otherwise> <a href="mypw.jsp">MY</a></c:otherwise>
+					</c:choose> </li>
 				</ul>
 			</nav>
 		</div>
