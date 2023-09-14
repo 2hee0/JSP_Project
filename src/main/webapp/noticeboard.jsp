@@ -107,8 +107,8 @@
 						<col style="width: 139px;">
 					</colgroup>
 					<div class="title-nick">
-						<input type="text" name="user_id" readonly>${usernum.user_id}</input>
-						<input type="text" name="user_nick" readonly>${usernum.user_nick }</input>
+						<input type="text" name="user_id" readonly required="${usernum.user_id}" value="${usernum.user_id}">
+						<input type="text" name="user_nick" readonly required="${usernum.user_nick }" value="${usernum.user_nick }">
 					</div>
 					<div class="title-name">
 						<input type="textarea" name="boardtitle" placeholder="제목을 입력하세요" />

@@ -22,13 +22,11 @@ public class NoticeBoardAction implements Action {
 		String user_nick = req.getParameter("user_nick");
 		String boardtitle = req.getParameter("boardtitle");
 		String boardcontent = req.getParameter("boardcontent");
-		String user_pw = req.getParameter("user_pw");
 		
 		addntc.setUser_id(user_id);
 		addntc.setUser_nick(user_nick);
 		addntc.setBoardtitle(boardtitle);
 		addntc.setBoardcontent(boardcontent);
-		addntc.setUser_pw(user_pw);
 		
 		if(gdao.addNotice(addntc)) {
 			// 등록성공

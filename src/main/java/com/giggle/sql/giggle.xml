@@ -19,8 +19,8 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	</select>
 	<insert id="addctn" parameterType="BoardDTO">
 		INSERT INTO board  
-(boardnum, user_id,user_nick, boardtitle, boardcontent, boarddate, boardreadcount,USER_pw)
-VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0,#{user_pw}) 
+(boardnum, user_id,user_nick, boardtitle, boardcontent, boarddate, boardreadcount)
+VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0) 
 	</insert>
 	<insert id="join" parameterType="JoinDTO">
     	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE,user_num )
