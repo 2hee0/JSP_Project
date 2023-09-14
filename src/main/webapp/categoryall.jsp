@@ -13,6 +13,7 @@
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<% int hardcodin =1;  %>
 	<header class="header">
         <div class="menu-top">
           <nav class="menu2">
@@ -127,7 +128,7 @@
                         <a href="#">giggle 영화 전체보기</a>
                     </div>
                     <div class="slide-container">
-		                <a href="movieinfo.jsp">
+		               <a href="${pageContext.request.contextPath}/contenView4.mo?content_index=<%=hardcodin %>">
 		                    <img src="./img/1-p.png" />
 		                </a>
 		                <a href="movieinfo.jsp">

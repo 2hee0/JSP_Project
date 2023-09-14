@@ -47,4 +47,13 @@ VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},
 	<select id="getuserinfo" parameterType="_int" resultType="NameDTO">
 	 SELECT * FROM user_info WHERE user_num = #{user_num}
 	</select>
+	<select id="getcontent2" parameterType="_int" resultType="ContensDTO">
+	 SELECT * FROM contents WHERE content_index = #{content_index}
+	</select>
+	<select id="getcontent3" parameterType="_int" resultType="ContensDTO">
+	 SELECT * FROM contents WHERE content_index = #{content_index}
+	</select>
+	<select id="getcontent4" parameterType="_int" resultType="ContensDTO">
+	 SELECT * FROM contents WHERE content_index = #{content_index}
+	 </select>
 </mapper>

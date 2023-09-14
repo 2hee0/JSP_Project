@@ -57,8 +57,12 @@ public class GiggleFrontController extends HttpServlet{
 		 	case "/BoardView.mo": System.out.println("오류 추적6"); forward = new BoardViewAction().execute(request, response); break;
 		 	case "/NoticeBoardView.mo": System.out.println("오류 추적7"); forward = new NoticeBoardViewAction().execute(request, response); break;
 		 	case "/complete.mo" : forward = new JoinAction().execute(request, response); break;
+		 	case "/contenView2.mo" : forward = new ContenAction2().execute(request, response); break;
+		 	case "/contenView3.mo" : forward = new ContenAction3().execute(request, response); break;
+		 	case "/contenView4.mo" : forward = new ContenAction4().execute(request, response); break;
 		 	case "/contenView.mo" : forward = new ContenAction().execute(request, response); break;
 		 	case "/InsertBoard.mo" : forward = new SessionNameAction().execute(request, response); break;
+		 	
 		 	
 		 }
 		 // 전송에 대한 일괄처리

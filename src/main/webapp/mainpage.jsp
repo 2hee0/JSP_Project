@@ -16,7 +16,8 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-
+<% int hardcodin =6;  %>
+<% int hardcodin2 =16;  %>
 	<header class="header">
 		<div class="menu-top">
 			<nav class="menu2">
@@ -112,8 +113,8 @@
 					<label for="slide03" class="right1"></label> <a
 					href="movieinfo.jsp"><img src="./img/5-b.png"></a></li>
 				<li class="slideitem"><label for="slide02" class="next"></label>
-					<label for="slide04" class="right1"></label> <a
-					href="movieinfo.jsp"><img src="./img/6-b.png"></a></li>
+					<label for="slide04" class="right1"></label> 
+					<a href="${pageContext.request.contextPath}/contenView.mo?content_index=<%=hardcodin %>"><img src="./img/6-b.png"></a>
 				<li class="slideitem"><label for="slide03" class="next"></label>
 					<label for="slide01" class="right1"></label> <a
 					href="movieinfo.jsp"><img src="./img/16-b.png"></a></li>
@@ -126,7 +127,9 @@
 				</div>
 				<div class="slide-container">
 					<a href="movieinfo.jsp"> <img src="./img/5-p.png" />
-					</a> <a href="movieinfo.jsp"> <img src="./img/16-p.png" />
+					<a href="${pageContext.request.contextPath}/contenView2.mo?content_index=<%=hardcodin2 %>">
+                        <img src="./img/16-p.png" />
+                    </a>
 					</a> <a href="movieinfo.jsp"> <img src="./img/7-p.png" />
 					</a> <a href="movieinfo.jsp"> <img src="./img/22-p.png" />
 					</a>

@@ -15,6 +15,7 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
+<% int hardcodin =4;  %>
 	<header class="header">
 		<div class="menu-top">
           <nav class="menu2">
@@ -108,7 +109,9 @@
 						<a href="#">#로맨스</a>
 					</div>
 					<div class="slide-container">
-						<a href="movieinfo.jsp"> <img src="./img/4-p.png" />
+						 <a href="${pageContext.request.contextPath}/contenView3.mo?content_index=<%=hardcodin %>">
+                            <img src="./img/4-p.png" />
+                         </a>
 						</a> <a href="movieinfo.jsp"> <img src="./img/5-p.png" />
 						</a> <a href="movieinfo.jsp"> <img src="./img/6-p.png" />
 						</a> <a href="movieinfo.jsp"> <img src="./img/23-p.png" />

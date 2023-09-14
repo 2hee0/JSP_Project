@@ -37,30 +37,6 @@ public class GiggleDAO {
 		return result;
 	}
 
-//public GiggleDTO getUserById(int userId) {
-//    GiggleDTO user = null;
-//    try {
-//        user = sqlsession.selectOne("Giggle.getUserById", userId);
-//    } catch (Exception e) {
-//        e.printStackTrace();
-//    }
-//    return user;
-//}
-//}
-
-//	public String getUserName(String user_id) {
-//		
-//		String user_name = null;
-//    
-//		try {
-//			// 사용자 이름을 조회하는 SQL 쿼리를 실행
-//			user_name = sqlsession.selectOne("Giggle.getUserName", user_id);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//    
-//		return user_name;
-//}
 
 	public String getUserNameByCredentials(String user_id, String user_pw) {
 	    String user_name = null;
@@ -167,5 +143,15 @@ public class GiggleDAO {
 	public Object getuserdata(int usernum) {
 		return sqlsession.selectOne("Giggle.getuserinfo", usernum);
 	}
+	public Object getcontent2(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
 	
+	public Object getcontent3(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
+
+	public Object getcontent4(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
 }
