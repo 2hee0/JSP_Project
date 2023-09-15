@@ -1,26 +1,30 @@
 package com.giggle.web.dto;
 
 public class BoardDTO {
-	/*사용자 게시판 선언*/
 	private int boardnum;
+	private String user_id;
 	private String user_nick;
 	private String boardtitle;
 	private String boardcontent;
 	private String boarddate;
 	private int boardreadcount;
-	
-	
-	
+	private String user_pw;
 	public int getBoardnum() {
 		return boardnum;
 	}
 	public void setBoardnum(int boardnum) {
 		this.boardnum = boardnum;
 	}
-	public String getuser_nick() {
+	public String getUser_id() {
+		return user_id;
+	}
+	public void setUser_id(String user_id) {
+		this.user_id = user_id;
+	}
+	public String getUser_nick() {
 		return user_nick;
 	}
-	public void setuser_nick(String user_nick) {
+	public void setUser_nick(String user_nick) {
 		this.user_nick = user_nick;
 	}
 	public String getBoardtitle() {
@@ -46,6 +50,12 @@ public class BoardDTO {
 	}
 	public void setBoardreadcount(int boardreadcount) {
 		this.boardreadcount = boardreadcount;
+	}
+	public String getUser_pw() {
+		return user_pw;
+	}
+	public void setUser_pw(String user_pw) {
+		this.user_pw = user_pw;
 	}
 	
 	

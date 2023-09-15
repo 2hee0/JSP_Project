@@ -11,6 +11,7 @@ import com.giggle.mybatis.SqlMapConfig;
 import com.giggle.web.dto.BoardDTO;
 import com.giggle.web.dto.BoardNoticeDTO;
 import com.giggle.web.dto.GiggleDTO;
+import com.giggle.web.dto.JoinDTO;
 
 public class GiggleDAO {
 	
@@ -36,31 +37,6 @@ public class GiggleDAO {
 		return result;
 	}
 
-//public GiggleDTO getUserById(int userId) {
-//    GiggleDTO user = null;
-//    try {
-//        user = sqlsession.selectOne("Giggle.getUserById", userId);
-//    } catch (Exception e) {
-//        e.printStackTrace();
-//    }
-//    return user;
-//}
-//}
-
-//	public String getUserName(String user_id) {
-//		
-//		String user_name = null;
-//    
-//		try {
-//			// 사용자 이름을 조회하는 SQL 쿼리를 실행
-//			user_name = sqlsession.selectOne("Giggle.getUserName", user_id);
-//		} catch (Exception e) {
-//			e.printStackTrace();
-//		}
-//    
-//		return user_name;
-//}
-
 	public String getUserNameByCredentials(String user_id, String user_pw) {
 	    String user_name = null;
 	    try {
@@ -76,8 +52,11 @@ public class GiggleDAO {
 	    return user_name;
 	}
 
-	public List<BoardDTO> getBoardList() {
-		List<BoardDTO> list=sqlsession.selectList("Giggle.getBoardList");
+	public List<BoardDTO> getBoardList(int startRow, int endRow) {
+		HashMap<String, Integer> datas = new HashMap<>();
+		datas.put("startRow", startRow);
+		datas.put("endRow", endRow);
+		List<BoardDTO> list=sqlsession.selectList("Giggle.getBoardList",datas);
 		return list;
 	} 
 	
@@ -92,6 +71,99 @@ public class GiggleDAO {
 		return sqlsession.selectOne("Giggle.getDetail", boardnum);
 	}
 
+	public boolean addNotice(BoardDTO addntc) {
+		boolean result = false;
+		
+		if ( sqlsession.insert("Giggle.addctn",addntc)==1) {
+			result = true;
+		}
+		
+		return result;
+	} 
 	
+	public boolean checkId(String user_id) {
+		boolean result = false;
+		
+		// query 호출
+		int cnt = 0;
+		// 1 param : 어떤 쿼리를 호출할지
+		// 2 param : 쿼리 실행 시 필요한 파라미터 값
+		cnt = sqlsession.selectOne("Giggle.checkId", user_id);
+		if( cnt >= 1 ) {
+			result = true;
+		}
+		
+		return result;
+	}
 	
+	public boolean checkNick(String user_nick) {
+		boolean result = false;
+		
+		// query 호출
+		int cnt = 0;
+		cnt = sqlsession.selectOne("Giggle.checkNick", user_nick);
+		if( cnt >= 1 ) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
+	public boolean JoinAction( JoinDTO giggle ) {
+		boolean result = false;
+		
+		if(sqlsession.insert( "Giggle.join", giggle ) != 0 ) {
+			result = true;
+		}
+		return result;
+	}
+	
+	public int getBoardCnt() {
+		return sqlsession.selectOne("Giggle.getBoardCnt");
+		
+	}
+
+
+
+	public Object getNoticeDetail(int boardnum) {
+		return sqlsession.selectOne("Giggle.getNoticeDetail", boardnum);
+	}
+
+
+
+	public Object getcontent(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
+
+
+	public int getUserNum(String user_id, String user_pw) {
+	    int user_num = 0;
+	    try {
+	        Map<String, String> credentials = new HashMap<>();
+	        credentials.put("user_id", user_id);
+	        credentials.put("user_pw", user_pw);
+
+	        // Fetch user_num from the database
+	        user_num = sqlsession.selectOne("Giggle.getUserNum", credentials);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return user_num;
+	}
+
+
+	public Object getuserdata(int usernum) {
+		return sqlsession.selectOne("Giggle.getuserinfo", usernum);
+	}
+
+	
+	// 마이페이지 닉네임 업데이트
+	  public boolean updateNick(String user_pw, String user_nick) {
+	        boolean result = false;
+	        if (sqlsession.update("Giggle.updateUserNick", new JoinDTO(user_pw, user_nick)) != 0) {
+	            result = true;
+	        }
+	        return result;
+	    }
+
 }

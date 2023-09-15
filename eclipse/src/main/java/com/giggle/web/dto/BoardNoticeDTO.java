@@ -6,6 +6,8 @@ public class BoardNoticeDTO {
 	private String notice_sect;
 	private String boardtitle;
 	private String boarddate;
+	private String boardnum;
+	private String boardcontent;
 	
 	
 	public String getNotice_sect() {
@@ -25,6 +27,18 @@ public class BoardNoticeDTO {
 	}
 	public void setBoarddate(String boarddate) {
 		this.boarddate = boarddate;
+	}
+	public String getBoardnum() {
+		return boardnum;
+	}
+	public void setBoardnum(String boardnum) {
+		this.boardnum = boardnum;
+	}
+	public String getBoardcontent() {
+		return boardcontent;
+	}
+	public void setBoardcontent(String boardcontent) {
+		this.boardcontent = boardcontent;
 	}
 	
 	

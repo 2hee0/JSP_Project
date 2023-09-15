@@ -43,18 +43,23 @@ public class GiggleFrontController extends HttpServlet{
 	}
 	
 	protected void doProcess(HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-		 
 		String requestURI = request.getRequestURI();
 		 
 		ActionForward forward = null;
+		
 		 
 		 switch(requestURI) {
 		 
 		 	case "/giggle/LoginAction.mo" : System.out.println("오류 추적2"); forward = new LoginAction().execute(request,response); break;
 		 	case "/giggle/LogoutAction.mo" : System.out.println("오류 추적3"); forward = new LogoutAction().execute(request,response); break;
 		 	case "/BoardList.mo": System.out.println("오류 추적4"); forward= new BoardListAction().execute(request, response); break;
-		 
-		 
+		 	case "/noticeboard.mo": System.out.println("오류 추적5"); forward = new NoticeBoardAction().execute(request, response); break;
+		 	case "/BoardView.mo": System.out.println("오류 추적6"); forward = new BoardViewAction().execute(request, response); break;
+		 	case "/NoticeBoardView.mo": System.out.println("오류 추적7"); forward = new NoticeBoardViewAction().execute(request, response); break;
+		 	case "/complete.mo" : forward = new JoinAction().execute(request, response); break;
+		 	case "/contenView.mo" : forward = new ContenAction().execute(request, response); break;
+		 	case "/InsertBoard.mo" : forward = new SessionNameAction().execute(request, response); break;
+		 	case "/Myinfo.mo" : forward = new MyAction().execute(request, response); break;		 	
 		 }
 		 // 전송에 대한 일괄처리
 		 if(forward != null) {

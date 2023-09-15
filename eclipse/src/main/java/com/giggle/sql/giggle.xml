@@ -6,16 +6,65 @@ PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 	<select id="LoginAction" parameterType="map" resultType="_int">
 		SELECT count (*) FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	
 	<select id="getUserNameByCredentials" resultType="java.lang.String" parameterType="java.util.Map">
     	SELECT user_name FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	
 	<select id="getBoardList" resultType="BoardDTO">
-	SELECT * FROM board ORDER BY BOARDNUM DESC
+	SELECT * FROM (
+		SELECT rownum r,A.* FROM (
+			SELECT * FROM board ORDER BY BOARDNUM DESC) A ) B WHERE B.r BETWEEN #{startRow} AND #{endRow}
 	</select>
+	
+	<select id="getDetail" parameterType="_int" resultType="BoardDTO">
+	SELECT * FROM BOARD WHERE BOARDNUM = #{BOARDNUM}
+	</select>
+	
+	<insert id="addctn" parameterType="BoardDTO">
+		INSERT INTO board  
+		(boardnum, user_id,user_nick, boardtitle, boardcontent, boarddate, boardreadcount,USER_pw)
+		VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0,#{user_pw}) 
+	</insert>
+	
+	<insert id="join" parameterType="JoinDTO">
+    	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE,user_num )
+    	values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_gender},#{user_birth},#{user_phone},usernumidx_seq.nextval)
+	</insert>
+	
+	<select id="checkId" parameterType="string" resultType="_int">
+		SELECT count(*) FROM user_info WHERE USER_ID = #{user_id}
+	</select>
+	
+	<select id="checkNick" parameterType="string" resultType="_int">
+		SELECT count(*) FROM user_info WHERE USER_NICK = #{user_nick}
+	</select>
+	
+	<select id="getBoardCnt" resultType="_int">
+   	SELECT COUNT(*) FROM board
+   </select>
+   
+	<select id="getNoticeDetail" parameterType="_int" resultType="BoardNoticeDTO">
+	SELECT * FROM BOARD_NOTICE WHERE BOARDNUM = #{BOARDNUM}
+	</select>
+	
 	<select id="getBoardNotice" resultType="BoardNoticeDTO">
 	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
 	</select>
-	<select id="getDetail" resultType="_int">
-	SELECT * FROM BOARD WHERE BOARDNUM = #{BOARDNUM}
+	
+	<select id="getcontent" parameterType="_int" resultType="ContensDTO">
+	 SELECT * FROM contents WHERE content_index = #{content_index}
 	</select>
+	
+	<select id="getUserNum" resultType="int" parameterType="java.util.Map">
+    SELECT user_num FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
+	</select>
+	
+	<select id="getuserinfo" parameterType="_int" resultType="NameDTO">
+	 SELECT * FROM user_info WHERE user_num = #{user_num}
+	</select>
+	
+	<update id="updateUserNick"  parameterType="JoinDTO">
+    	UPDATE USER_INFO SET user_nick = #{user_nick} WHERE user_pw = #{user_pw}
+	</update>
 </mapper>
