@@ -120,10 +120,6 @@ public class GiggleDAO {
 
 
 
-	public Object getcontent(int content_index) {
-		return sqlsession.selectOne("Giggle.getcontent", content_index);
-	}
-
 
 	public int getUserNum(String user_id, String user_pw) {
 	    int user_num = 0;
@@ -144,16 +140,19 @@ public class GiggleDAO {
 	public Object getuserdata(int usernum) {
 		return sqlsession.selectOne("Giggle.getuserinfo", usernum);
 	}
-	public Object getcontent2(int content_index) {
+	public Object getcontent(int content_index) {
 		return sqlsession.selectOne("Giggle.getcontent", content_index);
+	}
+	public Object getcontent2(int content_index) {
+		return sqlsession.selectOne("Giggle.getcontent2", content_index);
 	}
 	
 	public Object getcontent3(int content_index) {
-		return sqlsession.selectOne("Giggle.getcontent", content_index);
+		return sqlsession.selectOne("Giggle.getcontent3", content_index);
 	}
 
 	public Object getcontent4(int content_index) {
-		return sqlsession.selectOne("Giggle.getcontent", content_index);
+		return sqlsession.selectOne("Giggle.getcontent4", content_index);
 	}
 
 

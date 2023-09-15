@@ -9,7 +9,9 @@ public class ContensDTO {
 	private String country_type;
 	private String age_type;
 	private String director_name;
-	private String ACTOR_NAME;
+	private String ACTOR_NAME1;
+	private String ACTOR_NAME2;
+	private String ACTOR_NAME3;
 	public int getContent_index() {
 		return content_index;
 	}
@@ -58,12 +60,26 @@ public class ContensDTO {
 	public void setDirector_name(String director_name) {
 		this.director_name = director_name;
 	}
-	public String getACTOR_NAME() {
-		return ACTOR_NAME;
+	public String getACTOR_NAME1() {
+		return ACTOR_NAME1;
 	}
-	public void setACTOR_NAME(String aCTOR_NAME) {
-		ACTOR_NAME = aCTOR_NAME;
+	public void setACTOR_NAME1(String aCTOR_NAME1) {
+		ACTOR_NAME1 = aCTOR_NAME1;
 	}
+	public String getACTOR_NAME2() {
+		return ACTOR_NAME2;
+	}
+	public void setACTOR_NAME2(String aCTOR_NAME2) {
+		ACTOR_NAME2 = aCTOR_NAME2;
+	}
+	public String getACTOR_NAME3() {
+		return ACTOR_NAME3;
+	}
+	public void setACTOR_NAME3(String aCTOR_NAME3) {
+		ACTOR_NAME3 = aCTOR_NAME3;
+	}
+	
+	
 	
 	
 	

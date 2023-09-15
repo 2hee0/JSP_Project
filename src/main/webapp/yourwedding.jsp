@@ -259,7 +259,7 @@
               </th>
               <td>
                 <a href="" class="genre">
-                  ${director_index.ACTOR_NAME }
+                  ${director_index.ACTOR_NAME1 }, ${director_index.ACTOR_NAME2 }
                 </a>
               </td>
           </tr>

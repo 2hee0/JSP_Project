@@ -254,7 +254,7 @@
               </th>
               <td>
 		          <a href="" class="actor">
-		           	${director_index.ACTOR_NAME}
+		           	${director_index.ACTOR_NAME1}, ${director_index.ACTOR_NAME2 }
 		          </a>
               </td>
           </tr>

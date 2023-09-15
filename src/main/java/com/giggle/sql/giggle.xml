@@ -55,7 +55,7 @@ VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},
 	<select id="getUserNum" resultType="int" parameterType="java.util.Map">
     SELECT user_num FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
-	<!--영화페이지 번호에 따른 데이터 호출  -->
+	<!--유저 번호 호출  -->
 	<select id="getuserinfo" parameterType="_int" resultType="NameDTO">
 	 SELECT * FROM user_info WHERE user_num = #{user_num}
 	</select>
