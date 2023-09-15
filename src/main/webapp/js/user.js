@@ -146,3 +146,32 @@ function onCheckSignIn(){
 	
 		}
 	}
+	// 닉네임 중복 체크
+	function checkNick(user_nick) {
+		if (user_nick == "") {
+			alert("닉네임을 입력해주세요");
+			return false;
+		} else {
+			let xhr = new XMLHttpRequest();
+			xhr.open("GET", "nickcheck.jsp?user_nick=" + user_nick, true);
+			xhr.send();
+			xhr.onreadystatechange = function() {
+				if (xhr.readyState == XMLHttpRequest.DONE &&
+					xhr.status == 200) {
+	
+					if (xhr.responseText.trim() == "ok") {
+						// ok
+						// document.getElementById("text").innerHTML = "사용할 수 있는 아이디 입니다.";
+						alert('사용할 수 있는 닉네임입니다.');
+
+					} else {
+						// not-ok
+						// document.getElementById("text").innerHTML = "사용할 수 없는 아이디 입니다.";
+						alert('이미 존재하는 닉네임입니다.');
+					}
+				}
+			}
+	
+	
+		}
+	}

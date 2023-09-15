@@ -96,9 +96,10 @@
                 <li>
                     <a href="categoryall.jsp">영화</a>
                 </li>
-                <li>
-                    <a href="my.jsp">MY</a>
-                </li>
+                <c:choose>
+			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
+			           </c:choose>
             </ul>
         </nav>
     </div>
@@ -280,6 +281,12 @@
         </td>
       </tr>
       </table>
+      </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
       </div>
   </body>
 <footer class="footer">

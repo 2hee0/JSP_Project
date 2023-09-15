@@ -99,9 +99,9 @@
                     </li>
                     <li>
 						<c:choose>
-			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
-			            </c:choose> 
+			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
+			           </c:choose>
 			        </li>
                 </ul>
             </nav>

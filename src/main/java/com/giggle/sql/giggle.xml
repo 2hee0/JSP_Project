@@ -3,57 +3,80 @@
 PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN"
 "https://mybatis.org/dtd/mybatis-3-mapper.dtd">
 <mapper namespace="Giggle">
+	<!--로그인-->
 	<select id="LoginAction" parameterType="map" resultType="_int">
 		SELECT count (*) FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	<!--로그인시 아이디 세션값 저장-->
 	<select id="getUserNameByCredentials" resultType="java.lang.String" parameterType="java.util.Map">
     	SELECT user_name FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	<!--게시판 리스트 가져오기-->
 	<select id="getBoardList" resultType="BoardDTO">
 	SELECT * FROM (
 		SELECT rownum r,A.* FROM (
 			SELECT * FROM board ORDER BY BOARDNUM DESC) A ) B WHERE B.r BETWEEN #{startRow} AND #{endRow}
 	</select>
+	<!--게시판 클릭시 게시판 내용 확인-->
 	<select id="getDetail" parameterType="_int" resultType="BoardDTO">
 	SELECT * FROM BOARD WHERE BOARDNUM = #{BOARDNUM}
 	</select>
+	<!--게시판 페이지 등록-->
 	<insert id="addctn" parameterType="BoardDTO">
 		INSERT INTO board  
 (boardnum, user_id,user_nick, boardtitle, boardcontent, boarddate, boardreadcount)
 VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},sysdate, 0) 
 	</insert>
+	<!--회원가입 등록-->
 	<insert id="join" parameterType="JoinDTO">
     	INSERT INTO user_info ( USER_ID, USER_PW, USER_NAME, USER_NICK, USER_GENDER, USER_BIRTH, USER_PHONE,user_num )
     	values (#{user_id},#{user_pw},#{user_name},#{user_nick},#{user_gender},#{user_birth},#{user_phone},usernumidx_seq.nextval)
 	</insert>
+	<!--회원가입시 아이디 중복 체크-->
 	<select id="checkId" parameterType="string" resultType="_int">
 		SELECT count(*) FROM user_info WHERE USER_ID = #{user_id}
 	</select>
+	<!--게시판 페이지뷰 10개 제한 -->
 	<select id="getBoardCnt" resultType="_int">
    	SELECT COUNT(*) FROM board
    </select>
+   <!-- 공지사항 페이지 번호에 맞는 데이터 호출 -->
 	<select id="getNoticeDetail" parameterType="_int" resultType="BoardNoticeDTO">
 	SELECT * FROM BOARD_NOTICE WHERE BOARDNUM = #{BOARDNUM}
 	</select>
+	<!--공지사한 페이지 뷰-->
 	<select id="getBoardNotice" resultType="BoardNoticeDTO">
 	SELECT * FROM BOARD_NOTICE ORDER BY BOARDDATE DESC 
 	</select>
 	<select id="getcontent" parameterType="_int" resultType="ContensDTO">
 	 SELECT * FROM contents WHERE content_index = #{content_index}
 	</select>
+	<!--로그인시 유저 넘버 세션에 저장하는 로직-->
 	<select id="getUserNum" resultType="int" parameterType="java.util.Map">
     SELECT user_num FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
 	</select>
+	<!--영화페이지 번호에 따른 데이터 호출  -->
 	<select id="getuserinfo" parameterType="_int" resultType="NameDTO">
 	 SELECT * FROM user_info WHERE user_num = #{user_num}
 	</select>
+	<!--영화페이지 번호에 따른 데이터 호출  -->
 	<select id="getcontent2" parameterType="_int" resultType="ContensDTO">
 	 SELECT * FROM contents WHERE content_index = #{content_index}
 	</select>
+	<!--영화페이지 번호에 따른 데이터 호출  -->
 	<select id="getcontent3" parameterType="_int" resultType="ContensDTO">
 	 SELECT * FROM contents WHERE content_index = #{content_index}
 	</select>
+	<!--영화페이지 번호에 따른 데이터 호출  -->
 	<select id="getcontent4" parameterType="_int" resultType="ContensDTO">
 	 SELECT * FROM contents WHERE content_index = #{content_index}
 	 </select>
+	 <!-- 이용권 결제 12개월 -->
+	 <update id="updateMembershipInfo" parameterType="hashmap">
+    UPDATE USER_INFO SET MEMBERSHIP_TYPE = #{membership_type}, MEMBERSHIP_SIGNUP = SYSDATE , membership_expire = SYSDATE + 365 WHERE  USER_NUM = #{user_num}
+	</update>
+	<!-- 이용권 결제 1개월 -->
+	<update id="updateMembershipInfo1" parameterType="hashmap">
+    UPDATE USER_INFO SET MEMBERSHIP_TYPE = #{membership_type}, MEMBERSHIP_SIGNUP = SYSDATE , membership_expire = SYSDATE + 30 WHERE  USER_NUM = #{user_num}
+	</update>
 </mapper>

@@ -13,33 +13,36 @@
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
 <script
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="./js/my.js"></script>
+<script src="./js/user.js"></script>
 </head>
 <body>
+	<c:set var="usernum" value="${requestScope.usernum}" />
 	<header class="header">
 		<div class="menu-top">
-          <nav class="menu2">
-            <ul>
-                <li>
-                    <c:choose>
-                    	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    	<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
-                  	</c:choose>
-                </li>
-                <li>
-                    <a href="payment.jsp">이용권</a>
-                </li>
-                <li>
-                    <a href="eventpage.jsp">이벤트</a>
-                </li>
-                <li>
-                    <c:choose>
-						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
-						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
-					</c:choose> 
-                </li>
-            </ul>
-          </nav>
-        </div>
+			<nav class="menu2">
+				<ul>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">로그인</a>
+							</c:when>
+							<c:otherwise>
+								<a href="/giggle/LogoutAction.mo">로그아웃</a>
+							</c:otherwise>
+						</c:choose></li>
+					<li><a href="payment.jsp">이용권</a></li>
+					<li><a href="eventpage.jsp">이벤트</a></li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">게시판</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+							</c:otherwise>
+						</c:choose></li>
+				</ul>
+			</nav>
+		</div>
 		<div class="header-main">
 			<h1 class="logo">
 				<a href="mainpage.jsp"> <img src="./img/Giggle3.png" alt="로고"
@@ -76,12 +79,15 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li>
-						<c:choose>
-			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
-			            </c:choose> 
-			        </li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">MY</a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a>
+							</c:otherwise>
+						</c:choose></li>
 				</ul>
 			</nav>
 		</div>
@@ -114,16 +120,16 @@
 											<span class="profile-inner-wrap"> <span
 												class="profile-name"> <c:choose>
 														<c:when test="${empty sessionScope.user}">${user.user_nick}</c:when>
-														<c:otherwise>닉네임</c:otherwise>
+														<c:otherwise>${usernum.user_nick}</c:otherwise>
 													</c:choose>
-											</span> <span class="profile-title"> &nbsp;님 </span> <!---->
+											</span> <span class="profile-title"> 님 </span> <!---->
 											</span>
 											<div class="profile-link">
 												<div class="promotion-text">
 													<span style="color: rgb(165, 165, 165);"> Giggle의
 														다양한 컨텐츠를 즐겨보세요! </span>
 												</div>
-												<a href="payment.html"> 이용권 구매하기 </a>
+												<a href="payment.jsp"> 이용권 구매하기 </a>
 											</div>
 										</div>
 									</div>
@@ -134,10 +140,11 @@
 												<ul class="profile-metadata-list">
 													<li><a> <span> 관심 콘텐츠 : </span> <span
 															class="value"> &nbsp;0 </span>
-													</a> <a> <span> 사용중인 이용권 : </span> <span class="value">
-																&nbsp; 이용권 종류 </span>
-													</a> <a> <span> 사용 기간 : </span> <span class="value">
-																&nbsp; ~~~ </span>
+													</a> <a> <span> 사용중인 이용권 : </span> <span class="value">&nbsp;${usernum.membership_type}
+														</span>
+													</a> <a> <span> 사용 기간 : ${usernum.membership_signup}</span>
+															<span class="value">&nbsp; ~
+																${usernum.membership_expire}</span>
 													</a></li>
 												</ul>
 											</div>
@@ -152,77 +159,92 @@
 					<div class="user-info">
 						<div class="title">
 							<h1 tabindex="0" class="title-area">
-								<span class="label"> 회원 정보 </span>
+								<span class="label"> 회원 정보 변경</span>
 							</h1>
 						</div>
-						<div class="user-form">
-							<div class="user-input">
-								<div>
-									<h3>닉네임</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="닉네임">
+						<form action="${pageContext.request.contextPath}/complete.mo"
+							autocomplete="off" id="myFrm" method="post" name="myFrm"
+							novalidate="true">
+							<div class="user_box">
+								<div class="user-form">
+									<div>
+										<h3>닉네임</h3>
+									</div>
+									<div class="user-input-nick">
+										<div class="nickchange">
+											<textarea class="nick-text" id="nick" name="user_nick">${usernum.user_nick}</textarea>
+										</div>
+										<input type="button" class="multinick" value="중복확인"
+											onclick="checkNick(myFrm.user_nick.value);">
+									</div>
+									<p class="except">*특수문자 제외</p>
+									<div class="user-input">
+										<div>
+											<h3>이름</h3>
+										</div>
+										<div>
+											<textarea readonly id="name">${usernum.user_name}</textarea>
+										</div>
+									</div>
+									<div class="user-input">
+										<div>
+											<h3>아이디</h3>
+										</div>
+										<div>
+											<textarea readonly id="id">${usernum.user_id}</textarea>
+										</div>
+									</div>
+									<div class="user-input">
+										<div>
+											<h3>비밀번호</h3>
+										</div>
+										<div>
+											<input type="password" id="pw" placeholder="영문으로 작성, 대소문자 구분">
+										</div>
+										<div>
+											<input type="password" id="pwh" placeholder="비밀번호 확인">
+										</div>
+										<div class="user-input">
+											<div>
+												<h3>성별</h3>
+											</div>
+											<div class="gendertp">
+												<label> <input type="radio" class="gender"
+													id="gender" value="남자" onclick="return(false);"
+													<c:if test="${usernum.user_gender eq '남자'}">checked</c:if>>남자
+												</label> <label> <input type="radio" class="gender"
+													id="gender" value="여자" onclick="return(false);"
+													<c:if test="${usernum.user_gender eq '여자'}">checked</c:if>>여자
+												</label>
+											</div>
+										</div>
+										<div class="user-input">
+											<div>
+												<h3>생년월일</h3>
+											</div>
+											<div>
+												<textarea readonly id="birth">${usernum.user_birth}</textarea>
+											</div>
+										</div>
+										<div class="user-input">
+											<div>
+												<h3>휴대폰 번호</h3>
+											</div>
+											<div>
+												<textarea readonly id="phone">${usernum.user_phone}</textarea>
+											</div>
+										</div>
+									</div>
+
+									<div class="change">
+										<form>
+											<input type="submit" class="ins" value="변경"
+												onclick="./my.jsp">
+										</form>
+									</div>
 								</div>
 							</div>
-							<div class="user-input">
-								<div>
-									<h3>이름</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="이름">
-								</div>
-							</div>
-							<div class="user-input">
-								<div>
-									<h3>아이디</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="아이디">
-								</div>
-							</div>
-							<div class="user-input">
-								<div>
-									<h3>비밀번호</h3>
-								</div>
-								<div>
-									<input type="text" placeholder="비밀번호">
-								</div>
-								<div>
-									<input type="text" placeholder="비밀번호 확인">
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>성별</h3>
-									</div>
-									<div class="gendertp">
-										<input type="radio" class="gender" name="gender" value="man">남
-										<input type="radio" class="gender" name="gender" value="women">여
-									</div>
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>생년월일</h3>
-									</div>
-									<div>
-										<input type="text" placeholder="생년월일">
-									</div>
-								</div>
-								<div class="user-input">
-									<div>
-										<h3>휴대폰 번호</h3>
-									</div>
-									<div>
-										<input type="text" placeholder="101-1515-1515">
-									</div>
-								</div>
-							</div>
-							<div class="change">
-								<form>
-									<input type="submit" class="ins" value="수정" >
-									<input type="submit" class="cng" value="변경">
-								</form>
-							</div>
-						</div>
+						</form>
 					</div>
 				</section>
 				<section class="fav">
@@ -242,10 +264,9 @@
 								</div>
 							</div>
 						</div>
+
 					</section>
 				</section>
-			</div>
-		</div>
 	</main>
 	<footer class="footer">
 		<div class="footer-box">

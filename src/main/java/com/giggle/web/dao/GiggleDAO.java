@@ -12,6 +12,7 @@ import com.giggle.web.dto.BoardDTO;
 import com.giggle.web.dto.BoardNoticeDTO;
 import com.giggle.web.dto.GiggleDTO;
 import com.giggle.web.dto.JoinDTO;
+import com.giggle.web.dto.UpdateDTO;
 
 public class GiggleDAO {
 	
@@ -154,4 +155,82 @@ public class GiggleDAO {
 	public Object getcontent4(int content_index) {
 		return sqlsession.selectOne("Giggle.getcontent", content_index);
 	}
+
+
+	public boolean UpdateMember4(int user_num, String membership_type) {
+		boolean result = false;
+		
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_num", user_num);
+		datas.put("membership_type", membership_type);
+		
+		if(sqlsession.update("Giggle.updateMembershipInfo",datas)==1) {
+			result =true;
+		}
+		
+		
+		return result;
+	}
+
+	public boolean UpdateMember3(int user_num, String membership_type) {
+		boolean result = false;
+		
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_num", user_num);
+		datas.put("membership_type", membership_type);
+		
+		if(sqlsession.update("Giggle.updateMembershipInfo1",datas)==1) {
+			result =true;
+		}
+		
+		
+		return result;
+	}
+
+	public boolean UpdateMember2(int user_num, String membership_type) {
+		boolean result = false;
+		
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_num", user_num);
+		datas.put("membership_type", membership_type);
+		
+		if(sqlsession.update("Giggle.updateMembershipInfo",datas)==1) {
+			result =true;
+		}
+		
+		
+		return result;
+	}
+
+	public boolean UpdateMember1(int user_num, String membership_type) {
+		boolean result = false;
+		
+		
+		HashMap<String, Object> datas = new HashMap<String, Object>();
+		datas.put("user_num", user_num);
+		datas.put("membership_type", membership_type);
+		
+		if(sqlsession.update("Giggle.updateMembershipInfo1",datas)==1) {
+			result =true;
+		}
+		
+		
+		return result;
+	}
+	public Object getuserdata1(int usernum) {
+		return sqlsession.selectOne("Giggle.getuserinfo", usernum);
+	}
+	public boolean checkNick(String user_nick) {
+		boolean result = false;
+		
+		// query 호출
+		int cnt = 0;
+		cnt = sqlsession.selectOne("Giggle.checkNick", user_nick);
+		if( cnt >= 1 ) {
+			result = true;
+		}
+		
+		return result;
+	}
+	
 }

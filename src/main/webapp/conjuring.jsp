@@ -32,7 +32,10 @@
                 <a href="eventpage.jsp">이벤트</a>
             </li>
             <li>
-                <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+                <c:choose>
+						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
+						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
+					</c:choose> 
             </li>
         </ul>
       </nav>
@@ -96,7 +99,10 @@
                     <a href="categoryall.jsp">영화</a>
                 </li>
                 <li>
-                    <a href="my.jsp">MY</a>
+                   <c:choose>
+			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
+			           </c:choose>
                 </li>
             </ul>
         </nav>
@@ -221,7 +227,16 @@
             </colgroup>
             <tr>
               <th scope="row">
-                 ${director_index.content_released }
+                개봉일
+              </th>
+              <td>
+                ${director_index.content_released }
+                </a>
+              </td>
+            </tr>
+			<tr>
+			  <th scope="row">
+                국가
               </th>
               <td>
                 ${director_index.country_type } 
@@ -270,6 +285,12 @@
         </td>
       </tr>
       </table>
+      </div>
+        </div>
+      </div>
+      </div>
+      </div>
+      </div>
       </div>
   </body>
 <footer class="footer">

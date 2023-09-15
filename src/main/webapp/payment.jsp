@@ -78,9 +78,9 @@
 					<li><a href="categoryall.jsp">영화</a></li>
 					<li>
 						<c:choose>
-			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
-			            </c:choose> 
+			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
+			           </c:choose> 
 			        </li>
 				</ul>
 			</nav>
@@ -127,95 +127,37 @@
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Premium</h2>
-												<button type="button" id="pk_1489" class="btn"
-													onclick="openPopup('Premium', '1개월', '￦13,900')">
+												<form action="${pageContext.request.contextPath}/UpdateMember1.mo?user_num=${sessionScope.user_num}" method="post">
+												<button type="submit" id="pk_1489" class="btn">
 													<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦13,900</span></span>
 												</button>
-												<button type="button" id="pk_2847" class="btn"
-													onclick="openPopup('Premium', '12개월', '￦11,583')">
+												</form>
+												<form action="${pageContext.request.contextPath}/UpdateMember2.mo?user_num=${sessionScope.user_num}" method="post">
+												<button type="submit" id="pk_2847" class="btn">
 													<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦139,000</span>
 														<span class="summary">(월 ￦11,583)</span> </span>
-
 												</button>
+												</form>
 											</div>
 										</th>
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Standard</h2>
-												<button type="button" id="pk_1488" class="btn"
-													onclick="openPopup('Standard', '1개월', '￦10,900')">
+												<form action="${pageContext.request.contextPath}/UpdateMember3.mo?user_num=${sessionScope.user_num}" method="post">
+												<button type="submit" id="pk_1488" class="btn">
 													<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦10,900</span></span>
 												</button>
-												<button type="button" id="pk_2846" class="btn"
-													onclick="openPopup('Standard', '12개월', '￦9,083')">
+												</form>
+												<form action="${pageContext.request.contextPath}/UpdateMember4.mo?user_num=${sessionScope.user_num}" method="post">
+													<button type="submit" id="pk_2846" class="btn">
 													<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦109,000</span>
 														<span class="summary">(월 ￦9,083)</span> </span>
-
-												</button>
-											</div>
-										</th>
-									</tr>
-								</thead>
-								<div id="popup" class="popup" style="display: none;">
-									<div class="popup-content-1">
-										<button id="closePopup" class="close-button"
-											onclick="closePopup()">닫기</button>
-										<h2 class="popup-product-name"></h2>
-										<p class="popup-product-info"></p>
-										<br>
-										<hr>
-										<br>
-										<p>결제수단 선택</p>
-										<br>
-										<hr>
-										<br> <label for="cardPayment">카드</label> <input
-											type="radio" id="cardPayment" name="paymentMethod"
-											value="card" onclick="showCardOptions()"> <label
-											for="phonePayment">휴대폰</label> <input type="radio"
-											id="phonePayment" name="paymentMethod" value="phone"
-											onclick="showPhoneOptions()"> <label
-											for="bankPayment">계좌이체</label> <input type="radio"
-											id="bankPayment" name="paymentMethod" value="bank"
-											onclick="showBankOptions()">
-										<div id="cardOptions" style="display: none;">
-											<label>카드 선택:</label> <select id="cardType">
-												<option value="국민카드">국민카드</option>
-												<option value="신한카드">신한카드</option>
-												<option value="우리카드">우리카드</option>
-												<option value="삼성카드">삼성카드</option>
-												<option value="현대카드">현대카드</option>
-												<option value="농협카드">농협카드</option>
-											</select> <br> <label>카드 번호:</label> <input type="text"
-												id="accountNumber">
-										</div>
-										<div id="phoneOptions" style="display: none;">
-											<label>휴대폰 선택:</label> <select id="phoneType">
-												<option value="skt">SKT</option>
-												<option value="kt">KT</option>
-												<option value="lg">LG</option>
-												<option value="알뜰폰">알뜰폰</option>
-											</select> <br> <label>휴대폰 번호:</label> <input type="text"
-												id="phoneNumber">
-										</div>
-										<div id="bankOptions" style="display: none;">
-											<label>은행 선택:</label> <select id="bankName">
-												<option value="국민은행">국민은행</option>
-												<option value="신한은행">신한은행</option>
-												<option value="우리은행">우리은행</option>
-												<option value="하나은행">하나은행</option>
-												<option value="기업은행">기업은행</option>
-											</select> <br> <label>계좌 번호:</label> <input type="text"
-												id="accountNumber">
-										</div>
-										<br>
-										<br>
-										<hr>
-										<br>
-										<button type="submit" id="pay" onclick="closePopup()">결제</button>
+													</button>
+												</form>
 									</div>
 								</div>
 								<tbody>

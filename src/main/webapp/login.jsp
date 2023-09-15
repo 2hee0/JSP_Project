@@ -98,9 +98,9 @@
                     </li>
                     <li>
 						<c:choose>
-			            	<c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			            	<c:otherwise><a href="my.jsp">MY</a></c:otherwise>
-			            </c:choose> 
+			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
+			           </c:choose>
 			        </li>
                 </ul>
             </nav>
@@ -178,10 +178,6 @@
                         </li>
                     </ul>
                 </div> -->
-                <p class="sns-exclamation">
-                    <span> 웨이브 홈페이지 로그인 페이지와 비슷하게 만들어 봤습니다</span>
-                    <span> Giggle 눌러도 작동되는 기능이 없어요</span>
-                </p>
             </div>
         </div>
     </main>

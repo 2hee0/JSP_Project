@@ -975,6 +975,69 @@ a, a:active, a:hover, a:link, a:visited {
     height: 1px;
 }
 /*마이페이지 추가*/
+
+.user-input-nick {
+    display: flex;
+    align-items: center;
+}
+
+.user-input-nick textarea{
+	height: 50px;
+    width: 850px;
+    background-color: #2f2f2f;
+    color: #a5a5a5;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px auto;
+    font-size: 15px;
+    resize: none;
+    line-height: 25px;
+    vertical-align: middle;
+}
+
+.user-input-nick textarea:focus{
+	outline: none;
+}
+
+.except{
+	text-align: left;
+    font-size: 13px;
+    margin-bottom: 20px;
+    color: #a5a5a5;
+}
+
+
+.user-input-nick .multinick{
+	height: 50px;
+    width: 200px;
+    background-color: #3577e3;
+    color: #FFFFFF;
+    border: none;
+    border-radius: 5px;
+    padding: 12px;
+    margin: 10px auto;
+    font-size: 15px;
+    resize: none;
+    line-height: 25px;
+	cursor:pointer;
+	transition: background-color 0.3s ease;
+}
+
+.user-input-nick .multinick:hover{
+	background-color: #a5a5a5;
+	}
+
+
+
+.nickchange {
+    flex: 1;
+    margin-right: 10px; /* 입력창과 중복확인 버튼 사이 간격 조절 */
+}
+.multinick {
+    width: 100px; /* 중복확인 버튼의 너비 설정 */
+}
+
 .user-info .title h1{
 display: inline-block;
     font-size: 0;
@@ -991,10 +1054,13 @@ display: inline-block;
     margin: 0 auto;
     overflow: hidden;
     margin-bottom: 100px;
+    border: 2px solid #252525;
+    border-radius: 30px;
+    padding: 25px;
 }
 
 .user-form{
-	text-align: center;
+	text-align: right;
 	width: 1080px;
 	margin: 0 auto;
 	margin-top:30px;
@@ -1003,10 +1069,32 @@ display: inline-block;
 .user-form h3{
 	text-align: left;
 }
+.user-input{
+	text-align: right;
+}
+
+.user-form .user-input textarea{
+	height: 50px;
+	width: 1080px;
+	background-color: #252525;
+	color: #a5a5a5;
+	border: none;
+	border-radius: 5px;
+	padding: 12px;
+	margin: 10px auto;
+	font-size: 15px;
+	resize: none;
+	line-height: 25px;
+}
+
+
+.nickchange{
+	text-align: left;
+}
 
 
 .user-form .user-input input{
-	height: 53px;
+	height: 50px;
 	width: 1080px;
 	background-color: #2f2f2f;
 	color: #a5a5a5;
@@ -1015,15 +1103,26 @@ display: inline-block;
 	padding: 12px;
 	margin: 10px auto;
 	font-size: 15px;
+	resize: none;
+	line-height: 25px;
 }
 
 .user-form .user-input input:focus{
+	outline: none;
+	}
+
+.user-form .user-input .multinick{
+	width: 250px;
+}
+
+.user-form .user-input textarea:focus{
 	outline:none;
 }
 .gendertp{
 	text-align: left;
 	font-size: 20px;
 	color: #a5a5a5;
+	margin:15px auto;
 }
 
 .user-form .user-input .gender{
@@ -1034,6 +1133,7 @@ display: inline-block;
 
 .change form{
 	text-align: right;
+	margin-top: 15px;
 }
 
 .change .cng{
