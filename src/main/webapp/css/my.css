@@ -1131,24 +1131,15 @@ display: inline-block;
 	vertical-align: middle;
 }
 
-.change form{
+
+
+.change {
 	text-align: right;
 	margin-top: 15px;
 }
 
-.change .cng{
-	height: 45px;
-    width: 100px;
-    background-color: #252525;
-    border-radius: 6px;
-    border: 0;
-    color: #ffffff;
-    cursor: pointer;
-    font-size: 15px;
-    transition: background-color 0.3s ease;
-}
 
-.change .ins{
+.change button {
 	height: 45px;
     width: 100px;
     background-color: #3577e3;
@@ -1158,11 +1149,11 @@ display: inline-block;
     cursor: pointer;
     font-size: 15px;
     transition: background-color 0.3s ease;
+    text-align: center;
 }
 
 
-
-.change form input:hover{
+.change button:hover{
 	background-color: #a5a5a5;
 	
 	}

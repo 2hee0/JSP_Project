@@ -2,6 +2,7 @@
 	function submit_check(){
 		let id = document.getElementById("user_id");
 		let pw = document.getElementById("user_pw");
+		
 		if( id.value == ""){
 			$("#idAlert").html('<div class="loginAlert">아이디를 입력하세요.</div')
 			id.focus();

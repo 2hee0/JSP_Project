@@ -85,5 +85,18 @@ VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},
 	</delete>
 	<select id="getUserNick" resultType="java.lang.String" parameterType="java.util.Map">
     	SELECT user_nick FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
-	</select> 
+	</select>
+	<!-- 마이페이지 닉네임 중복체크 -->
+	<select id="checkNick" parameterType="string" resultType="_int">
+		SELECT count(*) FROM user_info WHERE USER_NICK = #{user_nick}
+	</select>
+	<!-- 마이페이지 비밀번호 확인 -->
+	<select id="checkPw" parameterType="string" resultType="GiggleDTO">
+		SELECT count(*) FROM user_info WHERE USER_PW = #{user_pw}
+<!-- 		SELECT USER_PW  FROM USER_INFO WHERE USER_NUM = ${user_num}; -->
+	</select>
+	<!-- 마이페이지 닉네임 업데이트 -->
+	<update id="MynickAction" parameterType="java.util.HashMap">
+        UPDATE USER_INFO SET user_nick = #{user_nick} WHERE user_num = #{user_num}
+    </update> 
 </mapper>

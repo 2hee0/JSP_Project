@@ -8,16 +8,14 @@
 <meta charset="UTF-8">
 <title>Insert title here</title>
 <link rel="stylesheet" href="./css/my.css">
-<link rel="stylesheet"
-	href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
+<link rel="stylesheet" href="https://unpkg.com/swiper@7/swiper-bundle.min.css" />
 <script src="https://unpkg.com/swiper@7/swiper-bundle.min.js"></script>
-<script
-	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 <script src="./js/my.js"></script>
-<script src="./js/user.js"></script>
 </head>
 <body>
 	<c:set var="usernum" value="${requestScope.usernum}" />
+	<input type="hidden" id="usernum" value="${sessionScope.user_num}">
 	<header class="header">
 		<div class="menu-top">
 			<nav class="menu2">
@@ -27,14 +25,19 @@
 								<a href="login.jsp">로그인</a>
 							</c:when>
 							<c:otherwise>
-								<a href="#" onclick="return logout()">로그아웃</a>
+								<a href="/giggle/LogoutAction.mo">로그아웃</a>
 							</c:otherwise>
 						</c:choose></li>
 					<li><a href="payment.jsp">이용권</a></li>
 					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li>
-               			 <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
-            		</li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">게시판</a>
+							</c:when>
+							<c:otherwise>
+								<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+							</c:otherwise>
+						</c:choose></li>
 				</ul>
 			</nav>
 		</div>
@@ -133,8 +136,8 @@
 											<div class="profile-metadata">
 												<!---->
 												<ul class="profile-metadata-list">
-													<li><a> <span> 관심 콘텐츠 : </span> <span
-															class="value"> &nbsp;0 </span>
+													<li><a> <span> 관심있는 영화 : </span> <span
+															class="value"> &nbsp; 0 </span>
 													</a> <a> <span> 사용중인 이용권 : </span> <span class="value">&nbsp;${usernum.membership_type}
 														</span>
 													</a> <a> <span> 사용 기간 : ${usernum.membership_signup}</span>
@@ -157,9 +160,9 @@
 								<span class="label"> 회원 정보 변경</span>
 							</h1>
 						</div>
-						<form action="${pageContext.request.contextPath}/complete.mo"
-							autocomplete="off" id="myFrm" method="post" name="myFrm"
-							novalidate="true">
+						<!-- 액션 폼 실행하면 이동하는 홈페이지 주소 -->
+						<form id="myform" action="${pageContext.request.contextPath}/Updatemyinfo.mo?user_num=${sessionScope.user_num}" 
+						method="post" name="myform" novalidate="true">
 							<div class="user_box">
 								<div class="user-form">
 									<div>
@@ -167,10 +170,10 @@
 									</div>
 									<div class="user-input-nick">
 										<div class="nickchange">
-											<textarea class="nick-text" id="nick" name="user_nick">${usernum.user_nick}</textarea>
+											<textarea class="nick-text" id="nick" name="user_nick" >${usernum.user_nick}</textarea>
 										</div>
 										<input type="button" class="multinick" value="중복확인"
-											onclick="checkNick(myFrm.user_nick.value);">
+											onclick="checkNick(myform.user_nick.value);">
 									</div>
 									<p class="except">*특수문자 제외</p>
 									<div class="user-input">
@@ -194,10 +197,12 @@
 											<h3>비밀번호</h3>
 										</div>
 										<div>
-											<input type="password" id="pw" placeholder="영문으로 작성, 대소문자 구분">
+											<input type="password" id="pw" name="user_pw" 
+												placeholder="비밀번호를 입력하세요">
 										</div>
 										<div>
-											<input type="password" id="pwh" placeholder="비밀번호 확인">
+											<input type="password" id="repw" name="reuser_pw" 
+												placeholder="비밀번호 확인">
 										</div>
 										<div class="user-input">
 											<div>
@@ -230,38 +235,35 @@
 											</div>
 										</div>
 									</div>
-
-									<div class="change">
-										<form>
-											<input type="submit" class="ins" value="변경"
-												onclick="./my.jsp">
-										</form>
-									</div>
+								</div>
+								<div class="change">
+									<button type="button" onclick="mypage();">변경</button>
 								</div>
 							</div>
 						</form>
 					</div>
 				</section>
-				<section class="fav">
-					<section>
-						<div id="multisection_index_2" class="multi portrait-cell"
-							style="background-color: rgb(27, 27, 27);">
-							<div class="title">
-								<h1 tabindex="0" class="title-area">
-									<span class="label"> 관심 영화 </span>
-								</h1>
-							</div>
-							<div>
-								<div tabindex="0" class="no-data">
-									<p>
-										<img src="img/nodata.png"> <span> 관심있는 영화가 없어요 </span>
-									</p>
-								</div>
+			</div>
+			<section class="fav">
+				<section>
+					<div id="multisection_index_2" class="multi portrait-cell"
+						style="background-color: rgb(27, 27, 27);">
+						<div class="title">
+							<h1 tabindex="0" class="title-area">
+								<span class="label"> 관심 영화 </span>
+							</h1>
+						</div>
+						<div>
+							<div tabindex="0" class="no-data">
+								<p>
+									<img src="img/nodata.png"> <span> 관심있는 영화가 없어요 </span>
+								</p>
 							</div>
 						</div>
+					</div>
 
-					</section>
 				</section>
+			</section>
 	</main>
 	<footer class="footer">
 		<div class="footer-box">

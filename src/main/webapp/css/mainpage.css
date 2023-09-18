@@ -1148,7 +1148,7 @@ body {
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 50vh;
+    height: auto;
     /* 화면 높이에 맞추기 위해 사용 */
     background-color: #1b1b1b;
     /* 배경 색상을 변경하고자 할 경우 */
@@ -1417,6 +1417,12 @@ body {
     border-radius: 10px;
 }
 
+.popup-content-1 .closepop{
+	text-align: right;
+	}
+
+
+
 /* 팝업 창 닫기 버튼 스타일 */
 .close-button {
     top: 10px;
@@ -1590,7 +1596,5 @@ body {
     right: 0;
   }
   
-.logout {
-	cursor: pointer;
-}
+  
 

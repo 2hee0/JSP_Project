@@ -68,7 +68,7 @@ public class GiggleFrontController extends HttpServlet{
 		 	case "/UpdateMember3.mo" : forward = new UpdateMembershipAction3().execute(request, response); break;
 		 	case "/UpdateMember4.mo" : forward = new UpdateMembershipAction4().execute(request, response); break;
 		 	case "/Myinfo.mo" : forward = new MyAction().execute(request, response); break;
-		 	
+		 	case "/Updatemyinfo.mo" : forward = new MynickAction().execute(request, response); break;
 		 }
 		 // 전송에 대한 일괄처리
 		 if(forward != null) {

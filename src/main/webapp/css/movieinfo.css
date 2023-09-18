@@ -1582,10 +1582,8 @@ ul, li {list-style:none;}
     
 }
 .picture-area-in img{
-width: 100%;
-vertical-align: middle;
-height: 400px;
-
+	vertical-align: middle;
+	height: 400px;
 
 }
  /* footer  추가 */

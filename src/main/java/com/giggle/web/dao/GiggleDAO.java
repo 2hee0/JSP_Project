@@ -255,5 +255,31 @@ public String getUserNick(String user_id, String user_pw) {
 	    }
 	    return user_nick;
 	}
+
+	public boolean checkPw(String user_pw) {
+	boolean result = false;
+	int cnt = 0;
+	
+	cnt = sqlsession.selectOne("Giggle.checkPw", user_pw);
+	if (cnt >= 1) {
+		result = true;
+	}
+
+	return result;
+}
+
+	// 마이페이지 유저 닉네임 변경
+	public boolean updateUserNick(int user_num, String user_nick) {
+	boolean result = false;
+	
+	HashMap<String, Object> datas = new HashMap<String, Object>();
+	datas.put("user_num", user_num);
+	datas.put("user_nick", user_nick);
+
+	if (sqlsession.update("Giggle.MynickAction", datas) == 1) {
+		result = true;
+	}
+	return result;
+}
 	
 }

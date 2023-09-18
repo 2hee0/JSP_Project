@@ -1,4 +1,5 @@
- <%@ page language="java" contentType="text/html; charset=UTF-8"
+
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
@@ -17,31 +18,26 @@
 <body>
 	<header class="header">
 		<div class="menu-top">
-          <nav class="menu2">
-            <ul>
-                <li>
-                    <c:choose>
-                    	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    	<c:otherwise>
+			<nav class="menu2">
+				<ul>
+					<li>
+						<c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">로그인</a>
+							</c:when>
+							<c:otherwise>
 								<a href="#" onclick="return logout()">로그아웃</a>
-						</c:otherwise>
-                  	</c:choose>
-                </li>
-                <li>
-                    <a href="payment.jsp">이용권</a>
-                </li>
-                <li>
-                    <a href="eventpage.jsp">이벤트</a>
-                </li>
-                <li>
-                    <c:choose>
-						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
-						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
-					</c:choose> 
-                </li>
-            </ul>
-          </nav>
-        </div>
+							</c:otherwise>
+						</c:choose>
+					</li>
+					<li><a href="payment.jsp">이용권</a></li>
+					<li><a href="eventpage.jsp">이벤트</a></li>
+					<li>
+						<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+					</li>
+				</ul>
+			</nav>
+		</div>
 		<div class="header-main">
 			<h1 class="logo">
 				<a href="mainpage.jsp"> <img src="./img/Giggle3.png" alt="로고"
@@ -78,21 +74,26 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li>
-						<c:choose>
-			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
-			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
-			           </c:choose>
-			        </li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="login.jsp">MY</a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a>
+							</c:otherwise>
+						</c:choose></li>
 				</ul>
 			</nav>
 		</div>
-		 <div class="search-box">
-            <form action="search.jsp" class="search-main-box">
-                <input type="text" placeholder="제목,인물명을 입력해보세요" class="search" />
-                <input type="image" src="https://www.wavve.com/img/icon-search-22.704db5c8.svg" class="submitbutton">
-            </form>
-        </div>
+		<div class="search-box">
+			<form action="search.jsp" class="search-main-box">
+				<input type="text" placeholder="제목,인물명을 입력해보세요" class="search" /> <input
+					type="image"
+					src="https://www.wavve.com/img/icon-search-22.704db5c8.svg"
+					class="submitbutton">
+			</form>
+		</div>
 	</header>
 	<main class="main">
 		<div class="page-top">
@@ -129,95 +130,45 @@
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Premium</h2>
-												<c:choose>
-							                    	<c:when test="${empty sessionScope.user}">
-							                    		<a href="#" onclick="login()">
-							                    			<button type="button" id="pk_1489" class="btn"
-															onclick="openPopup1('Premium', '1개월', '￦13,900')">
-															<span class="month"><span>1개월</span></span> <span
-															class="price"><span>￦13,900</span></span>
-															</button>
-							                    		</a>
-							                    	</c:when>
-							                    	<c:otherwise>
-							                    		<button type="button" id="pk_1489" class="btn"
-														onclick="openPopup1('Premium', '1개월', '￦13,900')">
-														<span class="month"><span>1개월</span></span> <span
+												<button type="button" id="pk_1489" class="btn"
+													onclick="openPopup1('Premium', '1개월', '￦13,900')">
+													<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦13,900</span></span>
-														</button>
-							                    	</c:otherwise>
-							                  	</c:choose>
-							                  	<c:choose>
-							                    	<c:when test="${empty sessionScope.user}">
-							                    		<a href="#" onclick="login()">
-							                    			<button type="button" id="pk_2847" class="btn"
-															onclick="openPopup2('Premium', '12개월', '￦11,583')">
-															<span class="month"><span>12개월</span><span
-															class="discount">16%</span></span> <span class="price"><span>￦139,000</span>
-															<span class="summary">(월 ￦11,583)</span> </span>
-															</button>
-							                    		</a>
-							                    	</c:when>
-							                    	<c:otherwise>
-							                    		<button type="button" id="pk_2847" class="btn"
-														onclick="openPopup2('Premium', '12개월', '￦11,583')">
-														<span class="month"><span>12개월</span><span
+												</button>
+												<button type="button" id="pk_2847" class="btn"
+													onclick="openPopup2('Premium', '12개월', '￦11,583')">
+													<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦139,000</span>
 														<span class="summary">(월 ￦11,583)</span> </span>
-														</button>
-							                    	</c:otherwise>
-							                  	</c:choose>
+
+												</button>
 											</div>
 										</th>
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Standard</h2>
-												<c:choose>
-							                    	<c:when test="${empty sessionScope.user}">
-							                    		<a href="#" onclick="login()">
-							                    			<button type="button" id="pk_1488" class="btn"
-															onclick="openPopup3('Standard', '1개월', '￦10,900')">
-															<span class="month"><span>1개월</span></span> <span
-															class="price"><span>￦10,900</span></span>
-															</button>
-							                    		</a>
-							                    	</c:when>
-							                    	<c:otherwise>
-							                    		<button type="button" id="pk_1488" class="btn"
-														onclick="openPopup3('Standard', '1개월', '￦10,900')">
-														<span class="month"><span>1개월</span></span> <span
+												<button type="button" id="pk_1488" class="btn"
+													onclick="openPopup3('Standard', '1개월', '￦10,900')">
+													<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦10,900</span></span>
-														</button>
-							                    	</c:otherwise>
-							                  	</c:choose>
-												<c:choose>
-							                    	<c:when test="${empty sessionScope.user}">
-							                    		<a href="#" onclick="login()">
-							                    			<button type="button" id="pk_2846" class="btn"
-															onclick="openPopup4('Standard', '12개월', '￦9,083')">
-															<span class="month"><span>12개월</span><span
-															class="discount">16%</span></span> <span class="price"><span>￦109,000</span>
-															<span class="summary">(월 ￦9,083)</span> </span>
-															</button>
-							                    		</a>
-							                    	</c:when>
-							                    	<c:otherwise>
-							                    		<button type="button" id="pk_2846" class="btn"
-														onclick="openPopup4('Standard', '12개월', '￦9,083')">
-														<span class="month"><span>12개월</span><span
+												</button>
+												<button type="button" id="pk_2846" class="btn"
+													onclick="openPopup4('Standard', '12개월', '￦9,083')">
+													<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦109,000</span>
 														<span class="summary">(월 ￦9,083)</span> </span>
-														</button>
-							                    	</c:otherwise>
-							                  	</c:choose>
+
+												</button>
 											</div>
 										</th>
 									</tr>
 								</thead>
 								<div id="popup" class="popup" style="display: none;">
 									<div class="popup-content-1">
-										<button id="closePopup" class="close-button"
-											onclick="closePopup()">닫기</button>
+										<p class="closepop">
+											<button id="closePopup" class="close-button"
+												onclick="closePopup()">닫기</button>
+										</p>
 										<h2 class="popup-product-name"></h2>
 										<p class="popup-product-info"></p>
 										<br>
@@ -265,24 +216,35 @@
 											</select> <br> <label>계좌 번호:</label> <input type="text"
 												id="accountNumber">
 										</div>
-										<br>
-										<br>
+										<br> <br>
 										<hr>
 										<br>
-										<form action="${pageContext.request.contextPath}/UpdateMember1.mo?user_num=${sessionScope.user_num}" method="post">
-											<button type="submit" id="pay1" onclick="return closePopup()" style="display: none" >결제</button>
+										<form
+											action="${pageContext.request.contextPath}/UpdateMember1.mo?user_num=${sessionScope.user_num}"
+											method="post">
+											<button type="submit" id="pay1" onclick="return closePopup()"
+												style="display: none">결제</button>
 										</form>
-										<form action="${pageContext.request.contextPath}/UpdateMember2.mo?user_num=${sessionScope.user_num}" method="post">
-											<button type="submit" id="pay2" onclick="return closePopup()" style="display: none">결제</button>
+										<form
+											action="${pageContext.request.contextPath}/UpdateMember2.mo?user_num=${sessionScope.user_num}"
+											method="post">
+											<button type="submit" id="pay2" onclick="return closePopup()"
+												style="display: none">결제</button>
 										</form>
-										<form action="${pageContext.request.contextPath}/UpdateMember3.mo?user_num=${sessionScope.user_num}" method="post">
-											<button type="submit" id="pay3" onclick="return closePopup()" style="display: none">결제</button>
+										<form
+											action="${pageContext.request.contextPath}/UpdateMember3.mo?user_num=${sessionScope.user_num}"
+											method="post">
+											<button type="submit" id="pay3" onclick="return closePopup()"
+												style="display: none">결제</button>
 										</form>
-										<form action="${pageContext.request.contextPath}/UpdateMember4.mo?user_num=${sessionScope.user_num}" method="post">
-											<button type="submit" id="pay4" onclick="return closePopup()" style="display: none">결제</button>
+										<form
+											action="${pageContext.request.contextPath}/UpdateMember4.mo?user_num=${sessionScope.user_num}"
+											method="post">
+											<button type="submit" id="pay4" onclick="return closePopup()"
+												style="display: none">결제</button>
 										</form>
 									</div>
-								
+
 								</div>
 								<tbody>
 									<tr>
@@ -411,7 +373,11 @@
 									<span>12개월 이용권 할인 프로모션 기간에 할인 상품 구매 시 첫 해에만 추가 할인 금액으로
 										결제되고, 12개월 후에는 기존 금액 (16% 할인)으로 연 1회 정기 결제됩니다.</span>
 								</p>
+							</span>
 					</div>
+				</div>
+			</div>
+		</div>
 	</main>
 	<footer class="footer">
 		<div class="footer-box">

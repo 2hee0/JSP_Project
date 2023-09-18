@@ -29,9 +29,9 @@
                 <li>
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
-               	<li>
-                	<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
-            	</li>
+                <li>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+                </li>
             </ul>
           </nav>
         </div>
@@ -143,37 +143,10 @@
                 </ul>
             </div>
             <div class="sns-box">
-                <!-- <div class="or-bar-box">
+                <div class="or-bar-box">
                     <span class="or-bar or-bar-left"></span>
                     <h2 tabindex="0" class="login-box-hd">또는 다른 서비스 계정으로 로그인</h2>
                     <span class="or-bar or-bar-right"></span>
-                </div> -->
-               <!--  <div class="login-sns">
-                    <ul>
-                        <li class="login-sns-each kakao">
-                            <a href="https://accounts.kakao.com/login/?continue=https%3A%2F%2Fcs.kakao.com%2Fhelps%3Fcategory%3D25#login">
-                                <span class="icon-sns icon-kakao"></span>
-                                <span class="a11y-hidden">카카오로 로그인</span>
-                            </a>
-                        </li>
-                        <li class="login-sns-each naver">
-                            <a href="https://nid.naver.com/nidlogin.login?mode=form&url=https://www.naver.com/">
-                                <span class="icon-sns icon-naver"></span>
-                                <span class="a11y-hidden">네이버로 로그인</span>
-                            </a>
-                            <div id="naverIdLogin" style="display: none;">
-                                <a id="naverIdLogin_loginButton" href="javascript:;">
-                                    <img src="https://static.nid.naver.com/oauth/button_g.PNG?version=js-2.0.0" height="60">
-                                </a>
-                            </div>
-                        </li>
-                        <li class = "login-sns-each facebook">
-                            <a href="https://www.facebook.com/?_rdr">
-                                <span class="icon-sns icon-facebook"></span>
-                                <span class="a11y-hidden">페이스북으로 로그인</span>
-                            </a>
-                        </li>
-                    </ul>
                 </div> -->
             </div>
         </div>
@@ -244,5 +217,4 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>
 <script type="text/javascript" src="./js/up.js"></script>
-<script type="text/javascript" src="./js/logout.js.js"></script>
 </html>
