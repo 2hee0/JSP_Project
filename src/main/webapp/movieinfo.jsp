@@ -23,7 +23,9 @@
                 <li>
                     <c:choose>
                     	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    	<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
+                    	<c:otherwise>
+								<a href="#" onclick="return logout()">로그아웃</a>
+						</c:otherwise>
                   	</c:choose>
                 </li>
                 <li>
@@ -32,11 +34,8 @@
                 <li>
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
-                <li>
-                    <c:choose>
-						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
-						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
-					</c:choose> 
+               	<li>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
                 </li>
             </ul>
           </nav>
@@ -116,18 +115,27 @@
 											<button type="button" id="loginbutton">
 												<c:choose>
 													<c:when test="${empty sessionScope.user}">
-                                로그인
-                            </c:when>
+                                						로그인
+                            						</c:when>
 													<c:otherwise>
-                                재생 ▶︎
-                            </c:otherwise>
+                               							 재생 ▶︎
+                            						</c:otherwise>
 												</c:choose>
 											</button>
-											<input type="checkbox" id="favorite">관심
-											</button>
-											<label for="favorite"><img src=""></label>
-											<button type="button" id="share">공유</button>
-											<!---->
+											<c:choose>
+							                  <c:when test="${empty sessionScope.user}">
+							                  	<a href="#" onclick="return login()">
+							                  		<input type="checkbox" id="favorite">관심
+							                  		<label for=""><img src=""></label>
+							                  		<button type="button" id="share">공유</button>
+							                  	</a>
+							                  </c:when>
+							                  <c:otherwise>
+							                  	<input type="checkbox" id="favorite">관심
+							                  	<label for="favorite"><img src=""></label>
+							                  	<button type="button" id="share">공유</button>
+							                  </c:otherwise>
+							           	</c:choose>
 										</div>
 									</div>
 								</div>

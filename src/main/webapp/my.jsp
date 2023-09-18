@@ -27,19 +27,14 @@
 								<a href="login.jsp">로그인</a>
 							</c:when>
 							<c:otherwise>
-								<a href="/giggle/LogoutAction.mo">로그아웃</a>
+								<a href="#" onclick="return logout()">로그아웃</a>
 							</c:otherwise>
 						</c:choose></li>
 					<li><a href="payment.jsp">이용권</a></li>
 					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li><c:choose>
-							<c:when test="${empty sessionScope.user}">
-								<a href="login.jsp">게시판</a>
-							</c:when>
-							<c:otherwise>
-								<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
-							</c:otherwise>
-						</c:choose></li>
+					<li>
+               			 <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+            		</li>
 				</ul>
 			</nav>
 		</div>

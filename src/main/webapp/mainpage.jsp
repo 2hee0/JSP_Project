@@ -35,15 +35,8 @@
 					<li><a href="payment.jsp">이용권</a></li>
 					<li><a href="eventpage.jsp">이벤트</a></li>
 					<li>
-						<c:choose>
-							<c:when test="${empty sessionScope.user}">
-								<a href="#" onclick="return login()">게시판</a>
-							</c:when>
-							<c:otherwise>
-								<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
-							</c:otherwise>
-						</c:choose>
-					</li>
+                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+               		 </li>
 				</ul>
 			</nav>
 		</div>
