@@ -92,3 +92,19 @@ function swiper_slide (){
   });
 }
 swiper_slide();
+
+function login(){
+	alert("로그인 및 회원가입 후 이용가능한 서비스입니다.")
+	window.location.href ="login.jsp";
+}
+
+function logout() {
+    if (confirm("로그아웃 하시겠습니까?") == true){    //확인
+       alert("로그아웃 되었습니다.")	
+       window.location.href ="/giggle/LogoutAction.mo";
+    }else{  
+        return false;
+   
+    }
+
+}

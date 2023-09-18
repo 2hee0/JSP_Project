@@ -1590,5 +1590,7 @@ body {
     right: 0;
   }
   
-  
+.logout {
+	cursor: pointer;
+}
 

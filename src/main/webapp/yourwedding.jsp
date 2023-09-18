@@ -144,10 +144,20 @@
                             </c:otherwise>
                           </c:choose>
                           </button>
-                              <input type="checkbox" id="favorite">관심</button>
-                              <label for="favorite"><img src=""></label>
-                              <button type="button" id="share">공유</button>
-                        <!---->
+                          <c:choose>
+			                  <c:when test="${empty sessionScope.user}">
+			                  	<a href="#" onclick="return login()">
+			                  		<input type="checkbox" id="favorite">관심
+			                  		<label for=""><img src=""></label>
+			                  		<button type="button" id="share">공유</button>
+			                  	</a>
+			                  </c:when>
+			                  <c:otherwise>
+			                  	<input type="checkbox" id="favorite">관심
+			                  	<label for="favorite"><img src=""></label>
+			                  	<button type="button" id="share">공유</button>
+			                  </c:otherwise>
+			           	</c:choose>
                       </div>
                     </div>
                    </div>

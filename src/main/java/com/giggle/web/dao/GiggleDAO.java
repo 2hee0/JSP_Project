@@ -231,5 +231,29 @@ public class GiggleDAO {
 		
 		return result;
 	}
+
+	public boolean deleteBoard(int boardnum) {
+		boolean result = false;
+		
+		if(sqlsession.delete("Giggle.deleteBoard",boardnum) == 1) {
+			result = true;
+		}
+		return result;
+	}
+
+public String getUserNick(String user_id, String user_pw) {
+		String user_nick = null;
+	    try {
+	        Map<String, String> credentials = new HashMap<>();
+	        credentials.put("user_id", user_id);
+	        credentials.put("user_pw", user_pw);
+
+	        // MyBatis를 사용하여 SQL 쿼리 실행
+	        user_nick = sqlsession.selectOne("Giggle.getUserNick", credentials);
+	    } catch (Exception e) {
+	        e.printStackTrace();
+	    }
+	    return user_nick;
+	}
 	
 }

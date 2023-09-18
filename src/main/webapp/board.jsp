@@ -24,11 +24,15 @@
           <nav class="menu2">
             <ul>
                 <li>
-                    <c:choose>
-                    	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    	<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
-                  	</c:choose>
-                </li>
+					<c:choose>
+						<c:when test="${empty sessionScope.user}">
+							<a href="login.jsp">로그인</a>
+						</c:when>
+						<c:otherwise>
+							<a href="#" onclick="return logout()">로그아웃</a>
+						</c:otherwise>
+					</c:choose>
+				</li>
                 <li>
                     <a href="payment.jsp">이용권</a>
                 </li>
@@ -36,11 +40,15 @@
                     <a href="eventpage.jsp">이벤트</a>
                 </li>
                 <li>
-                    <c:choose>
-						<c:when test="${empty sessionScope.user}"><a href="login.jsp">게시판</a></c:when>
-						<c:otherwise> <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a></c:otherwise>
-					</c:choose> 
-                </li>
+					<c:choose>
+						<c:when test="${empty sessionScope.user}">
+							<a href="#" onclick="return login()">게시판</a>
+						</c:when>
+						<c:otherwise>
+							<a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+						</c:otherwise>
+					</c:choose>
+				</li>
             </ul>
           </nav>
         </div>
@@ -82,7 +90,7 @@
 					<li><a href="categoryall.jsp">영화</a></li>
 					<li>
 						<c:choose>
-			                  <c:when test="${empty sessionScope.user}"><a href="login.jsp">MY</a></c:when>
+			                  <c:when test="${empty sessionScope.user}"><a href="#" onclick="return login()">MY</a></c:when>
 			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
 			           </c:choose>
 			        </li>

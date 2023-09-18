@@ -28,6 +28,7 @@ public class LoginAction implements Action {
         // Fetch user_name and user_num
         String user_name = mdao.getUserNameByCredentials(user_id, user_pw);
         int user_num = mdao.getUserNum(user_id, user_pw);
+   String user_nick = mdao.getUserNick(user_id, user_pw);
 
         if (user_name != null && user_num > 0) {
             // If user_name and user_num are valid
@@ -39,6 +40,7 @@ public class LoginAction implements Action {
                 // Store user_name and user_num in the session
                 session.setAttribute("user", user_name);
                 session.setAttribute("user_num", user_num);
+              session.setAttribute("user_nick", user_nick);
 
                 PrintWriter out = resp.getWriter();
                 out.println("<script>alert('" + welcomeMessage + "');window.location.href='/mainpage.jsp';</script>");

@@ -79,4 +79,11 @@ VALUES (board_seq.nextval,#{user_id},#{user_nick},#{boardtitle},#{boardcontent},
 	<update id="updateMembershipInfo1" parameterType="hashmap">
     UPDATE USER_INFO SET MEMBERSHIP_TYPE = #{membership_type}, MEMBERSHIP_SIGNUP = SYSDATE , membership_expire = SYSDATE + 30 WHERE  USER_NUM = #{user_num}
 	</update>
+	<!-- 보드게시판 내용 삭제  -->
+	<delete id="deleteBoard" parameterType="_int">
+		delete from board where boardnum = #{boardnum}
+	</delete>
+	<select id="getUserNick" resultType="java.lang.String" parameterType="java.util.Map">
+    	SELECT user_nick FROM user_info WHERE user_id = #{user_id} AND user_pw = #{user_pw}
+	</select> 
 </mapper>

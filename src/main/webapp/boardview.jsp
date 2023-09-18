@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
+<%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
 <%@taglib uri="http://java.sun.com/jsp/jstl/functions" prefix="fn"%>
 <!DOCTYPE html>
 <html>
@@ -98,7 +99,7 @@
 				<h1 tabindex="0" class="page-title">게시판</h1>
 			</hgroup>
 		</div>
-		<form action="${pageContext.request.contextPath}/boardDelete.mo" name="DeleteForm" method="post">
+		<form action="${pageContext.request.contextPath}/boardDelete.mo?boardnum=${boardView.boardnum}" name="DeleteForm" method="post">
 		<div class="cs-table-a">
 			<table class="cs-table">
 				<colgroup>
@@ -132,10 +133,14 @@
 				<textarea class="contenttext" name="content" id="content" readonly>${boardView.boardcontent}</textarea>
 			</div>
 			<div class="btn-list">
-				<a href="../noticeboard.jsp">
-					<button class="change">수정</button>
-				</a> 
-				<a href="javascript:document.DeleteForm.submit();">삭제</a>
+				<c:choose>
+   					 <c:when test="${sessionScope.user_nick != boardView.user_nick}">
+        				<a href="#" onclick="return login()"><button type="button" class="change">로그인</button></a>
+    				</c:when>
+   					 <c:otherwise>
+        				<button type="submit" class="change">삭제</button>
+    				</c:otherwise>
+				</c:choose>
 			</div>
 			<div class="list-btn">
 				<a href="${pageContext.request.contextPath}/BoardList.mo"> <img

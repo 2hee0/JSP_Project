@@ -127,35 +127,87 @@
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Premium</h2>
-												<button type="button" id="pk_1489" class="btn"
-													onclick="openPopup1('Premium', '1개월', '￦13,900')">
-													<span class="month"><span>1개월</span></span> <span
+												<c:choose>
+							                    	<c:when test="${empty sessionScope.user}">
+							                    		<a href="#" onclick="login()">
+							                    			<button type="button" id="pk_1489" class="btn"
+															onclick="openPopup1('Premium', '1개월', '￦13,900')">
+															<span class="month"><span>1개월</span></span> <span
+															class="price"><span>￦13,900</span></span>
+															</button>
+							                    		</a>
+							                    	</c:when>
+							                    	<c:otherwise>
+							                    		<button type="button" id="pk_1489" class="btn"
+														onclick="openPopup1('Premium', '1개월', '￦13,900')">
+														<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦13,900</span></span>
-												</button>
-												<button type="button" id="pk_2847" class="btn"
-													onclick="openPopup2('Premium', '12개월', '￦11,583')">
-													<span class="month"><span>12개월</span><span
+														</button>
+							                    	</c:otherwise>
+							                  	</c:choose>
+							                  	<c:choose>
+							                    	<c:when test="${empty sessionScope.user}">
+							                    		<a href="#" onclick="login()">
+							                    			<button type="button" id="pk_2847" class="btn"
+															onclick="openPopup2('Premium', '12개월', '￦11,583')">
+															<span class="month"><span>12개월</span><span
+															class="discount">16%</span></span> <span class="price"><span>￦139,000</span>
+															<span class="summary">(월 ￦11,583)</span> </span>
+															</button>
+							                    		</a>
+							                    	</c:when>
+							                    	<c:otherwise>
+							                    		<button type="button" id="pk_2847" class="btn"
+														onclick="openPopup2('Premium', '12개월', '￦11,583')">
+														<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦139,000</span>
 														<span class="summary">(월 ￦11,583)</span> </span>
-
-												</button>
+														</button>
+							                    	</c:otherwise>
+							                  	</c:choose>
 											</div>
 										</th>
 										<th scope="col">
 											<div class="button-container">
 												<h2 class="product-name">Standard</h2>
-												<button type="button" id="pk_1488" class="btn"
-													onclick="openPopup3('Standard', '1개월', '￦10,900')">
-													<span class="month"><span>1개월</span></span> <span
+												<c:choose>
+							                    	<c:when test="${empty sessionScope.user}">
+							                    		<a href="#" onclick="login()">
+							                    			<button type="button" id="pk_1488" class="btn"
+															onclick="openPopup3('Standard', '1개월', '￦10,900')">
+															<span class="month"><span>1개월</span></span> <span
+															class="price"><span>￦10,900</span></span>
+															</button>
+							                    		</a>
+							                    	</c:when>
+							                    	<c:otherwise>
+							                    		<button type="button" id="pk_1488" class="btn"
+														onclick="openPopup3('Standard', '1개월', '￦10,900')">
+														<span class="month"><span>1개월</span></span> <span
 														class="price"><span>￦10,900</span></span>
-												</button>
-												<button type="button" id="pk_2846" class="btn"
-													onclick="openPopup4('Standard', '12개월', '￦9,083')">
-													<span class="month"><span>12개월</span><span
+														</button>
+							                    	</c:otherwise>
+							                  	</c:choose>
+												<c:choose>
+							                    	<c:when test="${empty sessionScope.user}">
+							                    		<a href="#" onclick="login()">
+							                    			<button type="button" id="pk_2846" class="btn"
+															onclick="openPopup4('Standard', '12개월', '￦9,083')">
+															<span class="month"><span>12개월</span><span
+															class="discount">16%</span></span> <span class="price"><span>￦109,000</span>
+															<span class="summary">(월 ￦9,083)</span> </span>
+															</button>
+							                    		</a>
+							                    	</c:when>
+							                    	<c:otherwise>
+							                    		<button type="button" id="pk_2846" class="btn"
+														onclick="openPopup4('Standard', '12개월', '￦9,083')">
+														<span class="month"><span>12개월</span><span
 														class="discount">16%</span></span> <span class="price"><span>￦109,000</span>
 														<span class="summary">(월 ￦9,083)</span> </span>
-
-												</button>
+														</button>
+							                    	</c:otherwise>
+							                  	</c:choose>
 											</div>
 										</th>
 									</tr>

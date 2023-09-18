@@ -55,6 +55,7 @@ public class GiggleFrontController extends HttpServlet{
 		 	case "/BoardList.mo": System.out.println("오류 추적4"); forward= new BoardListAction().execute(request, response); break;
 		 	case "/noticeboard.mo": System.out.println("오류 추적5"); forward = new NoticeBoardAction().execute(request, response); break;
 		 	case "/BoardView.mo": System.out.println("오류 추적6"); forward = new BoardViewAction().execute(request, response); break;
+		 	case "/boardDelete.mo" : forward = new BoardDeleteAction().execute(request, response); break;
 		 	case "/NoticeBoardView.mo": System.out.println("오류 추적7"); forward = new NoticeBoardViewAction().execute(request, response); break;
 		 	case "/complete.mo" : forward = new JoinAction().execute(request, response); break;
 		 	case "/contenView2.mo" : forward = new ContenAction2().execute(request, response); break;

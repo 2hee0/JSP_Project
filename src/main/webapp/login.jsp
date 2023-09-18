@@ -20,7 +20,7 @@
                 <li>
                     <c:choose>
                     	<c:when test="${empty sessionScope.user}"><a href="login.jsp">로그인</a></c:when>
-                    	<c:otherwise><a href="/giggle/LogoutAction.mo">로그아웃</a></c:otherwise>
+                    	<c:otherwise><a onclick="logout()">로그아웃</a></c:otherwise>
                   	</c:choose>
                 </li>
                 <li>
@@ -247,4 +247,5 @@
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.3/jquery.min.js"></script>
 <script type="text/javascript" src="./js/login.js"></script>
 <script type="text/javascript" src="./js/up.js"></script>
+<script type="text/javascript" src="./js/logout.js.js"></script>
 </html>
