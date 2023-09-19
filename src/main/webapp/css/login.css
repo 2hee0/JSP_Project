@@ -149,7 +149,6 @@ margin-left:150px;
 }
 
 .categorty-list-menu>ul>li>a {
-    font-family: NotoSans, sans-serif;
     font-size: 14px;
     line-height: 34px;
     color: #a5a5a5;
@@ -440,7 +439,6 @@ body,html {
     scrollbar-face-color:#a5a5a5;scrollbar-track-color:#1b1b1b;scrollbar-arrow-color:#a5a5a5;scrollbar-3dlight-color: none;
     scrollbar-shadow-color:#a5a5a5;scrollbar-darkshadow-color: none;
     scrollbar-color: #a5a5a5 #1b1b1b;
-    font-family: NotoSans,sans-serif
 }
 
 body,button,dd,dl,dt,fieldset,figure,form,h1,h2,h3,h4,h5,h6,input,legend,li,ol,p,pre,select,table,td,textarea,th,ul {
@@ -559,7 +557,6 @@ img {
 
 button {
     cursor: pointer;
-    font-family: NotoSans, sans-serif;
     border: 0 none;
     margin: 0;
     background-color: transparent;
@@ -571,7 +568,6 @@ a {
 }
 
 body {
-    font-family: NotoSans, sans-serif;
     width: 100%;
     background-color: #1b1b1b;
     letter-spacing: -.5px;
@@ -921,7 +917,6 @@ body {
     box-sizing: border-box;
   }
   body {
-    font-family: NotoSans, sans-serif;
     width: 100%;
     background-color: #1b1b1b;
     letter-spacing: -.5px;
@@ -944,7 +939,6 @@ body {
     background-color: transparent;
     border: 0 none;
     cursor: pointer;
-    font-family: NotoSans, sans-serif;
   }
   .container {
     margin-left: auto;

@@ -16,27 +16,28 @@
 	src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.6.0/jquery.min.js"></script>
 </head>
 <body>
-<% int hardcodin =6;  %>
-<% int hardcodin2 =16;  %>
+	<%
+	int hardcodin = 6;
+	%>
+	<%
+	int hardcodin2 = 16;
+	%>
 	<header class="header">
 		<div class="menu-top">
 			<nav class="menu2">
 				<ul>
-					<li>
-						<c:choose>
+					<li><c:choose>
 							<c:when test="${empty sessionScope.user}">
 								<a href="login.jsp">로그인</a>
 							</c:when>
 							<c:otherwise>
 								<a href="#" onclick="return logout()">로그아웃</a>
 							</c:otherwise>
-						</c:choose>
-					</li>
+						</c:choose></li>
 					<li><a href="payment.jsp">이용권</a></li>
 					<li><a href="eventpage.jsp">이벤트</a></li>
-					<li>
-                    <a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
-               		 </li>
+					<li><a href="${pageContext.request.contextPath}/BoardList.mo">게시판</a>
+					</li>
 				</ul>
 			</nav>
 		</div>
@@ -76,12 +77,15 @@
 							</ul>
 						</div></li>
 					<li><a href="categoryall.jsp">영화</a></li>
-					<li>
-						<c:choose>
-			                  <c:when test="${empty sessionScope.user}"><a href="#" onclick="return login()">MY</a></c:when>
-			                  <c:otherwise><a href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a></c:otherwise>
-			           </c:choose>
-					</li>
+					<li><c:choose>
+							<c:when test="${empty sessionScope.user}">
+								<a href="#" onclick="return login()">MY</a>
+							</c:when>
+							<c:otherwise>
+								<a
+									href="${pageContext.request.contextPath}/Myinfo.mo?user_num=${sessionScope.user_num}">MY</a>
+							</c:otherwise>
+						</c:choose></li>
 				</ul>
 			</nav>
 		</div>
@@ -108,8 +112,9 @@
 					<label for="slide03" class="right1"></label> <a
 					href="movieinfo.jsp"><img src="./img/5-b.png"></a></li>
 				<li class="slideitem"><label for="slide02" class="next"></label>
-					<label for="slide04" class="right1"></label> 
-					<a href="${pageContext.request.contextPath}/contenView.mo?content_index=<%=hardcodin %>"><img src="./img/6-b.png"></a>
+					<label for="slide04" class="right1"></label> <a
+					href="${pageContext.request.contextPath}/contenView.mo?content_index=<%=hardcodin %>"><img
+						src="./img/6-b.png"></a>
 				<li class="slideitem"><label for="slide03" class="next"></label>
 					<label for="slide01" class="right1"></label> <a
 					href="movieinfo.jsp"><img src="./img/16-b.png"></a></li>
@@ -121,10 +126,10 @@
 					<a href="#">주간 TOP4</a>
 				</div>
 				<div class="slide-container">
-					<a href="movieinfo.jsp"> <img src="./img/5-p.png" />
-					<a href="${pageContext.request.contextPath}/contenView2.mo?content_index=<%=hardcodin2 %>">
-                        <img src="./img/16-p.png" />
-                    </a>
+					<a href="movieinfo.jsp"> <img src="./img/5-p.png" /> <a
+						href="${pageContext.request.contextPath}/contenView2.mo?content_index=<%=hardcodin2 %>">
+							<img src="./img/16-p.png" />
+					</a>
 					</a> <a href="movieinfo.jsp"> <img src="./img/7-p.png" />
 					</a> <a href="movieinfo.jsp"> <img src="./img/22-p.png" />
 					</a>
@@ -178,13 +183,13 @@
 							<ul class="swiper-wrapper">
 								<li class="swiper-slide"><a
 									href="${pageContext.request.contextPath}/BoardList.mo">
-										[점검안내] 9월 5일 SBS(ch.6) 라이브 채널 점검NEW </a></li>
+										[작업공지] 9월 23일 Giggle 서비스 정기점검 </a></li>
 								<li class="swiper-slide"><a
 									href="${pageContext.request.contextPath}/BoardList.mo">
-										[점검안내] 9월 2일 MBN,MBN+라이브 채널 점검 </a></li>
+										[점검안내] 9월 21일 게시판 페이지 오류 </a></li>
 								<li class="swiper-slide"><a
 									href="${pageContext.request.contextPath}/BoardList.mo">
-										[업데이트] 8월 5주 프로그램 리스트 </a></li>
+										[업데이트] 9월 3주 프로그램 리스트 </a></li>
 							</ul>
 							<div class="footer-button">
 								<div class="swiper-button-prev"></div>

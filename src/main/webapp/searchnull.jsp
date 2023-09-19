@@ -14,7 +14,7 @@
 </head>
 <body>
 	<header class="header">
-       <div class="menu-top">
+        <div class="menu-top">
           <nav class="menu2">
             <ul>
                 <li>
@@ -129,7 +129,7 @@
                         <a href="#">#레이첼 맥아담스</a>
                     </div>
                     <div class="slide-container">
-                        <a href="movieinfo.jsp">
+                        <a href="abouttime.jsp">
                             <img src="./img/4-p.png" />
                         </a>
                         <a href="movieinfo.jsp">
@@ -161,16 +161,16 @@
                         </div>
                         <div class="swiper">
                             <ul class="swiper-wrapper">
-                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
-                                        [점검안내] 9월 5일 SBS(ch.6) 라이브 채널 점검NEW
-                                    </a></li>
-                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
-                                        [점검안내] 9월 2일 MBN,MBN+라이브 채널 점검
-                                    </a></li>
-                                <li class="swiper-slide"><a href="${pageContext.request.contextPath}/BoardList.mo">
-                                        [업데이트] 8월 5주 프로그램 리스트
-                                    </a></li>
-                            </ul>
+								<li class="swiper-slide"><a
+									href="${pageContext.request.contextPath}/BoardList.mo">
+										[작업공지] 9월 23일 Giggle 서비스 정기점검 </a></li>
+								<li class="swiper-slide"><a
+									href="${pageContext.request.contextPath}/BoardList.mo">
+										[점검안내] 9월 21일 게시판 페이지 오류 </a></li>
+								<li class="swiper-slide"><a
+									href="${pageContext.request.contextPath}/BoardList.mo">
+										[업데이트] 9월 3주 프로그램 리스트 </a></li>
+							</ul>
                             <div class="footer-button">
                                 <div class="swiper-button-prev"></div>
                                 <div class="swiper-button-next"></div>
