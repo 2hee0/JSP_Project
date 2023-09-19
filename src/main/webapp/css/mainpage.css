@@ -352,6 +352,7 @@ li {
     overflow-clip-margin: content-box;
     overflow: clip;
     cursor:pointer ;
+    margin-top:10px;
 }
 
 .next {
